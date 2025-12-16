@@ -1,47 +1,59 @@
 # Arbitrary Rule Following Experiment
 
-Testing compositional generalization in large language models using procedurally-generated rules with minimized training coverage.
+Testing compositional generalization in large language models using procedurally-generated rules.
 
 ## Overview
 
-This experiment tests whether LLMs can follow arbitrary rules constructed from random combinations of conditions and actions. Rules are procedurally generated to minimize overlap with training distributions, isolating the ability to *construct* novel behaviors from the ability to *retrieve* trained patterns.
+This experiment tests whether LLMs can follow arbitrary rules constructed from random combinations of conditions and actions. Rules are procedurally generated to minimize overlap with training distributions.
 
-## Key Findings
+## Key Finding
 
-Across 5 models (GPT-4o, GPT-4o Mini, GPT-4 Turbo, Claude Sonnet 4, Claude 3.5 Haiku), N=300 trials each:
+**One robust result:** Input-dependent rules (L5) are consistently hard (5-15% accuracy). This replicates across models and runs.
 
-| Model | L1 | L2 | L3 | L4 | L5 | Overall |
-|-------|-----|-----|-----|-----|-----|---------|
-| GPT-4o Mini | 85% | 62% | 73% | 58% | 18% | 59% |
-| GPT-4o | 92% | 63% | 78% | 42% | 5% | 56% |
-| GPT-4 Turbo | 80% | 50% | 72% | 40% | 22% | 53% |
-| Claude Sonnet 4 | 93% | 42% | 42% | 35% | 8% | 43% |
-| Claude 3.5 Haiku | 92% | 20% | 32% | 20% | 0% | 33% |
+**Caution:** Other findings show high run-to-run variance (±20-40pp). Specific accuracy values at L1-L4 are unstable.
 
-**Findings:**
-1. All models: L1 high (80-93%), L5 near-failure (0-22%)
-2. Binary error structure (81-91%): rules ignored entirely, not partially followed
-3. Coordination (L2) harder than conditionals (L3) for most models
-4. Scale ≠ performance: GPT-4o Mini outperforms larger models
+## Results Summary
+
+### Initial Run (N=300 per model)
+
+| Model | L1 | L2 | L3 | L4 | L5 |
+|-------|-----|-----|-----|-----|-----|
+| GPT-4o Mini | 85% | 62% | 73% | 58% | 18% |
+| GPT-4o | 92% | 63% | 78% | 42% | 5% |
+| Claude Sonnet 4 | 93% | 42% | 42% | 35% | 8% |
+
+### Ultra-Power Replication (N=600 per model)
+
+| Model | L1 | L2 | L3 | L4 | L5 |
+|-------|-----|-----|-----|-----|-----|
+| Claude Sonnet 4 | **74%** | 33% | 41% | 40% | 10% |
+| GPT-4o | 83% | 63% | **38%** | 30% | 7% |
+
+**Notable:** Claude L1 dropped 19pp; GPT-4o L3 dropped 40pp between runs.
 
 ## Complexity Levels
 
 | Level | Structure | Example |
 |-------|-----------|---------|
 | 1 | Single action | "Always begin with 'QUACK'" |
-| 2 | Two simultaneous actions | "Use ALL CAPS and end with '!!'" |
-| 3 | IF-ELSE conditional | "If prompt contains 'the', prepend 'YES'; otherwise append 'NO'" |
-| 4 | IF-ELIF-ELSE chain | Three conditions with priority ordering |
-| 5 | Self-referential | "Respond in N words where N = vowels in prompt" |
+| 2 | Two actions | "Use ALL CAPS and end with '!!'" |
+| 3 | IF-ELSE | "If prompt contains 'the', prepend 'YES'; else append 'NO'" |
+| 4 | IF-ELIF-ELSE | Three conditions with priority |
+| 5 | Input-dependent | "Respond in N words where N = vowels in prompt" |
+
+## What Replicates vs What Doesn't
+
+| Finding | Status |
+|---------|--------|
+| L5 is hard (5-15%) | ✅ Robust |
+| L1 > L5 (large effect) | ✅ Robust |
+| Specific L1-L4 values | ❌ Unstable (±20-40pp) |
+| L2 vs L3 pattern | ❌ Reversed between runs |
 
 ## Installation
 
 ```bash
 pip install -r requirements.txt
-```
-
-Set API keys:
-```bash
 export ANTHROPIC_API_KEY=your_key
 export OPENAI_API_KEY=your_key
 ```
@@ -49,57 +61,21 @@ export OPENAI_API_KEY=your_key
 ## Usage
 
 ```bash
-# Default (30 trials/level)
-python run.py
-
-# Specific model
-python run.py --model gpt-4o
-
-# High power (60 trials/level) - recommended
-python run.py --high-power
-
-# Ultra power (120 trials/level) - for publication
-python run.py --ultra-power
-
-# Compare multiple models
-python run.py --compare --high-power
-
-# List available models
-python run.py --list-models
+python run.py --model gpt-4o          # Single model
+python run.py --high-power            # 60 trials/level
+python run.py --ultra-power           # 120 trials/level
+python run.py --compare --ultra-power # Multi-model comparison
 ```
 
-## Analysis
+## Known Limitations
 
-```bash
-# Single model
-python analyze_aph.py results/results_*.json
+- **High variance**: 20-40pp run-to-run differences at L1-L4
+- **L2 vs L3 unstable**: Pattern reversed for GPT-4o between runs
+- **Rule sampling**: Different rules may have different difficulty
 
-# Multi-model comparison
-python analyze_multimodel.py results/
-```
+## Recommendation
 
-## Statistical Power
-
-| Trials/Level | CI Width (at 50%) | Use Case |
-|--------------|-------------------|----------|
-| 30 | ±18% | Quick testing |
-| 60 | ±13% | Standard |
-| 120 | ±9% | Publication |
-| 200 | ±7% | High confidence |
-
-## Files
-
-```
-├── run.py                 # Main entry point
-├── experiment.py          # Experiment logic
-├── rule_generator.py      # Procedural rule generation
-├── provider.py            # Multi-provider API abstraction
-├── config.py              # Configuration
-├── analyze_aph.py         # Single-model analysis
-├── analyze_multimodel.py  # Cross-model comparison
-├── paper_draft.md         # Manuscript
-└── results/               # Output JSON files
-```
+Focus on the **L5 finding** (input-dependent constraints are hard). Treat L1-L4 comparisons as exploratory.
 
 ## Citation
 
@@ -110,12 +86,6 @@ python analyze_multimodel.py results/
   year={2025}
 }
 ```
-
-## References
-
-- Lake & Baroni (2018). Generalization without systematicity. *ICML*.
-- Dziri et al. (2023). Faith and Fate: Limits of Transformers on Compositionality. *NeurIPS*.
-- Schaeffer et al. (2023). Are emergent abilities a mirage? *NeurIPS*.
 
 ## License
 
