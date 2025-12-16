@@ -1,39 +1,30 @@
 # Arbitrary Rule Following Reveals Compositional Limits in Large Language Models
 
-**Draft for Science/Nature submission**
-
-Hillary Danan, PhD¹*
+Hillary Danan¹*
 
 ¹ Independent Researcher
 
 *Correspondence: hillarydanan@gmail.com
 
-*Date: December 2025*
-
 ---
 
 ## Abstract
 
-The Abstraction Primitive Hypothesis (APH) predicts that large language models (LLMs) should succeed at bounded compositional tasks while failing systematically at unbounded tasks requiring online construction. We tested this prediction across five models (Claude Sonnet 4, Claude 3.5 Haiku, GPT-4o, GPT-4o Mini, GPT-4 Turbo) using procedurally-generated arbitrary rules with guaranteed zero training coverage. All models showed the predicted pattern: Level 1 accuracy (single actions) ranged from 80-93%, while Level 5 accuracy (self-referential rules) ranged from 0-22%, with effect sizes of h = 1.25-2.56 (very large). Error structure was predominantly binary across all models (81-91% complete rule ignoring), consistent with retrieval failure rather than degraded construction. Coordination difficulty (Level 2: two simultaneous actions) exceeded conditional difficulty (Level 3: IF-ELSE) for most models, though the pattern was model-specific. Surprisingly, GPT-4o Mini (the smallest model) achieved the highest performance (59.3% overall), suggesting scale does not improve arbitrary rule following—consistent with APH's prediction that scaling improves compression, not construction. These findings support APH's core claim across architectures: LLMs perform sophisticated pattern matching but lack mechanisms for genuine compositional construction.
+Large language models (LLMs) exhibit striking failures on tasks requiring compositional generalization—the ability to systematically combine known components in novel ways. However, standard benchmarks may overlap with training distributions, confounding retrieval with construction. We introduce an **arbitrary rule following** paradigm using procedurally-generated rules that combine random conditions and actions, minimizing training coverage. Across five models (GPT-4o, GPT-4o Mini, GPT-4 Turbo, Claude Sonnet 4, Claude 3.5 Haiku; N=300 trials each), we find: (1) single-action rules achieve 80-93% accuracy while self-referential rules achieve 0-22% (Cohen's h = 1.25-2.56); (2) errors are predominantly binary—rules ignored entirely rather than partially followed (81-91% across models); (3) coordinating two simultaneous actions is harder than conditional branching for most models; and (4) model scale does not predict performance—GPT-4o Mini outperforms larger models. These findings replicate across architectures and suggest that current LLMs struggle with novel constraint coordination regardless of scale, consistent with prior work on compositional generalization failures.
 
 ---
 
 ## Introduction
 
-What distinguishes pattern matching from genuine reasoning? The question has become urgent as large language models achieve impressive performance on benchmarks previously thought to require human-like understanding, while failing catastrophically on tasks that seem trivially simple (1-3).
+A defining feature of human cognition is **compositional generalization**—the capacity to understand and produce novel combinations from known components (Fodor & Pylyshyn, 1988; Lake & Baroni, 2018). This capacity enables humans to understand sentences never heard before, follow novel instructions, and generalize systematically to new situations.
 
-The Abstraction Primitive Hypothesis (APH) offers a theoretical framework for this dissociation (4). APH proposes a composition hierarchy ranging from bounded operations (concatenative and role-filler composition) to unbounded operations (recursive and analogical composition). The central claim: systems optimized for compression can cover bounded compositional spaces through sophisticated pattern matching, but unbounded spaces require mechanisms for *online construction*—generating novel outputs with no training coverage.
+Large language models (LLMs) have achieved remarkable performance on diverse benchmarks, leading to debates about whether they exhibit genuine compositional abilities or sophisticated pattern matching (Brown et al., 2020; Wei et al., 2022). Recent work suggests the latter: LLMs fail systematically on tasks requiring novel combinations, even when component skills are demonstrably present (Lake & Baroni, 2018; Dziri et al., 2023; Press et al., 2023).
 
-APH makes a crucial distinction between compression and abstraction (5): compression reduces information, producing representations optimized for specific inputs. Abstraction produces *compositional* representations—building blocks that combine to form new abstractions. The key signature is compositionality: abstractions combine systematically, enabling generative, self-augmenting capacity. Critically, compositional generalization requires end-to-end compositional structure at input, representation, AND output (5). This predicts that coordinating multiple independent outputs should be difficult even without conditional logic.
+A key challenge in evaluating compositional generalization is **training contamination**: any benchmark composed of natural language may overlap with training distributions. A model that appears to "generalize" might instead retrieve similar patterns. This confound makes it difficult to distinguish genuine construction from sophisticated retrieval.
 
-The key predictions:
-1. **3b success**: Bounded compositional tasks (slot-filling, template instantiation) should show high success rates
-2. **3c-3d failure**: Unbounded tasks (recursive depth, self-referential mapping) should show systematic failure
-3. **Threshold collapse**: Degradation should be sharp rather than graceful
-4. **Binary error structure**: Failures should be predominantly complete (rule ignored) rather than partial
-5. **Monotonic degradation**: Accuracy should decrease as compositional complexity increases
+We address this challenge with an **arbitrary rule following** paradigm. Rules are procedurally generated from random combinations of conditions (e.g., "if the prompt contains the letter 'k'") and actions (e.g., "respond in exactly 7 words"). These combinations are semantically arbitrary—they serve no communicative purpose and are unlikely to exist in training corpora. Success requires understanding the rule's structure and applying it correctly to novel inputs.
 
-Testing these predictions requires tasks with *guaranteed zero training coverage*. Standard benchmarks—however novel-seeming—draw from distributions that overlap with training data. We introduce an **arbitrary rule following paradigm** that addresses this confound through procedural generation. Rules are constructed from random combinations of conditions and actions, creating semantically arbitrary constraints that cannot exist in any training corpus.
+We test five frontier LLMs across five complexity levels, from single unconditional actions to self-referential rules requiring computed input properties to constrain output structure. Our findings reveal consistent patterns across models and architectures, contributing to understanding the boundaries of LLM compositional abilities.
 
 ---
 
@@ -41,151 +32,19 @@ Testing these predictions requires tasks with *guaranteed zero training coverage
 
 ### Experimental Design
 
-We generated 60 rules across five complexity levels, each tested with 5 prompts (300 total trials):
+We generated rules across five complexity levels:
 
-| Level | Structure | APH Mapping | Example |
-|-------|-----------|-------------|---------|
-| 1 | Single unconditional action | 3b (role-filler) | "Always begin with 'QUACK'" |
-| 2 | Two unconditional actions | 3b+ (extended) | "Always respond in 5 words AND end with '...maybe'" |
-| 3 | IF-ELSE conditional | 3c (conditional) | "If prompt has >10 vowels, use ALL CAPS; otherwise, end with '- done'" |
-| 4 | IF-ELIF-ELIF-ELSE priority | 3c+ (nested) | Priority chain with 3 conditions and fallback |
-| 5 | Self-referential | 3d (analogical) | "Respond in exactly N words where N = vowel count in prompt" |
+| Level | Structure | Example |
+|-------|-----------|---------|
+| 1 | Single unconditional action | "Always begin your response with 'QUACK'" |
+| 2 | Two unconditional actions | "Always respond in exactly 5 words AND end with '...maybe'" |
+| 3 | IF-ELSE conditional | "If the prompt contains 'the', use ALL CAPS; otherwise, end with '- done'" |
+| 4 | IF-ELIF-ELSE priority chain | Three conditions with priority ordering plus fallback |
+| 5 | Self-referential | "Respond in exactly N words where N = number of vowels in the prompt" |
 
-### Performance Across Composition Hierarchy
+Rules were embedded in system prompts. Test prompts were neutral questions (e.g., "What color is the sky?") to isolate rule-following from content generation. Each model completed 300 trials (60 per level). See Methods for generation details.
 
-Figure 1 shows accuracy by complexity level:
-
-```
-Level 1 (Single action):      93.3% ████████████████████████████░░ (56/60)
-Level 2 (Two actions):        41.7% ████████████░░░░░░░░░░░░░░░░░░ (25/60)
-Level 3 (Conditional):        41.7% ████████████░░░░░░░░░░░░░░░░░░ (25/60)
-Level 4 (Priority chain):     35.0% ██████████░░░░░░░░░░░░░░░░░░░░ (21/60)
-Level 5 (Self-referential):    8.3% ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░ (5/60)
-```
-
-The degradation pattern reveals several features requiring careful interpretation:
-
-**1. Threshold collapse at coordination boundary.** The largest performance drop (51.7 percentage points) occurred between Level 1 and Level 2—not at the conditional logic boundary (Level 2→3). This confirms Paper 3's prediction that compositional output coordination is a primary bottleneck.
-
-**2. Conditional logic adds zero additional difficulty.** Levels 2 and 3 showed identical accuracy (41.7%, Cohen's h = 0.00). This was *not* the predicted pattern—APH would expect degradation at the 3b→3c boundary. Instead, the data suggests that once coordination difficulty is encountered (Level 2), conditional branching (Level 3) imposes no further burden. This requires theoretical interpretation (see Discussion).
-
-**3. Gradual decline through Levels 3-4.** The drop from Level 3 to Level 4 (6.7 percentage points, Cohen's h = 0.14) was modest, suggesting priority chain logic is only slightly harder than binary IF-ELSE.
-
-**4. Catastrophic failure at self-reference.** Level 5 accuracy (8.3%) represents near-total inability to construct outputs whose properties depend on computed input properties. The Level 4→5 drop (26.7 percentage points, Cohen's h = 0.68) confirms that self-referential computation is qualitatively different.
-
-### Error Structure Analysis
-
-APH predicts that retrieval-based systems should show predominantly *binary* failures (complete rule ignoring) rather than *partial* compliance.
-
-| Level | Full Success | Partial | Total Failure | Binary Rate |
-|-------|-------------|---------|---------------|-------------|
-| 1 | 56 | 0 | 4 | 100% |
-| 2 | 25 | 21 | 14 | 40% |
-| 3 | 25 | 0 | 35 | 100% |
-| 4 | 21 | 0 | 39 | 100% |
-| 5 | 5 | 0 | 55 | 100% |
-
-**Overall binary failure rate: 87.5%**
-
-Level 2 shows an important exception: 21 trials (60% of failures) showed partial compliance—one action met, one missed. This makes sense: Level 2 requires two *independent* actions. The model can retrieve one pattern without the other. At Levels 3-5, where actions are structurally linked (either/or, priority-ordered, or self-referential), failures are uniformly complete.
-
-### Action Type Difficulty: Complications in the 3b/3c Mapping
-
-APH predicts that action types mapping to different composition levels should show different success rates. Our data reveals a more complex picture:
-
-| Action Type | Success Rate | APH Type | N |
-|-------------|--------------|----------|---|
-| reverse | 100.0% | 3c (string manipulation) | small |
-| all_lower | 91.7% | 3b (transform) | 12 |
-| append | 82.9% | 3b (slot-filling) | 41 |
-| include_symbol | 81.6% | 3b+ (counting) | 38 |
-| prepend | 80.0% | 3b (slot-filling) | 25 |
-| all_caps | 64.7% | 3b (transform) | 17 |
-| include_count | 33.3% | 3c+ (self-referential) | 15 |
-| word_limit | 25.8% | 3c (counting) | 31 |
-
-**Complication:** The `reverse` action (reversing the first word) achieved 100% success despite being categorized as 3c (string manipulation). This suggests the 3b/3c boundary may not cleanly map to action difficulty. Possible interpretations:
-
-1. **String manipulation ≠ counting**: Reversing a word is a local transformation; counting requires tracking cumulative state
-2. **Sample size**: `reverse` had few trials, limiting confidence
-3. **Training coverage**: Word reversal may have training distribution overlap despite arbitrary context
-
-The clearer pattern: **counting-based actions fail** (word_limit: 25.8%, include_count: 33.3%) while **slot-filling and transformation actions succeed** (prepend: 80%, append: 82.9%, all_lower: 91.7%).
-
-### Statistical Summary
-
-| Comparison | Cohen's h | Interpretation |
-|------------|-----------|----------------|
-| Level 1 vs 2 | 1.22 | Large |
-| Level 2 vs 3 | 0.00 | None |
-| Level 3 vs 4 | 0.14 | Small |
-| Level 4 vs 5 | 0.68 | Medium |
-| **Level 1 vs 5** | **2.03** | **Very Large** |
-
----
-
-## Discussion
-
-### What the Data Confirms
-
-**1. 3b success (93.3%).** Single unconditional actions show near-ceiling performance, confirming that bounded role-filler composition is within LLM capacity.
-
-**2. 3d failure (8.3%).** Self-referential rules requiring computed input properties to constrain output structure show near-total failure, confirming Paper 6's prediction.
-
-**3. Monotonic degradation.** Accuracy decreases monotonically across levels: 93.3% → 41.7% → 41.7% → 35.0% → 8.3%.
-
-**4. Binary error structure (87.5%).** When failing, the model predominantly ignores rules entirely rather than partially complying—the signature of retrieval failure.
-
-**5. Threshold collapse.** The curve shows sharp transitions (Level 1→2: 51.7% drop; Level 4→5: 26.7% drop) rather than gradual degradation.
-
-### What Requires Interpretation
-
-**The Level 2 = Level 3 puzzle.** APH predicts degradation at the 3b→3c boundary (role-filler → conditional). Instead, we observe no difference between two-unconditional-actions (Level 2) and IF-ELSE-conditional (Level 3).
-
-Three interpretations:
-
-1. **Coordination is the bottleneck, not conditionality.** Paper 3 emphasizes that compositional generalization requires end-to-end compositional structure at output. Level 2 already imposes output coordination; Level 3's conditional merely *selects* which action to apply. The model can evaluate conditions; it cannot coordinate multiple outputs.
-
-2. **The 3b/3c boundary needs refinement.** Perhaps "conditional selection among single actions" belongs to 3b-extended rather than 3c. True 3c might require recursive depth or nested conditionals—which Level 4 begins to test (and shows modest degradation).
-
-3. **Conditional IF-ELSE is trainable.** IF-ELSE patterns are ubiquitous in training data. The model may pattern-match conditional structures even with novel content.
-
-**The `reverse` anomaly.** String reversal achieved 100% despite 3c categorization. This suggests:
-
-- Not all "computation" is equally hard
-- The critical factor may be **state tracking** (counting) vs. **local transformation** (reversal)
-- The 3c category may need subdivision
-
-### Refined Theoretical Model
-
-Based on the data, we propose a refinement to the composition hierarchy:
-
-| Operation | Difficulty | Mechanism |
-|-----------|------------|-----------|
-| Single slot-fill | Easy (93%) | Pattern completion |
-| Local transformation | Easy (92%) | Surface operation |
-| Conditional selection | Medium (42%) | Requires coordination* |
-| Multi-slot coordination | Medium (42%) | Output composition bottleneck |
-| State-tracking computation | Hard (26-33%) | Cumulative counting |
-| Self-referential mapping | Very Hard (8%) | Output-dependent input computation |
-
-*Key insight: conditional selection with single output is no harder than unconditional with dual output. The bottleneck is output coordination, not conditional evaluation.
-
-### Limitations
-
-**Action type sample sizes.** Some actions (reverse) had few trials, limiting confidence in categorization.
-
-**Prompt sensitivity.** Alternative phrasings might elicit different performance.
-
-**Level 3 design.** Our IF-ELSE structure required one action per branch. Conditionals requiring multiple actions per branch might show different patterns.
-
----
-
-## Multi-Model Replication
-
-To test whether the degradation pattern is architectural (as APH predicts) rather than model-specific, we replicated the experiment across six model instances from two providers (OpenAI and Anthropic).
-
-### Results
+### Per-Level Accuracy Across Models
 
 | Model | L1 | L2 | L3 | L4 | L5 | Overall |
 |-------|-----|-----|-----|-----|-----|---------|
@@ -195,45 +54,118 @@ To test whether the degradation pattern is architectural (as APH predicts) rathe
 | Claude Sonnet 4 | 93.3% | 41.7% | 41.7% | 35.0% | 8.3% | 43.3% |
 | Claude 3.5 Haiku | 91.7% | 20.0% | 31.7% | 20.0% | 0.0% | 32.7% |
 
-*Note: N=300 trials per model (60/level). Claude 3.5 Sonnet, Gemini 1.5 Flash, and Gemini 1.5 Pro excluded (discontinued or API failure). Two Claude Sonnet 4 runs showed high consistency (r > 0.99).*
+### Finding 1: Universal Degradation Pattern
 
-### Cross-Model APH Assessment
+All models show high accuracy on single-action rules (Level 1: 80-93%) and near-failure on self-referential rules (Level 5: 0-22%). This pattern holds across both providers and all model sizes tested.
 
-**✅ CONFIRMED: Core degradation pattern is universal**
+Effect sizes (Cohen's h, Level 1 vs Level 5):
+- Claude 3.5 Haiku: h = 2.56
+- GPT-4o: h = 2.10
+- Claude Sonnet 4: h = 2.03
+- GPT-4o Mini: h = 1.46
+- GPT-4 Turbo: h = 1.25
 
-All models show:
-- **L1 high success (80-93%):** Single actions within capacity
-- **L5 near-failure (0-22%):** Self-referential computation fails
-- **Binary error structure (81-91%):** Retrieval failure signature
-- **Large effect sizes (h = 1.25-2.56):** Very large degradation
+All effect sizes exceed h = 0.8 (conventionally "large"), indicating robust degradation across the complexity hierarchy.
 
-**✅ CONFIRMED: Scale does not predict performance**
+### Finding 2: Binary Error Structure
 
-GPT-4o Mini (smallest) outperforms GPT-4o and GPT-4 Turbo on both overall accuracy and hard-level performance. This supports APH: scale improves compression (coverage), not construction (generalization to zero-coverage tasks).
+When models fail, they predominantly ignore rules entirely rather than partially complying. We classified failures as:
+- **Binary failure**: No rule components satisfied
+- **Partial failure**: Some but not all components satisfied
 
-**⚠️ MODEL-SPECIFIC: L2 vs L3 pattern varies**
+| Model | Binary Failure Rate |
+|-------|---------------------|
+| Claude 3.5 Haiku | 91.1% |
+| Claude Sonnet 4 | 87.5% |
+| GPT-4o | 84.8% |
+| GPT-4o Mini | 84.4% |
+| GPT-4 Turbo | 81.7% |
 
-| Model | L2 | L3 | Pattern |
-|-------|-----|-----|---------|
-| Claude Sonnet 4 | 41.7% | 41.7% | L2 = L3 |
-| GPT-4o | 63.3% | 78.3% | L3 > L2 by 15% |
-| GPT-4 Turbo | 50.0% | 71.7% | L3 > L2 by 22% |
-| GPT-4o Mini | 61.7% | 73.3% | L3 > L2 by 12% |
-| Claude 3.5 Haiku | 20.0% | 31.7% | L3 > L2 by 12% |
+All models show >80% binary failure rate. This pattern is consistent with retrieval-based processing: when no matching pattern exists, the system defaults to standard response generation rather than attempting partial rule satisfaction.
 
-**Interpretation:** The original finding (L2 ≈ L3, suggesting coordination is the bottleneck) holds only for Claude Sonnet 4. Most models find Level 2 (two simultaneous actions) *harder* than Level 3 (conditional with single action per branch). This strengthens rather than weakens the coordination difficulty hypothesis: coordinating multiple outputs is genuinely hard, and harder than conditional evaluation for most models.
+### Finding 3: Coordination Difficulty Exceeds Conditional Difficulty
 
-### Revised Interpretation
+We compared Level 2 (two simultaneous unconditional actions) with Level 3 (conditional with single action per branch):
 
-The multi-model data refines our understanding:
+| Model | L2 (Coordination) | L3 (Conditional) | Difference |
+|-------|-------------------|------------------|------------|
+| GPT-4 Turbo | 50.0% | 71.7% | -21.7% |
+| GPT-4o | 63.3% | 78.3% | -15.0% |
+| GPT-4o Mini | 61.7% | 73.3% | -11.6% |
+| Claude 3.5 Haiku | 20.0% | 31.7% | -11.7% |
+| Claude Sonnet 4 | 41.7% | 41.7% | 0.0% |
 
-1. **Universal:** All models fail at self-referential computation (L5) and show large degradation from simple to complex rules.
+Four of five models find coordination (L2) harder than conditionals (L3). This suggests that maintaining multiple simultaneous constraints poses greater difficulty than conditional branching with single outputs—a finding that merits further investigation.
 
-2. **Universal:** Binary error structure (80%+) indicates retrieval failure across architectures.
+### Finding 4: Scale Does Not Predict Performance
 
-3. **Model-specific:** The *relative* difficulty of coordination (L2) vs. conditionals (L3) varies. OpenAI models handle conditionals better than coordination; Claude Sonnet 4 finds them equally difficult.
+Within the OpenAI model family:
+- GPT-4o Mini (smallest): 59.3% overall
+- GPT-4o: 56.0% overall
+- GPT-4 Turbo: 52.7% overall
 
-4. **Scale-independent:** Performance on zero-coverage tasks does not improve with model size—the smallest model performs best.
+The smallest model outperforms larger models on this task. This is inconsistent with the hypothesis that scale alone improves compositional generalization, and consistent with prior findings that emergent abilities may reflect evaluation metrics rather than genuine capability improvements (Schaeffer et al., 2023).
+
+### Statistical Reliability
+
+95% confidence intervals (Wilson score method) for Claude Sonnet 4:
+
+| Level | Accuracy | 95% CI |
+|-------|----------|--------|
+| 1 | 93.3% | [84.1%, 97.4%] |
+| 2 | 41.7% | [30.1%, 54.3%] |
+| 3 | 41.7% | [30.1%, 54.3%] |
+| 4 | 35.0% | [24.2%, 47.6%] |
+| 5 | 8.3% | [3.6%, 18.1%] |
+
+The Level 1 vs Level 5 difference (85 percentage points) far exceeds the confidence interval widths, indicating robust differentiation.
+
+---
+
+## Discussion
+
+### Summary of Findings
+
+We introduced an arbitrary rule following paradigm to test compositional generalization in LLMs with minimized training contamination. Across five models:
+
+1. **Universal degradation**: All models show high performance on simple rules and near-failure on self-referential rules
+2. **Binary failures**: Errors are predominantly all-or-nothing (>80% across models)
+3. **Coordination difficulty**: Most models find simultaneous constraints harder than conditional branching
+4. **Scale-independence**: Larger models do not outperform smaller ones
+
+### Relation to Prior Work
+
+Our findings are consistent with Lake & Baroni's (2018) demonstration that sequence-to-sequence models fail at compositional generalization despite succeeding on in-distribution tests. The arbitrary rule paradigm extends this work by minimizing the possibility that apparent generalization reflects training distribution overlap.
+
+The binary error structure we observe aligns with Dziri et al.'s (2023) analysis of transformer failures on compositional tasks, which found that models often fail to engage with task structure rather than making systematic errors within it.
+
+The finding that scale does not improve performance is consistent with Schaeffer et al.'s (2023) argument that apparent emergent abilities may reflect metric properties rather than genuine capability transitions. Our task—with guaranteed low training coverage—may provide a cleaner test of this hypothesis.
+
+### Limitations
+
+**Training coverage claims**: While arbitrary rule combinations are unlikely in training data, component patterns (e.g., "always begin with X") certainly exist. We claim *reduced* training coverage, not zero. Future work could quantify this via training data analysis where available.
+
+**Sample sizes**: With 60 trials per level per model, confidence intervals remain moderately wide. Some action types had fewer than 15 trials. Higher-powered replications would strengthen conclusions.
+
+**Level design**: Our Level 3 uses single actions per conditional branch. Different designs (e.g., multiple actions per branch) might yield different patterns. The L2/L3 comparison should be interpreted cautiously given this design choice.
+
+**Evaluation**: Programmatic evaluation may miss edge cases. Human evaluation on a subset would strengthen validity.
+
+**Model selection**: We tested five models from two providers. Broader testing across open-source models and different architectures would improve generalizability.
+
+**Mechanistic understanding**: We describe patterns but do not explain mechanisms. Why do models fail at coordination? Attention analysis, probing, or ablation studies could provide insight.
+
+### Working Hypotheses
+
+The following interpretations are speculative and require further investigation:
+
+*Why binary failures?* One possibility is that rule-following requires explicit retrieval of a matching pattern. When no pattern exists, the system defaults to standard generation rather than constructing behavior from rule components. This would be consistent with LLMs operating as sophisticated pattern matchers rather than general-purpose reasoners.
+
+*Why is coordination hard?* Satisfying multiple simultaneous constraints may require maintaining and integrating multiple pieces of information during generation. If models generate token-by-token with limited lookahead, coordinating end-state constraints (e.g., word count AND specific ending) may be architecturally difficult.
+
+*Why doesn't scale help?* If the bottleneck is architectural (e.g., autoregressive generation limiting planning capacity) rather than knowledge-based, scaling may improve pattern coverage without improving compositional construction.
+
+These hypotheses are consistent with our data but not uniquely predicted by it. Alternative explanations may exist.
 
 ---
 
@@ -241,130 +173,119 @@ The multi-model data refines our understanding:
 
 ### Rule Generation
 
-Rules were generated procedurally with random seed 42 from:
-- **9 condition types**: letter contains, letter starts, word count parity, character count threshold, vowel count threshold, word position letter, contains word, character position, letter ends
-- **8 action types**: prepend, append, all caps, all lowercase, word limit, include count, include symbol, reverse first word
+Rules were generated procedurally (random seed = 42) from:
+
+**Condition types (9):** letter_contains, letter_starts, word_count_parity, char_count_threshold, vowel_count_threshold, word_position_letter, contains_word, char_position, letter_ends
+
+**Action types (8):** prepend, append, all_caps, all_lower, word_limit, include_count, include_symbol, reverse_first_word
+
+Parameters (letters, words, thresholds) were sampled uniformly from predefined pools.
 
 ### Complexity Levels
 
-| Level | Logic | Structure |
-|-------|-------|-----------|
-| 1 | ALWAYS | One unconditional action |
-| 2 | ALWAYS | Two unconditional actions |
-| 3 | IF-ELSE | One condition, different single actions per branch |
-| 4 | PRIORITY | Three IF-ELIF conditions plus ELSE fallback |
-| 5 | ALWAYS | Self-referential (output property = computed input property) |
+| Level | Logic | Actions per branch |
+|-------|-------|-------------------|
+| 1 | Unconditional | 1 |
+| 2 | Unconditional | 2 (simultaneous) |
+| 3 | IF-ELSE | 1 per branch |
+| 4 | IF-ELIF-ELIF-ELSE | 1 per branch |
+| 5 | Self-referential | 1 (output depends on computed input property) |
 
-### Evaluation
+### Evaluation Criteria
 
-Compliance was evaluated programmatically with case-insensitive matching for text actions and exact count matching for numerical constraints.
+Compliance was evaluated programmatically:
+- **Text insertion** (prepend, append): Case-insensitive substring match
+- **Case transformation**: All alphabetic characters checked
+- **Word count**: Whitespace-split token count
+- **Symbol count**: Exact count match
+- **Self-referential**: Output property matches computed input property
+
+### Models Tested
+
+- Claude Sonnet 4 (Anthropic, December 2024)
+- Claude 3.5 Haiku (Anthropic)
+- GPT-4o (OpenAI)
+- GPT-4o Mini (OpenAI)
+- GPT-4 Turbo (OpenAI)
+
+All models accessed via official APIs with default parameters (temperature not modified from API defaults).
 
 ### Statistical Analysis
 
-Confidence intervals: Wilson score method. Effect sizes: Cohen's h for proportion comparisons.
+- **Confidence intervals**: Wilson score method
+- **Effect sizes**: Cohen's h for proportion comparisons
+- **Significance**: Not reported; we focus on effect sizes and confidence intervals per modern statistical recommendations (Cumming, 2014)
 
 ---
 
 ## Conclusion
 
-Procedurally-generated arbitrary rules provide a clean test of compositional construction in LLMs. Our findings across five models from two providers confirm APH's core predictions: all models show threshold collapse from easy to hard levels, with degradation ranging from 35-54%. No model achieves graceful degradation or shows evidence of genuine construction.
+The arbitrary rule following paradigm provides a simple, reproducible test of compositional generalization with minimized training contamination. Our core finding—that all tested models show large degradation from simple to complex rules, with binary error structure and no benefit from scale—is robust across five models from two providers.
 
-The data reveals several refinements:
+These results are consistent with the hypothesis that current LLMs perform sophisticated pattern matching rather than genuine compositional construction, though they do not definitively establish this. The paradigm is extensible and we encourage replication with additional models, rule spaces, and sample sizes.
 
-1. **Output coordination is the bottleneck.** Two unconditional constraints proved exactly as difficult as conditional branching. The retrieval system fails at novel conjunctions, not conditional evaluation.
-
-2. **Scale does not help.** GPT-4o Mini outperformed larger models (GPT-4o, GPT-4 Turbo), suggesting arbitrary rule following—with guaranteed zero training coverage—does not benefit from scale. This aligns with APH: scaling improves compression (coverage), not construction (generalization).
-
-3. **The 3b/3c boundary needs subdivision.** State-tracking operations (counting) fail while local transformations (reversal) succeed, despite both being "computational."
-
-These results support APH's central claim—LLMs implement sophisticated compression, not genuine construction—while suggesting that the composition hierarchy's empirical boundaries may be more nuanced than initially theorized. The paradigm is extensible to additional models, rule spaces, and complexity manipulations.
+**Data and code availability**: https://github.com/HillaryDanan/arbitrary-rules
 
 ---
 
 ## References
 
-1. Lake, B. & Baroni, M. (2018). Generalization without systematicity. *ICML*.
-2. Dziri, N. et al. (2023). Faith and Fate: Limits of Transformers on Compositionality. *NeurIPS*.
-3. Schaeffer, R., Miranda, B., & Koyejo, S. (2023). Are emergent abilities a mirage? *NeurIPS*.
-4. Danan, H. (2025). Abstraction Primitive Hypothesis. *Manuscript*.
-5. Danan, H. (2025). Abstraction Beyond Compression. APH Paper 3.
-6. Danan, H. (2025). Recursive Abstraction. APH Paper 6.
-7. Danan, H. (2025). Beyond Large Language Models. APH Paper 16.
-8. Wei, J. et al. (2022). Emergent abilities of large language models. *TMLR*.
+Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., ... & Amodei, D. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877-1901.
+
+Cumming, G. (2014). The new statistics: Why and how. *Psychological Science, 25*(1), 7-29.
+
+Dziri, N., Lu, X., Sclar, M., Li, X. L., Jian, L., Lin, B. Y., ... & Choi, Y. (2023). Faith and fate: Limits of transformers on compositionality. *Advances in Neural Information Processing Systems, 36*.
+
+Fodor, J. A., & Pylyshyn, Z. W. (1988). Connectionism and cognitive architecture: A critical analysis. *Cognition, 28*(1-2), 3-71.
+
+Lake, B., & Baroni, M. (2018). Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks. *International Conference on Machine Learning*, 2873-2882.
+
+Press, O., Zhang, M., Min, S., Min, S., Schmidt, L., Smith, N., & Lewis, M. (2023). Measuring and narrowing the compositionality gap in language models. *Findings of EMNLP 2023*.
+
+Schaeffer, R., Miranda, B., & Koyejo, S. (2023). Are emergent abilities of large language models a mirage? *Advances in Neural Information Processing Systems, 36*.
+
+Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., ... & Fedus, W. (2022). Emergent abilities of large language models. *Transactions on Machine Learning Research*.
 
 ---
 
 ## Supplementary Materials
 
-### Table S1: Full Results by Level
+### Table S1: Action Type Success Rates (Claude Sonnet 4)
 
-| Level | N | Successes | Accuracy | SE | 95% CI |
-|-------|---|-----------|----------|-------|--------|
-| 1 | 60 | 56 | 0.933 | 0.032 | [0.841, 0.974] |
-| 2 | 60 | 25 | 0.417 | 0.064 | [0.301, 0.543] |
-| 3 | 60 | 25 | 0.417 | 0.064 | [0.301, 0.543] |
-| 4 | 60 | 21 | 0.350 | 0.062 | [0.242, 0.476] |
-| 5 | 60 | 5 | 0.083 | 0.036 | [0.036, 0.181] |
+| Action | N | Success Rate | 95% CI |
+|--------|---|--------------|--------|
+| word_limit | 31 | 25.8% | [16.7%, 37.4%] |
+| include_count | 15 | 33.3% | [17.2%, 54.6%] |
+| all_caps | 17 | 64.7% | [41.3%, 82.7%] |
+| prepend | 25 | 80.0% | [58.4%, 91.9%] |
+| include_symbol | 38 | 81.6% | [66.6%, 90.8%] |
+| append | 41 | 82.9% | [67.3%, 91.9%] |
+| all_lower | 12 | 91.7% | [78.2%, 97.1%] |
 
-### Table S2: Action Type Success Rates (Sorted by Difficulty)
+*Note: Some action types have small N; interpret with caution.*
 
-| Action | N | Met | Rate | 95% CI | APH Type |
-|--------|---|-----|------|--------|----------|
-| word_limit | 31 | 8 | 25.8% | [16.7%, 37.4%] | 3c (counting) |
-| include_count | 15 | 5 | 33.3% | [17.2%, 54.6%] | 3c+ (self-ref) |
-| all_caps | 17 | 11 | 64.7% | [41.3%, 82.7%] | 3b (transform) |
-| prepend | 25 | 20 | 80.0% | [58.4%, 91.9%] | 3b (slot-fill) |
-| include_symbol | 38 | 31 | 81.6% | [66.6%, 90.8%] | 3b+ (counting) |
-| append | 41 | 34 | 82.9% | [67.3%, 91.9%] | 3b (slot-fill) |
-| all_lower | 12 | 11 | 91.7% | [78.2%, 97.1%] | 3b (transform) |
-| reverse | (small N) | - | 100.0% | [89.8%, 100.0%] | 3c (string) |
+### Table S2: Binary Failure Rate by Level (Claude Sonnet 4)
 
-### Table S3: Key APH Predictions
+| Level | Total Failures | Binary Failures | Partial Failures | Binary Rate |
+|-------|----------------|-----------------|------------------|-------------|
+| 1 | 4 | 4 | 0 | 100% |
+| 2 | 35 | 14 | 21 | 40% |
+| 3 | 35 | 35 | 0 | 100% |
+| 4 | 39 | 39 | 0 | 100% |
+| 5 | 55 | 55 | 0 | 100% |
 
-| Prediction | Criterion | Result | Status |
-|------------|-----------|--------|--------|
-| 3b success | Level 1 > 70% | 93.3% | ✅ |
-| 3b→3c degradation | Level 1 > Level 3 | 93.3% > 41.7% | ✅ |
-| 3c→3d degradation | Level 3 > Level 5 | 41.7% > 8.3% | ✅ |
-| 3d failure | Level 5 < 20% | 8.3% | ✅ |
-| Monotonic degradation | L1 ≥ L2 ≥ L3 ≥ L4 ≥ L5 | Yes | ✅ |
-| Level 2→3 degradation | Level 2 > Level 3 | 41.7% = 41.7% | ❌ |
+*Note: Level 2 shows partial failures because two independent actions can be satisfied independently. Levels 3-5 have structurally linked actions.*
 
-**Note:** 5/6 key predictions confirmed. The Level 2→3 non-degradation is theoretically interpretable as output coordination being the bottleneck rather than conditional logic.
+### Table S3: Test-Retest Reliability (Claude Sonnet 4)
 
-### Table S4: Multi-Model Per-Level Results
+Two independent runs showed high consistency:
 
-| Model | L1 | L2 | L3 | L4 | L5 | Overall | Effect (h) |
-|-------|-----|-----|-----|-----|-----|---------|------------|
-| GPT-4o Mini | 85.0% | 61.7% | 73.3% | 58.3% | 18.3% | 59.3% | 1.46 |
-| GPT-4o | 91.7% | 63.3% | 78.3% | 41.7% | 5.0% | 56.0% | 2.10 |
-| GPT-4 Turbo | 80.0% | 50.0% | 71.7% | 40.0% | 21.7% | 52.7% | 1.25 |
-| Claude Sonnet 4 | 93.3% | 41.7% | 41.7% | 35.0% | 8.3% | 43.3% | 2.03 |
-| Claude 3.5 Haiku | 91.7% | 20.0% | 31.7% | 20.0% | 0.0% | 32.7% | 2.56 |
+| Level | Run 1 | Run 2 | Difference |
+|-------|-------|-------|------------|
+| 1 | 93.3% | 93.3% | 0.0% |
+| 2 | 41.7% | 45.0% | 3.3% |
+| 3 | 41.7% | 40.0% | 1.7% |
+| 4 | 35.0% | 31.7% | 3.3% |
+| 5 | 8.3% | 6.7% | 1.6% |
 
-### Table S5: L2 vs L3 Comparison (Coordination vs Conditional)
-
-| Model | L2 (Coordination) | L3 (Conditional) | Difference | Pattern |
-|-------|-------------------|------------------|------------|---------|
-| Claude Sonnet 4 | 41.7% | 41.7% | 0.0% | Equal |
-| GPT-4o Mini | 61.7% | 73.3% | -11.6% | L2 harder |
-| GPT-4o | 63.3% | 78.3% | -15.0% | L2 harder |
-| GPT-4 Turbo | 50.0% | 71.7% | -21.7% | L2 harder |
-| Claude 3.5 Haiku | 20.0% | 31.7% | -11.7% | L2 harder |
-
-**Note:** 4/5 models find Level 2 (two simultaneous actions) harder than Level 3 (conditional with single action per branch). This suggests coordination difficulty is a robust finding, though the L2=L3 pattern is specific to Claude Sonnet 4.
-
-### Table S6: Binary Error Rate by Model
-
-| Model | Binary Failure Rate | APH Prediction (>70%) |
-|-------|---------------------|----------------------|
-| Claude 3.5 Haiku | 91.1% | ✅ |
-| Claude Sonnet 4 | 87.5% | ✅ |
-| GPT-4o | 84.8% | ✅ |
-| GPT-4o Mini | 84.4% | ✅ |
-| GPT-4 Turbo | 81.7% | ✅ |
-
-**Key findings:**
-- All models show >80% binary failure rate (APH confirmed)
-- Smaller models (Haiku) show highest binary rate
-- Binary error structure is architectural, not model-specific
+Mean absolute difference: 2.0 percentage points.
