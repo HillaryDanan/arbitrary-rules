@@ -1,0 +1,9 @@
+# Required
+anthropic>=0.18.0
+
+# Optional: for multi-model testing
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# Optional: for statistical analysis
+scipy>=1.10.0
