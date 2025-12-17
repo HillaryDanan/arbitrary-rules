@@ -1,0 +1,2352 @@
+{
+  "by_condition": {
+    "A_COUNT_ONLY": {
+      "description": "Count vowels in prompt and report the number",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "B_FIXED_CONSTRAINT": {
+      "description": "Respond in exactly N words (fixed N)",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "C_COUNT_AND_REPORT": {
+      "description": "Count vowels, report count, then respond naturally",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "D_FULL_L5": {
+      "description": "Respond in exactly N words where N = vowels in prompt",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "E_SCRATCHPAD": {
+      "description": "Explicitly count first, then constrain (chain of thought)",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50,
+      "count_accuracy": 0.0,
+      "used_own_count_rate": 0.0
+    }
+  },
+  "timestamp": "2025-12-16T20:49:09.316183",
+  "model": "Gemini 1.5 Flash",
+  "config": {
+    "random_seed": 42,
+    "trials_per_condition": 50,
+    "test_prompts": [
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?",
+      "Can you count?",
+      "What do cows produce?",
+      "Is the sun hot?",
+      "Where is north?",
+      "How many legs do spiders have?",
+      "What color are bananas?",
+      "Do penguins fly?",
+      "What is two plus two?",
+      "Can robots think?",
+      "What floats on water?",
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?"
+    ],
+    "fixed_word_count": 7
+  },
+  "trials": [
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 714.7948741912842,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 843.1661128997803,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 846.5242385864258,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 845.5369472503662,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 847.034215927124,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 139.52994346618652,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 89.82610702514648,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 192.95001029968262,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 199.48220252990723,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 190.10019302368164,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 198.53997230529785,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 442.97099113464355,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 339.4181728363037,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 464.4598960876465,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 465.5427932739258,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 186.64073944091797,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 190.66286087036133,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 542.1020984649658,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 146.76785469055176,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.42083740234375,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 153.86605262756348,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.62825393676758,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 131.9129467010498,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 132.74598121643066,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 132.91406631469727,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 113.8918399810791,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 153.01799774169922,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 137.28880882263184,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 217.34976768493652,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 225.79717636108398,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 244.26007270812988,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 244.1871166229248,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 268.85199546813965,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.2621021270752,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.87397766113281,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 92.05198287963867,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 116.39666557312012,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 59.30495262145996,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 62.821149826049805,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.19412994384766,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.32614135742188,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 70.91498374938965,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 104.31599617004395,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 108.26420783996582,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 102.98800468444824,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 109.26198959350586,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 96.18878364562988,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 218.61910820007324,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 221.5418815612793,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 219.69079971313477,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 260.3137493133545,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 244.9202537536621,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 62.67380714416504,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 124.84884262084961,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 125.41413307189941,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 275.2649784088135,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 202.51703262329102,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 202.4099826812744,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 282.9093933105469,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 273.9851474761963,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 60.38093566894531,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 62.65711784362793,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 190.6449794769287,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 192.50202178955078,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 196.08187675476074,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 226.34172439575195,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 232.84196853637695,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 222.2001552581787,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 224.4858741760254,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 228.4719944000244,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 136.3849639892578,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.92218780517578,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 194.73600387573242,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 74.6009349822998,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 102.03003883361816,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 106.03594779968262,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 681.6470623016357,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 714.3731117248535,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 723.8829135894775,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 722.7098941802979,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 682.7330589294434,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 107.95283317565918,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 131.06107711791992,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 132.10225105285645,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 130.2499771118164,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 134.93108749389648,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 566.1880970001221,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 561.068058013916,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 564.0127658843994,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 567.5880908966064,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 573.8852024078369,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 53.72786521911621,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 117.84815788269043,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 120.38993835449219,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.11636924743652,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.4468173980713,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 110.28790473937988,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 116.30010604858398,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 134.43493843078613,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 117.19775199890137,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 209.76495742797852,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 206.2389850616455,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 109.37023162841797,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.13377380371094,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 188.9328956604004,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 136.0790729522705,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 138.09800148010254,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 183.72821807861328,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 170.07684707641602,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 145.5998420715332,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 132.03907012939453,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 205.37590980529785,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 169.3878173828125,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 167.50311851501465,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 179.46600914001465,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 210.2830410003662,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 105.56697845458984,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 175.3866672515869,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 190.60707092285156,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 207.73601531982422,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 239.6831512451172,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 335.88409423828125,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 248.24810028076172,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 140.5627727508545,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 239.87317085266113,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 207.84592628479004,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 186.26809120178223,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 197.87883758544922,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 206.06112480163574,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 195.96290588378906,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 104.59303855895996,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.1273365020752,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 180.70292472839355,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 184.86595153808594,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 188.37976455688477,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 185.94980239868164,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 86.70210838317871,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 97.33414649963379,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 92.87500381469727,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 119.56596374511719,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 162.6298427581787,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 177.57010459899902,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 199.73206520080566,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 225.36778450012207,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 194.14710998535156,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 154.75130081176758,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 244.17901039123535,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 161.44824028015137,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 162.26887702941895,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 162.40501403808594,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 163.12599182128906,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 67.41905212402344,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 90.92593193054199,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 94.15292739868164,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 106.57286643981934,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 114.31002616882324,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 104.6137809753418,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 161.6501808166504,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 162.07504272460938,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 121.92487716674805,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 121.83499336242676,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 283.5710048675537,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 289.4890308380127,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 252.23302841186523,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 255.00893592834473,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 290.02881050109863,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 49.141883850097656,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 55.73892593383789,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 59.23104286193848,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 60.389041900634766,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.88017654418945,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 56.26797676086426,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 385.451078414917,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 342.2219753265381,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 382.3428153991699,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 348.07300567626953,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 388.87810707092285,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 53.382158279418945,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 79.78701591491699,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 86.32707595825195,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 83.53114128112793,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.19103240966797,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 49.2091178894043,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 57.46102333068848,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 52.89125442504883,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.16691017150879,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 84.7320556640625,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.21831512451172,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 63.178062438964844,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.0020694732666,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 54.85796928405762,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 55.676937103271484,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 314.2127990722656,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 296.3581085205078,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 306.6439628601074,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 300.43697357177734,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 303.21693420410156,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 69.19407844543457,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.4880599975586,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.93608856201172,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.3886604309082,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 53.58099937438965,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.13907814025879,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 64.02087211608887,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 78.10616493225098,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.32280349731445,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 79.68807220458984,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.75486183166504,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 97.53990173339844,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.66093444824219,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 126.33895874023438,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 115.12327194213867,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 116.77813529968262,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 119.99702453613281,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 144.5629596710205,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 146.58308029174805,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 110.56303977966309,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.92189979553223,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 71.03800773620605,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 63.40193748474121,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 67.34299659729004,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 84.67411994934082,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.13010025024414,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.37495613098145,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 69.89812850952148,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.70815086364746,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 55.75203895568848,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 59.693098068237305,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 62.54386901855469,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 60.675621032714844,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 58.003902435302734,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.67804718017578,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 60.279130935668945,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 147.13478088378906,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 170.73488235473633,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 159.36803817749023,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 153.55610847473145,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 157.55605697631836,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 83.85300636291504,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 89.91599082946777,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 89.81180191040039,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 94.4528579711914,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.3701057434082,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 64.0568733215332,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 67.28911399841309,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.32883644104004,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 67.03019142150879,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 120.8648681640625,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 58.46405029296875,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 64.78691101074219,
+      "error": "404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+    }
+  ]
+}

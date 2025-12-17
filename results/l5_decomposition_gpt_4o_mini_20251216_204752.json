@@ -1,0 +1,3902 @@
+{
+  "by_condition": {
+    "A_COUNT_ONLY": {
+      "description": "Count vowels in prompt and report the number",
+      "n_trials": 50,
+      "n_correct": 15,
+      "accuracy": 0.3,
+      "errors": 0
+    },
+    "B_FIXED_CONSTRAINT": {
+      "description": "Respond in exactly N words (fixed N)",
+      "n_trials": 50,
+      "n_correct": 39,
+      "accuracy": 0.78,
+      "errors": 0
+    },
+    "C_COUNT_AND_REPORT": {
+      "description": "Count vowels, report count, then respond naturally",
+      "n_trials": 50,
+      "n_correct": 22,
+      "accuracy": 0.44,
+      "errors": 0
+    },
+    "D_FULL_L5": {
+      "description": "Respond in exactly N words where N = vowels in prompt",
+      "n_trials": 50,
+      "n_correct": 18,
+      "accuracy": 0.36,
+      "errors": 0
+    },
+    "E_SCRATCHPAD": {
+      "description": "Explicitly count first, then constrain (chain of thought)",
+      "n_trials": 50,
+      "n_correct": 6,
+      "accuracy": 0.12,
+      "errors": 0,
+      "count_accuracy": 0.22,
+      "used_own_count_rate": 0.54
+    }
+  },
+  "timestamp": "2025-12-16T20:47:52.546919",
+  "model": "GPT-4o Mini",
+  "config": {
+    "random_seed": 42,
+    "trials_per_condition": 50,
+    "test_prompts": [
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?",
+      "Can you count?",
+      "What do cows produce?",
+      "Is the sun hot?",
+      "Where is north?",
+      "How many legs do spiders have?",
+      "What color are bananas?",
+      "Do penguins fly?",
+      "What is two plus two?",
+      "Can robots think?",
+      "What floats on water?",
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?"
+    ],
+    "fixed_word_count": 7
+  },
+  "trials": [
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 798.8269329071045,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "I am doing well, thank you!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "I am doing well, thank you!"
+      },
+      "correct": false,
+      "latency_ms": 943.1920051574707,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow taller and wider over time.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, trees grow taller and wider over time."
+      },
+      "correct": false,
+      "latency_ms": 1071.476936340332,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 704.2801380157471,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cows produce?",
+      "response": "VOWELS: 6  \nCows primarily produce milk, which can be processed into various dairy products like cheese, butter, and yogurt. They also produce meat, leather, and manure, which can be used as fertilizer.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nCows primarily produce milk, which can be processed into various dairy products like che"
+      },
+      "correct": true,
+      "latency_ms": 1650.8378982543945,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "The moon is quite large indeed.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 6,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The moon is quite large indeed."
+      },
+      "correct": true,
+      "latency_ms": 856.328010559082,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where is north?",
+      "response": "VOWELS: 3  \nNorth is typically located at the top of a map. In terms of geography, it refers to the direction that is opposite to south.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3  \nNorth is typically located at the top of a map. In terms of geography, it refers to the "
+      },
+      "correct": false,
+      "latency_ms": 1664.726972579956,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do penguins fly?",
+      "response": "No, penguins cannot fly at all.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "No, penguins cannot fly at all."
+      },
+      "correct": false,
+      "latency_ms": 709.449291229248,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 597.369909286499,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 473.70171546936035,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "Mango is a delicious and tropical fruit.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Mango is a delicious and tropical fruit."
+      },
+      "correct": true,
+      "latency_ms": 591.8371677398682,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "The moon is quite large indeed.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 6,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The moon is quite large indeed."
+      },
+      "correct": true,
+      "latency_ms": 663.0661487579346,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "I cannot provide real-time information or updates.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I cannot provide real-time information or updates."
+      },
+      "correct": true,
+      "latency_ms": 722.9440212249756,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "VOWELS: 5  \nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient"
+      },
+      "correct": false,
+      "latency_ms": 1330.6739330291748,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Yes, fish do sleep, but differently than mammals.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, fish do sleep, but differently than mammals."
+      },
+      "correct": false,
+      "latency_ms": 732.935905456543,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "VOWELS: 5  \nBees make honey, which is a sweet substance produced from the nectar of flowers. They also create beeswax, which is used to build their hives.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nBees make honey, which is a sweet substance produced from the nectar of flowers. They al"
+      },
+      "correct": false,
+      "latency_ms": 974.238395690918,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cows produce?",
+      "response": "7",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 7,
+        "correct": false,
+        "response_clean": "7"
+      },
+      "correct": false,
+      "latency_ms": 534.5280170440674,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "Counting vowels: o, i, e, e, a  \nTotal vowels: 5  \n\nResponse (5 words): Yes, fish do sleep sometimes.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, e, e, a  \nTotal vowels: 5  \n\nResponse (5 words): Yes, fish do sleep sometimes."
+      },
+      "correct": false,
+      "latency_ms": 1340.4440879821777,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Planes fly due to lift, thrust, and aerodynamics.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Planes fly due to lift, thrust, and aerodynamics."
+      },
+      "correct": false,
+      "latency_ms": 571.9680786132812,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 5  \nI can't provide the current time, but you can easily check it on your device or a clock nearby!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nI can't provide the current time, but you can easily check it on your device or a clock "
+      },
+      "correct": true,
+      "latency_ms": 1185.3899955749512,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "Counting vowels: e, o, a, a  \nTotal vowels: 4  \n\nResponse (4 words): The Earth orbits the Sun.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, o, a, a  \nTotal vowels: 4  \n\nResponse (4 words): The Earth orbits the Sun."
+      },
+      "correct": false,
+      "latency_ms": 821.6218948364258,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What floats on water?",
+      "response": "7",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 7,
+        "correct": false,
+        "response_clean": "7"
+      },
+      "correct": false,
+      "latency_ms": 541.0990715026855,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "Counting vowels: o, o, i, e, y, e, a  \nTotal vowels: 7\n\nResponse (7 words): The sky is usually blue during daytime.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 7,
+        "count_correct": false,
+        "words_in_response": 7,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, i, e, y, e, a  \nTotal vowels: 7\n\nResponse (7 words): The sky is usually blue during daytime."
+      },
+      "correct": false,
+      "latency_ms": 1426.5010356903076,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 4  \nThe question of whether water is wet is a philosophical and scientific debate. Water itself is a liquid that can make other surfaces wet, but some argue that it cannot be wet by itself since \"wetness\" is a condition that describes the interaction between a liquid and a solid surface.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nThe question of whether water is wet is a philosophical and scientific debate. Water its"
+      },
+      "correct": true,
+      "latency_ms": 1856.8437099456787,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 645.7028388977051,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is the sun hot?",
+      "response": "Counting vowels: i, e, u, o, o  \nTotal vowels: 5\n\nResponse (5 words): Yes, the sun is very hot.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: i, e, u, o, o  \nTotal vowels: 5\n\nResponse (5 words): Yes, the sun is very hot."
+      },
+      "correct": false,
+      "latency_ms": 1023.0929851531982,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How many legs do spiders have?",
+      "response": "Spiders have eight legs in total.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": -2,
+        "response_clean": "Spiders have eight legs in total."
+      },
+      "correct": false,
+      "latency_ms": 522.7599143981934,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is the sun hot?",
+      "response": "Yes, the sun is extremely hot and bright.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, the sun is extremely hot and bright."
+      },
+      "correct": false,
+      "latency_ms": 705.2810192108154,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do penguins fly?",
+      "response": "VOWELS: 5  \nNo, penguins do not fly. They are flightless birds that have adapted to life in the water, using their wings as flippers to swim efficiently.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nNo, penguins do not fly. They are flightless birds that have adapted to life in the wate"
+      },
+      "correct": false,
+      "latency_ms": 1349.2720127105713,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "Bees make honey and beeswax for storage.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Bees make honey and beeswax for storage."
+      },
+      "correct": true,
+      "latency_ms": 474.7180938720703,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "Clouds appear soft, but they're actually gaseous.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Clouds appear soft, but they're actually gaseous."
+      },
+      "correct": true,
+      "latency_ms": 434.07392501831055,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "Snow falls during cold weather.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Snow falls during cold weather."
+      },
+      "correct": true,
+      "latency_ms": 568.5219764709473,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "VOWELS: 6  \nI'm doing well, thank you! How about you?",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nI'm doing well, thank you! How about you?"
+      },
+      "correct": false,
+      "latency_ms": 803.6081790924072,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "Counting vowels: e, o, a, a  \nTotal vowels: 4  \n\nResponse (4 words): The Earth orbits the Sun.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, o, a, a  \nTotal vowels: 4  \n\nResponse (4 words): The Earth orbits the Sun."
+      },
+      "correct": false,
+      "latency_ms": 997.5769519805908,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "It is currently autumn season.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "It is currently autumn season."
+      },
+      "correct": false,
+      "latency_ms": 523.6179828643799,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can robots think?",
+      "response": "Robots can simulate thinking, but lack consciousness.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Robots can simulate thinking, but lack consciousness."
+      },
+      "correct": true,
+      "latency_ms": 497.236967086792,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "Counting vowels: o, e, e, o, o  \nTotal vowels: 5  \n\nResponse (5 words): Yes, trees grow continuously over time.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, e, o, o  \nTotal vowels: 5  \n\nResponse (5 words): Yes, trees grow continuously over time."
+      },
+      "correct": false,
+      "latency_ms": 881.2520503997803,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 413.1910800933838,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "Yes, they can appear soft.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, they can appear soft."
+      },
+      "correct": true,
+      "latency_ms": 580.8367729187012,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What floats on water?",
+      "response": "Boats, ducks, and some types of wood.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Boats, ducks, and some types of wood."
+      },
+      "correct": true,
+      "latency_ms": 904.7789573669434,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is two plus two?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 422.4817752838135,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "Mango is a delicious tropical fruit choice.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Mango is a delicious tropical fruit choice."
+      },
+      "correct": true,
+      "latency_ms": 740.6342029571533,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "7",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 7,
+        "correct": false,
+        "response_clean": "7"
+      },
+      "correct": false,
+      "latency_ms": 564.9380683898926,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "It is currently autumn in the Northern Hemisphere.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "It is currently autumn in the Northern Hemisphere."
+      },
+      "correct": false,
+      "latency_ms": 902.6319980621338,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 6  \nThe current season depends on your location. In the Northern Hemisphere, it's autumn, while in the Southern Hemisphere, it's spring.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nThe current season depends on your location. In the Northern Hemisphere, it's autumn, wh"
+      },
+      "correct": true,
+      "latency_ms": 1600.6970405578613,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 411.73720359802246,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "Counting vowels: a, o, e, o, a, o, a  \nTotal vowels: 7\n\nResponse (7 words): I am doing well, thank you for asking!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "reported_count": 7,
+        "count_correct": true,
+        "words_in_response": 8,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, e, o, a, o, a  \nTotal vowels: 7\n\nResponse (7 words): I am doing well, thank you for asking!"
+      },
+      "correct": false,
+      "latency_ms": 1403.0680656433105,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How many legs do spiders have?",
+      "response": "VOWELS: 8  \nSpiders have eight legs, which is a characteristic feature of arachnids.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 8,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 8  \nSpiders have eight legs, which is a characteristic feature of arachnids."
+      },
+      "correct": true,
+      "latency_ms": 786.5700721740723,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 4  \nThe question of whether water is wet is a philosophical and scientific debate. Water itself is not wet, but it makes other materials wet when it comes into contact with them. Wetness is a property that describes the interaction between a liquid and a solid surface.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nThe question of whether water is wet is a philosophical and scientific debate. Water its"
+      },
+      "correct": true,
+      "latency_ms": 1507.0719718933105,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "Water is indeed considered wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Water is indeed considered wet."
+      },
+      "correct": false,
+      "latency_ms": 526.5190601348877,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where is north?",
+      "response": "Counting vowels: e, i, o  \nTotal vowels: 3  \n\nResponse (3 words): North is up.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, i, o  \nTotal vowels: 3  \n\nResponse (3 words): North is up."
+      },
+      "correct": false,
+      "latency_ms": 987.6360893249512,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can you count?",
+      "response": "VOWELS: 4  \nYes, I can count! How can I assist you with counting today?",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, I can count! How can I assist you with counting today?"
+      },
+      "correct": false,
+      "latency_ms": 921.8518733978271,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 906.1660766601562,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "Cats primarily eat meat, fish, and poultry.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cats primarily eat meat, fish, and poultry."
+      },
+      "correct": true,
+      "latency_ms": 880.5451393127441,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where is north?",
+      "response": "North is typically towards the North Pole.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "North is typically towards the North Pole."
+      },
+      "correct": true,
+      "latency_ms": 513.4029388427734,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "VOWELS: 6  \nThe sky is typically blue during the day due to the scattering of sunlight by the atmosphere. However, it can also appear in various colors during sunrise and sunset, such as orange, pink, and purple.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nThe sky is typically blue during the day due to the scattering of sunlight by the atmosp"
+      },
+      "correct": false,
+      "latency_ms": 1659.451961517334,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "VOWELS: 6  \nPlanes fly by generating lift through their wings, which are designed to create a difference in air pressure. As the plane moves forward, air flows over and under the wings, causing the pressure on top to be lower than the pressure underneath. This difference in pressure creates lift, allowing the plane to rise into the air. Additionally, engines provide thrust to propel the plane forward, while control surfaces like ailerons, elevators, and rudders help steer and stabilize the aircraft during flight.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nPlanes fly by generating lift through their wings, which are designed to create a differ"
+      },
+      "correct": false,
+      "latency_ms": 2537.666082382202,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "Counting vowels: o, e, e, o, o  \nTotal vowels: 5  \n\nResponse (5 words): Yes, trees grow continuously over time.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, e, o, o  \nTotal vowels: 5  \n\nResponse (5 words): Yes, trees grow continuously over time."
+      },
+      "correct": false,
+      "latency_ms": 957.827091217041,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "Counting vowels: a, o, a, e, i, e, o, a, e, i  \nTotal vowels: 10\n\nResponse (10 words): Planes fly by generating lift through wings and engine thrust.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 10,
+        "count_correct": false,
+        "words_in_response": 10,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, a, e, i, e, o, a, e, i  \nTotal vowels: 10\n\nResponse (10 words): Planes fly by generating lift through wings and engine thrust."
+      },
+      "correct": false,
+      "latency_ms": 1712.0811939239502,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 810.1580142974854,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "Ice becomes cold through the freezing process.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Ice becomes cold through the freezing process."
+      },
+      "correct": true,
+      "latency_ms": 707.3111534118652,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "7",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 7,
+        "correct": false,
+        "response_clean": "7"
+      },
+      "correct": false,
+      "latency_ms": 495.0249195098877,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 5  \nI'm sorry, but I can't provide the current time. You can check the time on your device or a clock nearby!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nI'm sorry, but I can't provide the current time. You can check the time on your device o"
+      },
+      "correct": true,
+      "latency_ms": 1082.9918384552002,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color are bananas?",
+      "response": "VOWELS: 6  \nBananas are typically yellow when they are ripe, although they can also be green when unripe and brown when overripe.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nBananas are typically yellow when they are ripe, although they can also be green when un"
+      },
+      "correct": false,
+      "latency_ms": 878.899335861206,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "Counting vowels: a, e, a, u, i  \nTotal vowels: 5\n\nResponse (5 words): An apple is a great choice.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a, u, i  \nTotal vowels: 5\n\nResponse (5 words): An apple is a great choice."
+      },
+      "correct": false,
+      "latency_ms": 857.4151992797852,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 6  \nGrass is green primarily due to the presence of chlorophyll, a pigment that plays a crucial role in photosynthesis. Chlorophyll absorbs light most efficiently in the blue and red wavelengths, reflecting green light, which is why we perceive grass as green.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nGrass is green primarily due to the presence of chlorophyll, a pigment that plays a cruc"
+      },
+      "correct": false,
+      "latency_ms": 1173.8669872283936,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 431.20408058166504,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "They fly high in the sky.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "They fly high in the sky."
+      },
+      "correct": false,
+      "latency_ms": 645.0831890106201,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "Counting vowels: a, o, e, o, o, a  \nTotal vowels: 6\n\nResponse (6 words): I am doing well, thank you!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, e, o, o, a  \nTotal vowels: 6\n\nResponse (6 words): I am doing well, thank you!"
+      },
+      "correct": false,
+      "latency_ms": 990.135908126831,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 945.7461833953857,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cows produce?",
+      "response": "Counting vowels: o, o, o, u, e, o, o, u, e  \nTotal vowels: 9\n\nResponse (9 words): Cows produce milk, meat, leather, and other products.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 9,
+        "count_correct": false,
+        "words_in_response": 8,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, o, u, e, o, o, u, e  \nTotal vowels: 9\n\nResponse (9 words): Cows produce milk, meat, leather, and other products."
+      },
+      "correct": false,
+      "latency_ms": 1152.0593166351318,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "Yes, fish do sleep sometimes.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, fish do sleep sometimes."
+      },
+      "correct": false,
+      "latency_ms": 964.2517566680908,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat various types of food.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Cats eat various types of food."
+      },
+      "correct": false,
+      "latency_ms": 681.7708015441895,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "Counting vowels: a, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Cats eat fish, meat, and poultry.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Cats eat fish, meat, and poultry."
+      },
+      "correct": false,
+      "latency_ms": 906.743049621582,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "VOWELS: 5  \nBirds typically fly in the sky, often migrating to find food, suitable climates, or breeding grounds. They can soar high above landscapes or glide gracefully through trees and open spaces.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nBirds typically fly in the sky, often migrating to find food, suitable climates, or bree"
+      },
+      "correct": false,
+      "latency_ms": 1253.0889511108398,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cows produce?",
+      "response": "Cows produce milk and meat.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "Cows produce milk and meat."
+      },
+      "correct": false,
+      "latency_ms": 556.7359924316406,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 1014.6908760070801,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 335.4511260986328,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "Counting vowels: o, e, a, i, i  \nTotal vowels: 5  \n\nResponse (5 words): It is currently autumn season.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, a, i, i  \nTotal vowels: 5  \n\nResponse (5 words): It is currently autumn season."
+      },
+      "correct": false,
+      "latency_ms": 1498.6870288848877,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is two plus two?",
+      "response": "Two plus two equals four, simple math.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Two plus two equals four, simple math."
+      },
+      "correct": true,
+      "latency_ms": 628.8430690765381,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "I\u2019m doing well, thank you for asking!",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I\u2019m doing well, thank you for asking!"
+      },
+      "correct": true,
+      "latency_ms": 610.3847026824951,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 313.25316429138184,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, many dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Yes, many dogs can swim."
+      },
+      "correct": false,
+      "latency_ms": 526.0128974914551,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "Counting vowels: a, o, e, a, i, e, o, a, i  \nTotal vowels: 9\n\nResponse (9 words): Planes fly due to lift, thrust, drag, and weight.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 9,
+        "count_correct": false,
+        "words_in_response": 9,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, e, a, i, e, o, a, i  \nTotal vowels: 9\n\nResponse (9 words): Planes fly due to lift, thrust, drag, and weight."
+      },
+      "correct": false,
+      "latency_ms": 1489.4778728485107,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 498.34299087524414,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 436.24234199523926,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "Snow typically falls during cold winter months.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Snow typically falls during cold winter months."
+      },
+      "correct": true,
+      "latency_ms": 747.1160888671875,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "Counting vowels: a, e, a, u, i  \nTotal vowels: 5  \n\nResponse (5 words): An apple is a great choice.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a, u, i  \nTotal vowels: 5  \n\nResponse (5 words): An apple is a great choice."
+      },
+      "correct": false,
+      "latency_ms": 975.5818843841553,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "Counting vowels: o, i, e, i  \nTotal vowels: 4  \n\nResponse (4 words): I cannot tell time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, e, i  \nTotal vowels: 4  \n\nResponse (4 words): I cannot tell time."
+      },
+      "correct": false,
+      "latency_ms": 864.4170761108398,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees do grow tall.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, trees do grow tall."
+      },
+      "correct": false,
+      "latency_ms": 487.13088035583496,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "Counting vowels: a, e, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Yes, water is considered wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Yes, water is considered wet."
+      },
+      "correct": false,
+      "latency_ms": 889.9569511413574,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 862.3778820037842,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "The sky is often blue.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The sky is often blue."
+      },
+      "correct": true,
+      "latency_ms": 932.758092880249,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat various types of food.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Cats eat various types of food."
+      },
+      "correct": false,
+      "latency_ms": 605.5898666381836,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "Cats primarily eat meat, fish, and poultry.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cats primarily eat meat, fish, and poultry."
+      },
+      "correct": true,
+      "latency_ms": 612.3077869415283,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 612.2729778289795,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "VOWELS: 6  \nThe sky is typically blue during the day due to the scattering of sunlight by the atmosphere. However, it can also appear in various colors during sunrise and sunset, such as orange, pink, and purple.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nThe sky is typically blue during the day due to the scattering of sunlight by the atmosp"
+      },
+      "correct": false,
+      "latency_ms": 1484.0359687805176,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How many legs do spiders have?",
+      "response": "Counting vowels: a, o, e, o, i, e, a, e, i, a, e  \nTotal vowels: 11\n\nResponse (11 words): Spiders have eight legs, which is a characteristic feature.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "reported_count": 11,
+        "count_correct": false,
+        "words_in_response": 9,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, e, o, i, e, a, e, i, a, e  \nTotal vowels: 11\n\nResponse (11 words): Spiders have eight legs, which is a characteristic feature."
+      },
+      "correct": false,
+      "latency_ms": 1376.3761520385742,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is two plus two?",
+      "response": "Counting vowels: o, i, o, u, o, o, u  \nTotal vowels: 7\n\nResponse (7 words): Two plus two equals four, simple math.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 7,
+        "count_correct": false,
+        "words_in_response": 7,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, o, u, o, o, u  \nTotal vowels: 7\n\nResponse (7 words): Two plus two equals four, simple math."
+      },
+      "correct": false,
+      "latency_ms": 933.6490631103516,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is the sun hot?",
+      "response": "VOWELS: 4  \nYes, the sun is extremely hot! Its surface temperature is about 5,500 degrees Celsius (9,932 degrees Fahrenheit), and the core can reach temperatures of around 15 million degrees Celsius (27 million degrees Fahrenheit).",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, the sun is extremely hot! Its surface temperature is about 5,500 degrees Celsius (9"
+      },
+      "correct": true,
+      "latency_ms": 1832.0581912994385,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 6  \nIt depends on where you are in the world! In the Northern Hemisphere, it's currently autumn, while in the Southern Hemisphere, it's spring.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nIt depends on where you are in the world! In the Northern Hemisphere, it's currently aut"
+      },
+      "correct": true,
+      "latency_ms": 1224.329948425293,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 722.3632335662842,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "Counting vowels: a, o, o, o, o  \nTotal vowels: 5\n\nResponse (5 words): Yes, clouds appear soft and fluffy.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, o, o  \nTotal vowels: 5\n\nResponse (5 words): Yes, clouds appear soft and fluffy."
+      },
+      "correct": false,
+      "latency_ms": 1020.5528736114502,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can robots think?",
+      "response": "VOWELS: 6  \nRobots can process information and perform tasks based on programming and algorithms, but they do not \"think\" in the same way humans do. Their responses are based on data and pre-defined rules rather than conscious thought or emotions.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nRobots can process information and perform tasks based on programming and algorithms, bu"
+      },
+      "correct": false,
+      "latency_ms": 1932.8022003173828,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is the sun hot?",
+      "response": "Yes, the sun is very hot.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Yes, the sun is very hot."
+      },
+      "correct": false,
+      "latency_ms": 614.1729354858398,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "Counting vowels: a, o, o, i, a, e  \nTotal vowels: 6  \n\nResponse (6 words): My name is Assistant, nice to meet!",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 7,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, i, a, e  \nTotal vowels: 6  \n\nResponse (6 words): My name is Assistant, nice to meet!"
+      },
+      "correct": false,
+      "latency_ms": 1701.949119567871,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "VOWELS: 4  \nOne fruit you might enjoy is the mango. It's sweet, juicy, and packed with vitamins!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nOne fruit you might enjoy is the mango. It's sweet, juicy, and packed with vitamins!"
+      },
+      "correct": false,
+      "latency_ms": 952.3658752441406,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "Counting vowels: o, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Bees make honey and beeswax.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Bees make honey and beeswax."
+      },
+      "correct": false,
+      "latency_ms": 1699.2599964141846,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "VOWELS: 5  \nI am known as ChatGPT, your AI assistant here to help you with your questions!",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nI am known as ChatGPT, your AI assistant here to help you with your questions!"
+      },
+      "correct": false,
+      "latency_ms": 1134.9186897277832,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 609.2500686645508,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can you count?",
+      "response": "Counting vowels: a, o, u, o, e  \nTotal vowels: 5  \n\nResponse (5 words): Yes, I can count accurately.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: a, o, u, o, e  \nTotal vowels: 5  \n\nResponse (5 words): Yes, I can count accurately."
+      },
+      "correct": true,
+      "latency_ms": 1255.0909519195557,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do penguins fly?",
+      "response": "No, penguins cannot fly; they are flightless.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "No, penguins cannot fly; they are flightless."
+      },
+      "correct": true,
+      "latency_ms": 970.0291156768799,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "VOWELS: 5  \nClouds may appear soft and fluffy, but they are actually made up of tiny water droplets or ice crystals. So while they look soft, they are not solid objects you can touch!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nClouds may appear soft and fluffy, but they are actually made up of tiny water droplets "
+      },
+      "correct": true,
+      "latency_ms": 1105.780839920044,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "Counting vowels: o, e, a, i, i  \nTotal vowels: 5  \n\nResponse (5 words): It is currently autumn season.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, a, i, i  \nTotal vowels: 5  \n\nResponse (5 words): It is currently autumn season."
+      },
+      "correct": false,
+      "latency_ms": 1068.5677528381348,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "Counting vowels: i, a, e, i, o, o  \nTotal vowels: 6\n\nResponse (6 words): Ice is cold due to temperature.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: i, a, e, i, o, o  \nTotal vowels: 6\n\nResponse (6 words): Ice is cold due to temperature."
+      },
+      "correct": true,
+      "latency_ms": 1243.8881397247314,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "Counting vowels: o, i, e, e, a  \nTotal vowels: 5  \n\nResponse (5 words): Yes, fish do sleep occasionally.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, e, e, a  \nTotal vowels: 5  \n\nResponse (5 words): Yes, fish do sleep occasionally."
+      },
+      "correct": false,
+      "latency_ms": 830.2969932556152,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "Counting vowels: a, i, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Grass is green due to chlorophyll.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, i, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Grass is green due to chlorophyll."
+      },
+      "correct": false,
+      "latency_ms": 952.2647857666016,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 784.8901748657227,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "VOWELS: 4  \nYes, trees do grow! They increase in height and girth over time as they absorb nutrients and water from the soil, and they also produce new leaves and branches.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, trees do grow! They increase in height and girth over time as they absorb nutrients"
+      },
+      "correct": true,
+      "latency_ms": 1106.9729328155518,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, many dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Yes, many dogs can swim."
+      },
+      "correct": false,
+      "latency_ms": 552.0479679107666,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "VOWELS: 5  \nIce is cold because it is made of water that has frozen at or below 0 degrees Celsius (32 degrees Fahrenheit). The molecules in ice are closely packed together and move very slowly, which gives it a low temperature.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nIce is cold because it is made of water that has frozen at or below 0 degrees Celsius (3"
+      },
+      "correct": false,
+      "latency_ms": 1523.5710144042969,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is two plus two?",
+      "response": "Four is the correct answer.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Four is the correct answer."
+      },
+      "correct": true,
+      "latency_ms": 512.1281147003174,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "VOWELS: 5  \nIce is cold because it is the solid form of water, which freezes at 0 degrees Celsius (32 degrees Fahrenheit). The molecules in ice are closely packed together and move very slowly, resulting in a lower temperature compared to liquid water.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nIce is cold because it is the solid form of water, which freezes at 0 degrees Celsius (3"
+      },
+      "correct": false,
+      "latency_ms": 1723.242998123169,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "Bees make honey and beeswax for storage.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Bees make honey and beeswax for storage."
+      },
+      "correct": true,
+      "latency_ms": 918.7638759613037,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color are bananas?",
+      "response": "Counting vowels: a, o, a, a, a  \nTotal vowels: 5  \n\nResponse (5 words): Bananas are typically yellow in color.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, a, a, a  \nTotal vowels: 5  \n\nResponse (5 words): Bananas are typically yellow in color."
+      },
+      "correct": false,
+      "latency_ms": 1821.767807006836,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "Apple is a delicious fruit.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Apple is a delicious fruit."
+      },
+      "correct": true,
+      "latency_ms": 488.6038303375244,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "Counting vowels: a, i, a, e, e  \nTotal vowels: 5  \n\nResponse (5 words): Grass is green due to chlorophyll.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, i, a, e, e  \nTotal vowels: 5  \n\nResponse (5 words): Grass is green due to chlorophyll."
+      },
+      "correct": false,
+      "latency_ms": 1228.7139892578125,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 5  \nCats typically eat a diet that consists of meat, as they are obligate carnivores. This means they require animal-based proteins to thrive. Common foods for cats include commercial cat food, which can be dry kibble or wet canned food, as well as fresh meat like chicken or fish. It's important to ensure that their diet is balanced and meets their nutritional needs.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nCats typically eat a diet that consists of meat, as they are obligate carnivores. This m"
+      },
+      "correct": true,
+      "latency_ms": 1741.617202758789,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "Counting vowels: o, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Bees make honey and beeswax.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, e, a, e  \nTotal vowels: 5\n\nResponse (5 words): Bees make honey and beeswax."
+      },
+      "correct": false,
+      "latency_ms": 886.3019943237305,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "VOWELS: 6  \nI'm doing well, thank you! How about you?",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nI'm doing well, thank you! How about you?"
+      },
+      "correct": false,
+      "latency_ms": 816.626787185669,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "Honey never spoils and can last indefinitely.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Honey never spoils and can last indefinitely."
+      },
+      "correct": true,
+      "latency_ms": 819.5600509643555,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "VOWELS: 5  \nSnow typically falls during the winter months, depending on the region. In many places, this can be from late November to early March, but it varies based on local climate conditions.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nSnow typically falls during the winter months, depending on the region. In many places, "
+      },
+      "correct": true,
+      "latency_ms": 1835.1280689239502,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 448.3017921447754,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "Counting vowels: a, o, o, a, e  \nTotal vowels: 5  \n\nResponse (5 words): My name is Assistant, yours?",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, a, e  \nTotal vowels: 5  \n\nResponse (5 words): My name is Assistant, yours?"
+      },
+      "correct": false,
+      "latency_ms": 1226.680040359497,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "Cats are fascinating and independent creatures.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Cats are fascinating and independent creatures."
+      },
+      "correct": false,
+      "latency_ms": 507.4658393859863,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "VOWELS: 5  \nYes, fish do sleep, but their sleep is different from that of land animals. They experience periods of rest where their activity levels decrease, and they become less responsive to external stimuli, but they do not have eyelids to close, so their eyes remain open.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nYes, fish do sleep, but their sleep is different from that of land animals. They experie"
+      },
+      "correct": false,
+      "latency_ms": 1925.6930351257324,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "Ice is cold due to temperature.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 6,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Ice is cold due to temperature."
+      },
+      "correct": true,
+      "latency_ms": 516.7312622070312,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "I\u2019m doing well, thank you for asking!",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I\u2019m doing well, thank you for asking!"
+      },
+      "correct": true,
+      "latency_ms": 500.0886917114258,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "VOWELS: 4  \nOne fruit you might enjoy is the mango. It's sweet, juicy, and packed with vitamins!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nOne fruit you might enjoy is the mango. It's sweet, juicy, and packed with vitamins!"
+      },
+      "correct": false,
+      "latency_ms": 1015.8400535583496,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 517.1289443969727,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "I don't know the time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I don't know the time."
+      },
+      "correct": true,
+      "latency_ms": 1447.2730159759521,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "VOWELS: 6  \nBees make honey, which is a sweet substance produced from the nectar of flowers. They also create beeswax, which is used to build their hives.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nBees make honey, which is a sweet substance produced from the nectar of flowers. They al"
+      },
+      "correct": true,
+      "latency_ms": 1176.8279075622559,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is two plus two?",
+      "response": "VOWELS: 5  \nTwo plus two equals four.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nTwo plus two equals four."
+      },
+      "correct": true,
+      "latency_ms": 1482.3532104492188,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "Planes fly using lift and thrust.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Planes fly using lift and thrust."
+      },
+      "correct": false,
+      "latency_ms": 887.7801895141602,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "The sky is typically blue during daytime.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The sky is typically blue during daytime."
+      },
+      "correct": true,
+      "latency_ms": 458.1480026245117,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color are bananas?",
+      "response": "Bananas are typically yellow in color.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": -2,
+        "response_clean": "Bananas are typically yellow in color."
+      },
+      "correct": false,
+      "latency_ms": 761.61789894104,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 641.8569087982178,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "Counting vowels: a, o, a, e, a, e  \nTotal vowels: 6\n\nResponse (6 words): Cats eat meat, fish, and some vegetables.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 7,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, a, e, a, e  \nTotal vowels: 6\n\nResponse (6 words): Cats eat meat, fish, and some vegetables."
+      },
+      "correct": false,
+      "latency_ms": 1050.9157180786133,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "Water itself is not considered to be wet.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Water itself is not considered to be wet."
+      },
+      "correct": false,
+      "latency_ms": 742.3977851867676,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "Counting vowels: o, i, i, o, o  \nTotal vowels: 5\n\nResponse (5 words): The moon is about 3,474 kilometers.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: o, i, i, o, o  \nTotal vowels: 5\n\nResponse (5 words): The moon is about 3,474 kilometers."
+      },
+      "correct": true,
+      "latency_ms": 1172.2660064697266,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can you count?",
+      "response": "Yes, I can count well.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, I can count well."
+      },
+      "correct": true,
+      "latency_ms": 739.595890045166,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "It is currently autumn in the Northern Hemisphere.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "It is currently autumn in the Northern Hemisphere."
+      },
+      "correct": false,
+      "latency_ms": 890.40207862854,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 5  \nCats typically eat a diet that consists of meat, as they are obligate carnivores. This means they require animal-based proteins to thrive. Common foods for cats include commercial cat food, which can be dry kibble or wet canned food, as well as fresh meat like chicken or fish. It's important to ensure that their diet is balanced and meets their nutritional needs.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nCats typically eat a diet that consists of meat, as they are obligate carnivores. This m"
+      },
+      "correct": true,
+      "latency_ms": 2029.2158126831055,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "VOWELS: 5  \nI am known as ChatGPT, your AI assistant here to help you with your questions!",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nI am known as ChatGPT, your AI assistant here to help you with your questions!"
+      },
+      "correct": false,
+      "latency_ms": 1301.5968799591064,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "Bees make honey and wax.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "Bees make honey and wax."
+      },
+      "correct": false,
+      "latency_ms": 460.97517013549805,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 316.03360176086426,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "Counting vowels: e, o, o, a  \nTotal vowels: 4  \n\nResponse (4 words): Snow falls in winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: e, o, o, a  \nTotal vowels: 4  \n\nResponse (4 words): Snow falls in winter months."
+      },
+      "correct": true,
+      "latency_ms": 725.0699996948242,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "I don't know the time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I don't know the time."
+      },
+      "correct": true,
+      "latency_ms": 415.27581214904785,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "VOWELS: 4  \nYes, trees do grow! They increase in height and girth over time as they absorb nutrients and water from the soil, and they also produce new leaves and branches.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, trees do grow! They increase in height and girth over time as they absorb nutrients"
+      },
+      "correct": true,
+      "latency_ms": 967.2031402587891,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 271.76403999328613,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow taller and wider over time.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, trees grow taller and wider over time."
+      },
+      "correct": false,
+      "latency_ms": 648.4339237213135,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "VOWELS: 5  \nBirds typically fly in the sky, often migrating to find food, suitable climates, or breeding grounds. They can soar high above landscapes or glide gracefully through trees and open spaces.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nBirds typically fly in the sky, often migrating to find food, suitable climates, or bree"
+      },
+      "correct": false,
+      "latency_ms": 1295.5782413482666,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "Water itself is not considered to be wet.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Water itself is not considered to be wet."
+      },
+      "correct": false,
+      "latency_ms": 547.7902889251709,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "Ice becomes cold through the freezing process.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Ice becomes cold through the freezing process."
+      },
+      "correct": true,
+      "latency_ms": 473.2401371002197,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "Snow typically falls during cold winter months.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Snow typically falls during cold winter months."
+      },
+      "correct": true,
+      "latency_ms": 656.0578346252441,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "Honey never spoils; archaeologists found it edible.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Honey never spoils; archaeologists found it edible."
+      },
+      "correct": true,
+      "latency_ms": 889.6379470825195,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 950.4899978637695,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "My name is Assistant.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 4,
+        "correct": false,
+        "off_by": -2,
+        "response_clean": "My name is Assistant."
+      },
+      "correct": false,
+      "latency_ms": 906.6901206970215,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "Yes, they grow tall and strong.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Yes, they grow tall and strong."
+      },
+      "correct": false,
+      "latency_ms": 666.724681854248,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "VOWELS: 5  \nClouds may appear soft and fluffy, but they are actually made up of tiny water droplets or ice crystals. So while they look soft, they are not solid objects you can touch!",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nClouds may appear soft and fluffy, but they are actually made up of tiny water droplets "
+      },
+      "correct": true,
+      "latency_ms": 1501.5218257904053,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "Counting vowels: o, i, e, i  \nTotal vowels: 4  \n\nResponse (4 words): I cannot tell time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, e, i  \nTotal vowels: 4  \n\nResponse (4 words): I cannot tell time."
+      },
+      "correct": false,
+      "latency_ms": 1417.8249835968018,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color are bananas?",
+      "response": "7",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 7,
+        "correct": false,
+        "response_clean": "7"
+      },
+      "correct": false,
+      "latency_ms": 754.5771598815918,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "Counting vowels: a, o, o, i \nTotal vowels: 4\n\nResponse (4 words): Yes, most dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, i \nTotal vowels: 4\n\nResponse (4 words): Yes, most dogs can swim."
+      },
+      "correct": false,
+      "latency_ms": 923.7940311431885,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "Planes fly using lift and thrust.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Planes fly using lift and thrust."
+      },
+      "correct": false,
+      "latency_ms": 518.9387798309326,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How many legs do spiders have?",
+      "response": "Spiders have eight legs in total, always.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Spiders have eight legs in total, always."
+      },
+      "correct": true,
+      "latency_ms": 764.4331455230713,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "It is currently autumn season.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "It is currently autumn season."
+      },
+      "correct": false,
+      "latency_ms": 647.9299068450928,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "My name is Assistant.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 4,
+        "correct": false,
+        "off_by": -2,
+        "response_clean": "My name is Assistant."
+      },
+      "correct": false,
+      "latency_ms": 486.24300956726074,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "Chlorophyll absorbs sunlight, reflecting green wavelengths primarily.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Chlorophyll absorbs sunlight, reflecting green wavelengths primarily."
+      },
+      "correct": true,
+      "latency_ms": 783.5781574249268,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 637.7561092376709,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 888.5118961334229,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "Grass absorbs sunlight efficiently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 4,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Grass absorbs sunlight efficiently."
+      },
+      "correct": true,
+      "latency_ms": 599.3926525115967,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "I am called OpenAI's language model assistant.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I am called OpenAI's language model assistant."
+      },
+      "correct": true,
+      "latency_ms": 738.090991973877,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can you count?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "response_clean": "5"
+      },
+      "correct": true,
+      "latency_ms": 433.2401752471924,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "Ice is cold due to temperature.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 6,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Ice is cold due to temperature."
+      },
+      "correct": true,
+      "latency_ms": 674.1690635681152,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color are bananas?",
+      "response": "Bananas are typically yellow when ripe.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 6,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "Bananas are typically yellow when ripe."
+      },
+      "correct": false,
+      "latency_ms": 705.0590515136719,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "Clouds appear soft, but they're actually vapor.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Clouds appear soft, but they're actually vapor."
+      },
+      "correct": true,
+      "latency_ms": 508.6498260498047,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "VOWELS: 6  \nThe moon has a diameter of about 3,474 kilometers (2,159 miles), making it roughly one-quarter the size of Earth. Its size and distance from Earth contribute to its significant influence on our planet, including tides and various natural phenomena.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nThe moon has a diameter of about 3,474 kilometers (2,159 miles), making it roughly one-q"
+      },
+      "correct": true,
+      "latency_ms": 1704.4579982757568,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "response_clean": "5"
+      },
+      "correct": true,
+      "latency_ms": 531.2471389770508,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 889.3938064575195,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "They fly high in the sky.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "They fly high in the sky."
+      },
+      "correct": false,
+      "latency_ms": 1005.0532817840576,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 4  \nYes, dogs can swim! Most dogs have a natural instinct to paddle in water, and many enjoy swimming as a fun activity. However, not all dogs are strong swimmers, so it's important to supervise them around water and ensure they are safe.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, dogs can swim! Most dogs have a natural instinct to paddle in water, and many enjoy"
+      },
+      "correct": false,
+      "latency_ms": 1488.6901378631592,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "Chlorophyll absorbs light, reflecting green wavelengths primarily.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Chlorophyll absorbs light, reflecting green wavelengths primarily."
+      },
+      "correct": true,
+      "latency_ms": 555.7360649108887,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "The moon's diameter is about 3,474 kilometers.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The moon's diameter is about 3,474 kilometers."
+      },
+      "correct": true,
+      "latency_ms": 659.9750518798828,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do penguins fly?",
+      "response": "Counting vowels: o, e, u, i, f, i  \nTotal vowels: 6\n\nResponse (6 words): No, penguins cannot fly; they swim.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, u, i, f, i  \nTotal vowels: 6\n\nResponse (6 words): No, penguins cannot fly; they swim."
+      },
+      "correct": false,
+      "latency_ms": 1044.9297428131104,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How many legs do spiders have?",
+      "response": "8",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 8,
+        "correct": true,
+        "response_clean": "8"
+      },
+      "correct": true,
+      "latency_ms": 390.3229236602783,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "VOWELS: 6  \nPlanes fly by generating lift through their wings, which are designed to create a difference in air pressure above and below them. This lift, combined with thrust from the engines, allows the plane to ascend and maintain flight. The principles of aerodynamics, including Bernoulli's principle and Newton's third law of motion, play crucial roles in how planes achieve and sustain flight.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nPlanes fly by generating lift through their wings, which are designed to create a differ"
+      },
+      "correct": false,
+      "latency_ms": 3085.9758853912354,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "VOWELS: 6  \nThe moon has a diameter of about 3,474 kilometers (2,159 miles), making it roughly one-quarter the size of Earth. Its size and distance from Earth contribute to its significant influence on our planet, including ocean tides.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nThe moon has a diameter of about 3,474 kilometers (2,159 miles), making it roughly one-q"
+      },
+      "correct": true,
+      "latency_ms": 2118.3481216430664,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Planes fly by generating lift through wings.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Planes fly by generating lift through wings."
+      },
+      "correct": true,
+      "latency_ms": 516.0338878631592,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "The moon's diameter is about 3,474 kilometers.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The moon's diameter is about 3,474 kilometers."
+      },
+      "correct": true,
+      "latency_ms": 598.5651016235352,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "Bees make honey and wax.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "Bees make honey and wax."
+      },
+      "correct": false,
+      "latency_ms": 572.1359252929688,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "Birds fly in the sky and atmosphere.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Birds fly in the sky and atmosphere."
+      },
+      "correct": true,
+      "latency_ms": 810.3041648864746,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "Counting vowels: o, o, i, e, y, e, i, e, a  \nTotal vowels: 9\n\nResponse (9 words): The sky is usually blue during clear sunny days.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 9,
+        "count_correct": false,
+        "words_in_response": 9,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, i, e, y, e, i, e, a  \nTotal vowels: 9\n\nResponse (9 words): The sky is usually blue during clear sunny days."
+      },
+      "correct": false,
+      "latency_ms": 1363.0590438842773,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "Counting vowels: i, a, e, i, o, o  \nTotal vowels: 6\n\nResponse (6 words): Ice is cold due to low temperatures.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 7,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: i, a, e, i, o, o  \nTotal vowels: 6\n\nResponse (6 words): Ice is cold due to low temperatures."
+      },
+      "correct": false,
+      "latency_ms": 1316.5690898895264,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 1270.4439163208008,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, most dogs can swim quite well.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, most dogs can swim quite well."
+      },
+      "correct": true,
+      "latency_ms": 750.0190734863281,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "Counting vowels: e, o, o, a  \nTotal vowels: 4  \n\nResponse (4 words): Snow falls in winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: e, o, o, a  \nTotal vowels: 4  \n\nResponse (4 words): Snow falls in winter months."
+      },
+      "correct": true,
+      "latency_ms": 1512.7949714660645,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What floats on water?",
+      "response": "Counting vowels: o, a, o, a  \nTotal vowels: 4\n\nResponse (4 words): Many objects can float.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, a, o, a  \nTotal vowels: 4\n\nResponse (4 words): Many objects can float."
+      },
+      "correct": false,
+      "latency_ms": 1884.0999603271484,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "Counting vowels: a, e, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Yes, water is considered wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a, e, e  \nTotal vowels: 5\n\nResponse (5 words): Yes, water is considered wet."
+      },
+      "correct": false,
+      "latency_ms": 1428.6160469055176,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 1052.9260635375977,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "Snow falls in winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Snow falls in winter months."
+      },
+      "correct": true,
+      "latency_ms": 827.9170989990234,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can robots think?",
+      "response": "Yes, robots can simulate thinking.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, robots can simulate thinking."
+      },
+      "correct": false,
+      "latency_ms": 1384.8581314086914,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "response_clean": "5"
+      },
+      "correct": true,
+      "latency_ms": 593.2881832122803,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "Counting vowels: e, o, i, i, e, o, i  \nTotal vowels: 7\n\nResponse (7 words): Birds fly high in the sky above.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 7,
+        "count_correct": false,
+        "words_in_response": 7,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, o, i, i, e, o, i  \nTotal vowels: 7\n\nResponse (7 words): Birds fly high in the sky above."
+      },
+      "correct": false,
+      "latency_ms": 1898.4441757202148,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "The sky is often blue.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The sky is often blue."
+      },
+      "correct": true,
+      "latency_ms": 938.1921291351318,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cows produce?",
+      "response": "Cows produce milk, meat, leather, and manure.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cows produce milk, meat, leather, and manure."
+      },
+      "correct": true,
+      "latency_ms": 1092.911720275879,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "Counting vowels: a, o, o, i \nTotal vowels: 4\n\nResponse (4 words): Yes, dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, i \nTotal vowels: 4\n\nResponse (4 words): Yes, dogs can swim."
+      },
+      "correct": false,
+      "latency_ms": 1400.7961750030518,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "VOWELS: 5  \nSnow typically falls during the winter months, depending on the region. In many places, this can be from late November to early March, but it varies based on local climate conditions.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nSnow typically falls during the winter months, depending on the region. In many places, "
+      },
+      "correct": true,
+      "latency_ms": 1407.4912071228027,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What floats on water?",
+      "response": "Many objects can float easily.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "Many objects can float easily."
+      },
+      "correct": false,
+      "latency_ms": 541.3670539855957,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "Birds fly in the sky and atmosphere.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Birds fly in the sky and atmosphere."
+      },
+      "correct": true,
+      "latency_ms": 1009.7730159759521,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "Yes, they can appear soft.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, they can appear soft."
+      },
+      "correct": true,
+      "latency_ms": 525.083065032959,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 4  \nYes, dogs can swim! Most dogs have a natural instinct to paddle in water, and many enjoy swimming as a fun activity. However, not all dogs are strong swimmers, so it's important to supervise them around water and ensure their safety.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4  \nYes, dogs can swim! Most dogs have a natural instinct to paddle in water, and many enjoy"
+      },
+      "correct": false,
+      "latency_ms": 1163.935899734497,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "Water is indeed considered wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Water is indeed considered wet."
+      },
+      "correct": false,
+      "latency_ms": 510.2427005767822,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "Counting vowels: e, o, i, e, i, y  \nTotal vowels: 6\n\nResponse (6 words): Birds fly in search of food.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, o, i, e, i, y  \nTotal vowels: 6\n\nResponse (6 words): Birds fly in search of food."
+      },
+      "correct": false,
+      "latency_ms": 1250.7619857788086,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "The sky is typically blue during daytime.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The sky is typically blue during daytime."
+      },
+      "correct": true,
+      "latency_ms": 402.4538993835449,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "VOWELS: 5  \nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nDid you know that honey never spoils? Archaeologists have found pots of honey in ancient"
+      },
+      "correct": false,
+      "latency_ms": 1069.2789554595947,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "I am doing well, thank you!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": -1,
+        "response_clean": "I am doing well, thank you!"
+      },
+      "correct": false,
+      "latency_ms": 894.0038681030273,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Yes, fish do sleep, but differently than mammals.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, fish do sleep, but differently than mammals."
+      },
+      "correct": false,
+      "latency_ms": 910.4781150817871,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "Counting vowels: o, i, o, o, o  \nTotal vowels: 5\n\nResponse (5 words): The moon's diameter is 3,474 km.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: o, i, o, o, o  \nTotal vowels: 5\n\nResponse (5 words): The moon's diameter is 3,474 km."
+      },
+      "correct": true,
+      "latency_ms": 1188.054084777832,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where is north?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 437.81018257141113,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 313.0640983581543,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 359.81273651123047,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "I cannot provide real-time information or updates.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I cannot provide real-time information or updates."
+      },
+      "correct": true,
+      "latency_ms": 594.2819118499756,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What floats on water?",
+      "response": "VOWELS: 6  \nMany objects can float on water, including boats, certain types of wood, and even some fruits like apples and oranges. The ability to float depends on the object's density compared to water.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6  \nMany objects can float on water, including boats, certain types of wood, and even some f"
+      },
+      "correct": true,
+      "latency_ms": 1724.1368293762207,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is the sun hot?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 421.35095596313477,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "Apple is a delicious fruit.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 5,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Apple is a delicious fruit."
+      },
+      "correct": true,
+      "latency_ms": 470.0028896331787,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where is north?",
+      "response": "North is that way, usually.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "North is that way, usually."
+      },
+      "correct": false,
+      "latency_ms": 587.1961116790771,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 5  \nGrass is green primarily due to the presence of chlorophyll, a pigment that plays a crucial role in photosynthesis. Chlorophyll absorbs light most efficiently in the blue and red wavelengths, reflecting green light, which is why we perceive grass as green.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nGrass is green primarily due to the presence of chlorophyll, a pigment that plays a cruc"
+      },
+      "correct": false,
+      "latency_ms": 1344.111680984497,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "VOWELS: 5  \nYes, fish do sleep, but their sleep is different from that of land animals. They experience periods of rest where their activity levels decrease, and they become less responsive to external stimuli, but they do not have eyelids to close, so their eyes remain open.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5  \nYes, fish do sleep, but their sleep is different from that of land animals. They experie"
+      },
+      "correct": false,
+      "latency_ms": 1327.8069496154785,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "Counting vowels: a, o, o, o  \nTotal vowels: 3\n\nResponse (3 words): Yes, they are.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, o  \nTotal vowels: 3\n\nResponse (3 words): Yes, they are."
+      },
+      "correct": false,
+      "latency_ms": 1003.6759376525879,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do penguins fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 638.6280059814453,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can robots think?",
+      "response": "Counting vowels: a, o, o, i, o, i  \nTotal vowels: 6\n\nResponse (6 words): Yes, robots can simulate thinking processes.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, o, i, o, i  \nTotal vowels: 6\n\nResponse (6 words): Yes, robots can simulate thinking processes."
+      },
+      "correct": false,
+      "latency_ms": 1393.9170837402344,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, most dogs can swim quite well.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, most dogs can swim quite well."
+      },
+      "correct": true,
+      "latency_ms": 650.4580974578857,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "Grass absorbs sunlight efficiently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 4,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Grass absorbs sunlight efficiently."
+      },
+      "correct": true,
+      "latency_ms": 744.2367076873779,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 783.350944519043,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "I am an AI language model, unnamed.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I am an AI language model, unnamed."
+      },
+      "correct": true,
+      "latency_ms": 463.40298652648926,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 309.62610244750977,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can robots think?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 333.5700035095215,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can you count?",
+      "response": "Yes, I can count accurately and efficiently.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, I can count accurately and efficiently."
+      },
+      "correct": true,
+      "latency_ms": 689.6469593048096,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "Yes, fish do sleep sometimes.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, fish do sleep sometimes."
+      },
+      "correct": false,
+      "latency_ms": 470.6730842590332,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "Cats are fascinating and independent creatures.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 6,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Cats are fascinating and independent creatures."
+      },
+      "correct": false,
+      "latency_ms": 454.56886291503906,
+      "error": null
+    }
+  ]
+}

@@ -2,15 +2,26 @@
 
 Testing compositional generalization in large language models using procedurally-generated rules.
 
-## Overview
-
-This experiment tests whether LLMs can follow arbitrary rules constructed from random combinations of conditions and actions. Rules are procedurally generated to minimize overlap with training distributions.
-
 ## Key Finding
 
 **One robust result:** Input-dependent rules (L5) are consistently hard (5-15% accuracy). This replicates across models and runs.
 
+![Accuracy Heatmap](figures/fig1_heatmap.png)
+
 **Caution:** Other findings show high run-to-run variance (±20-40pp). Specific accuracy values at L1-L4 are unstable.
+
+## L5 Decomposition: Where Does It Break?
+
+We decomposed L5 into components to find architecture-specific bottlenecks:
+
+![L5 Decomposition](figures/fig2_decomposition.png)
+
+![Scaffold Effect](figures/fig3_scaffold.png)
+
+**Key insight:** Same task failure, different causes:
+- **Claude**: Binding bottleneck → Scaffold helps (+68pp)
+- **GPT-4o**: Counting bottleneck → Scaffold helps (+20pp)  
+- **GPT-4o Mini**: Unclear → Scaffold hurts (-24pp)
 
 ## Results Summary
 
@@ -72,6 +83,8 @@ python run.py --compare --ultra-power # Multi-model comparison
 - **High variance**: 20-40pp run-to-run differences at L1-L4
 - **L2 vs L3 unstable**: Pattern reversed for GPT-4o between runs
 - **Rule sampling**: Different rules may have different difficulty
+
+![Cross-Run Variance](figures/fig4_variance.png)
 
 ## Recommendation
 

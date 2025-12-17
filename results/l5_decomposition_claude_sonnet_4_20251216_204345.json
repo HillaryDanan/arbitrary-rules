@@ -1,0 +1,3563 @@
+{
+  "by_condition": {
+    "A_COUNT_ONLY": {
+      "description": "Count vowels in prompt and report the number",
+      "n_trials": 50,
+      "n_correct": 17,
+      "accuracy": 0.34,
+      "errors": 7
+    },
+    "B_FIXED_CONSTRAINT": {
+      "description": "Respond in exactly N words (fixed N)",
+      "n_trials": 50,
+      "n_correct": 31,
+      "accuracy": 0.62,
+      "errors": 14
+    },
+    "C_COUNT_AND_REPORT": {
+      "description": "Count vowels, report count, then respond naturally",
+      "n_trials": 50,
+      "n_correct": 18,
+      "accuracy": 0.36,
+      "errors": 11
+    },
+    "D_FULL_L5": {
+      "description": "Respond in exactly N words where N = vowels in prompt",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 15
+    },
+    "E_SCRATCHPAD": {
+      "description": "Explicitly count first, then constrain (chain of thought)",
+      "n_trials": 50,
+      "n_correct": 34,
+      "accuracy": 0.68,
+      "errors": 8,
+      "count_accuracy": 0.7,
+      "used_own_count_rate": 0.82
+    }
+  },
+  "timestamp": "2025-12-16T20:43:45.903187",
+  "model": "Claude Sonnet 4",
+  "config": {
+    "random_seed": 42,
+    "trials_per_condition": 50,
+    "test_prompts": [
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?",
+      "Can you count?",
+      "What do cows produce?",
+      "Is the sun hot?",
+      "Where is north?",
+      "How many legs do spiders have?",
+      "What color are bananas?",
+      "Do penguins fly?",
+      "What is two plus two?",
+      "Can robots think?",
+      "What floats on water?",
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?"
+    ],
+    "fixed_word_count": 7
+  },
+  "trials": [
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2205.91402053833,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow throughout their entire lives.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, trees grow throughout their entire lives."
+      },
+      "correct": true,
+      "latency_ms": 3812.714099884033,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cows produce?",
+      "response": "VOWELS: 6\n\nCows produce milk, which is their primary product that humans use for drinking and making dairy products like cheese, butter, and yogurt. They also produce meat (beef), leather from their hides, and manure which can be used as fertilizer. Additionally, cows produce methane gas as part of their digestive process.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nCows produce milk, which is their primary product that humans use for drinking and making"
+      },
+      "correct": true,
+      "latency_ms": 3888.822078704834,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where is north?",
+      "response": "VOWELS: 4\n\nNorth is a cardinal direction that points toward the North Pole, which is the northernmost point on Earth's axis of rotation. On a compass, north is typically indicated at the top (0\u00b0 or 360\u00b0). You can find north using a compass, by locating the North Star (Polaris) at night in the Northern Hemisphere, or by observing that the sun rises in the east and sets in the west, making north to your left when facing the sunrise. North is also used as a reference point for navigation and mapping systems worldwide.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nNorth is a cardinal direction that points toward the North Pole, which is the northernmos"
+      },
+      "correct": true,
+      "latency_ms": 5102.074861526489,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2121.8223571777344,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "I need to count the vowels in \"How big is the moon?\"\n\nVowels found:\n- o (in \"How\")\n- i (in \"big\") \n- i (in \"is\")\n- e (in \"the\")\n- o, o (in \"moon\")\n\nTotal: 6 vowels\n\nMy response in exactly 6 words:\n\nThe moon is quite small relatively.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 45,
+        "correct": false,
+        "off_by": 39,
+        "response_clean": "I need to count the vowels in \"How big is the moon?\"\n\nVowels found:\n- o (in \"How\")\n- i (in \"big\") \n-"
+      },
+      "correct": false,
+      "latency_ms": 3732.081890106201,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "I need to count the vowels in \"How are you today?\":\n- H**o**w **a**r**e** y**ou** t**o**d**a**y?\n- Vowels: o, a, e, o, u, o, a, y (counting y as a vowel here) = 8 vowels\n\nWait, let me recount more carefully:\n- How: o (1)\n- are: a, e (2) \n- you: o, u (2)\n- today: o, a, y (3)\n\nTotal: 1 + 2 + 2 + 3 = 8 vowels\n\nI'm doing quite well today, thanks!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "words_in_response": 67,
+        "correct": false,
+        "off_by": 60,
+        "response_clean": "I need to count the vowels in \"How are you today?\":\n- H**o**w **a**r**e** y**ou** t**o**d**a**y?\n- V"
+      },
+      "correct": false,
+      "latency_ms": 6308.24089050293,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do penguins fly?",
+      "response": "I need to count the vowels in \"Do penguins fly?\":\n- o (1)\n- e (2) \n- u (3)\n- i (4)\n- y (5)\n\nSo I need exactly 5 words:\n\nNo, penguins cannot fly.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 30,
+        "correct": false,
+        "off_by": 26,
+        "response_clean": "I need to count the vowels in \"Do penguins fly?\":\n- o (1)\n- e (2) \n- u (3)\n- i (4)\n- y (5)\n\nSo I nee"
+      },
+      "correct": false,
+      "latency_ms": 3083.045721054077,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2240.223169326782,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "I need to count the vowels in \"How big is the moon?\"\n\nVowels found:\n- o (in \"How\")\n- i (in \"big\") \n- i (in \"is\")\n- e (in \"the\")\n- o, o (in \"moon\")\n\nTotal: 6 vowels\n\nMy response in exactly 6 words:\n\nThe moon is quite small relatively.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 45,
+        "correct": false,
+        "off_by": 39,
+        "response_clean": "I need to count the vowels in \"How big is the moon?\"\n\nVowels found:\n- o (in \"How\")\n- i (in \"big\") \n-"
+      },
+      "correct": false,
+      "latency_ms": 3283.5159301757812,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "I will name one common fruit for you.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "I will name one common fruit for you."
+      },
+      "correct": false,
+      "latency_ms": 2390.552043914795,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2117.4511909484863,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "VOWELS: 4\n\nHere's an interesting fact: Octopuses have three hearts! Two of them pump blood to their gills, while the third pumps blood to the rest of their body. The main heart actually stops beating when they swim, which is why octopuses prefer crawling along the ocean floor rather than swimming - it's less exhausting for them.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nHere's an interesting fact: Octopuses have three hearts! Two of them pump blood to their "
+      },
+      "correct": true,
+      "latency_ms": 3626.9712448120117,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Fish rest but don't sleep like humans.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Fish rest but don't sleep like humans."
+      },
+      "correct": true,
+      "latency_ms": 2218.985080718994,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "I don't know the current time right now.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "I don't know the current time right now."
+      },
+      "correct": false,
+      "latency_ms": 2592.576026916504,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, e, e\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Yes, fish do sleep.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, e, e\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3048.433303833008,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cows produce?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 2073.2779502868652,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "VOWELS: 4\n\nBees make honey! They collect nectar from flowers and transform it into honey through a process of regurgitation and evaporation in their hives. Bees also make beeswax, which they use to build the hexagonal cells of their honeycomb structures. Additionally, they produce other substances like propolis (a resinous mixture used to seal their hives) and royal jelly (a special food for queen bees).",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nBees make honey! They collect nectar from flowers and transform it into honey through a p"
+      },
+      "correct": false,
+      "latency_ms": 4230.914115905762,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 5\n\nI don't have access to real-time information, so I can't tell you the current time. To find out what time it is, you could check your device's clock, ask a voice assistant, or search \"current time\" in your web browser.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\n\nI don't have access to real-time information, so I can't tell you the current time. To fi"
+      },
+      "correct": true,
+      "latency_ms": 3111.5899085998535,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, i, e, y\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): The sky appears blue during daytime.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 6,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, i, e, y\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": false,
+      "latency_ms": 3628.4549236297607,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 5\n\nThat's actually a fascinating philosophical question! Water itself isn't technically \"wet\" - wetness is a property we experience when water adheres to and covers a surface. When water molecules stick to your skin or other materials, that's what creates the sensation of wetness. So water makes things wet, but the water itself is just... water. It's one of those questions that sounds simple but gets pretty deep when you really think about it!",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\n\nThat's actually a fascinating philosophical question! Water itself isn't technically \"wet"
+      },
+      "correct": false,
+      "latency_ms": 4673.168182373047,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, a, a\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Octopuses have three hearts.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, a, a\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 4734.671115875244,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Lift from wings overcomes gravity through airflow.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Lift from wings overcomes gravity through airflow."
+      },
+      "correct": true,
+      "latency_ms": 3047.2538471221924,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What floats on water?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 2989.8297786712646,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is the sun hot?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: I, e, u, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Yes, extremely hot always.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: I, e, u, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3042.4399375915527,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2165.7588481903076,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is the sun hot?",
+      "response": "Yes, the sun is extremely hot indeed.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, the sun is extremely hot indeed."
+      },
+      "correct": true,
+      "latency_ms": 2660.6619358062744,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do penguins fly?",
+      "response": "VOWELS: 4\n\nNo, penguins cannot fly. While they are birds, penguins have evolved to be flightless. Their wings have adapted into flippers that make them incredibly skilled swimmers and divers instead. Penguins are perfectly designed for life in the water, where they can \"fly\" through the ocean with remarkable grace and speed, but they remain grounded when on land or ice.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nNo, penguins cannot fly. While they are birds, penguins have evolved to be flightless. Th"
+      },
+      "correct": true,
+      "latency_ms": 4389.010190963745,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "VOWELS: 6\n\nI'm doing well, thank you for asking! I'm here and ready to help with whatever questions or tasks you might have. How are you doing today?",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nI'm doing well, thank you for asking! I'm here and ready to help with whatever questions "
+      },
+      "correct": false,
+      "latency_ms": 2709.517002105713,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How many legs do spiders have?",
+      "response": "I need to count the vowels in \"How many legs do spiders have?\"\n\nVowels: o, a, e, o, i, e, a, e = 8 vowels\n\nMy response in exactly 8 words:\n\nSpiders have eight legs in total always.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "words_in_response": 37,
+        "correct": false,
+        "off_by": 29,
+        "response_clean": "I need to count the vowels in \"How many legs do spiders have?\"\n\nVowels: o, a, e, o, i, e, a, e = 8 v"
+      },
+      "correct": false,
+      "latency_ms": 3853.065013885498,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, a, a\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Octopuses have three hearts.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, a, a\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3190.1838779449463,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "Bees make honey, wax, and royal jelly.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Bees make honey, wax, and royal jelly."
+      },
+      "correct": true,
+      "latency_ms": 2873.9001750946045,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "Clouds appear soft but are actually water.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Clouds appear soft but are actually water."
+      },
+      "correct": true,
+      "latency_ms": 2525.273084640503,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, e, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Yes, trees grow continuously.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, e, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 2649.2109298706055,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What floats on water?",
+      "response": "Many things float including boats and wood.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Many things float including boats and wood."
+      },
+      "correct": true,
+      "latency_ms": 2380.3062438964844,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can robots think?",
+      "response": "Robots process information but don't truly think.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Robots process information but don't truly think."
+      },
+      "correct": true,
+      "latency_ms": 2459.4619274139404,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "I need to count the vowels in \"When does snow fall?\"\n\nW-h-e-n d-o-e-s s-n-o-w f-a-l-l?\n\nVowels: e, o, e, o, a = 5 vowels\n\nSnow falls during winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 28,
+        "correct": false,
+        "off_by": 23,
+        "response_clean": "I need to count the vowels in \"When does snow fall?\"\n\nW-h-e-n d-o-e-s s-n-o-w f-a-l-l?\n\nVowels: e, o"
+      },
+      "correct": false,
+      "latency_ms": 3200.8140087127686,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "I need to count the vowels in \"What season is it?\"\n\nW-h-a-t s-e-a-s-o-n i-s i-t?\n\nVowels: a, e, a, o, i, i = 6 vowels\n\nMy response must be exactly 6 words:\n\nIt is currently winter season now.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 37,
+        "correct": false,
+        "off_by": 31,
+        "response_clean": "I need to count the vowels in \"What season is it?\"\n\nW-h-a-t s-e-a-s-o-n i-s i-t?\n\nVowels: a, e, a, o"
+      },
+      "correct": false,
+      "latency_ms": 4181.066989898682,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 1949.2712020874023,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is two plus two?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 3033.9062213897705,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "I need to count the vowels in \"Are clouds soft?\":\n- A-r-e: A, e (2 vowels)\n- c-l-o-u-d-s: o, u (2 vowels)  \n- s-o-f-t: o (1 vowel)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nClouds appear soft but aren't.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 38,
+        "correct": false,
+        "off_by": 33,
+        "response_clean": "I need to count the vowels in \"Are clouds soft?\":\n- A-r-e: A, e (2 vowels)\n- c-l-o-u-d-s: o, u (2 vo"
+      },
+      "correct": false,
+      "latency_ms": 3456.695079803467,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "I cannot determine the current season today.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I cannot determine the current season today."
+      },
+      "correct": true,
+      "latency_ms": 2398.6377716064453,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 6\n\nI don't have access to real-time information about your current location or the date, so I can't tell you what season it is where you are right now. The seasons depend on your geographic location (Northern or Southern Hemisphere) and the current date. Could you let me know your location or the current date so I can help you determine what season it is?",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nI don't have access to real-time information about your current location or the date, so "
+      },
+      "correct": true,
+      "latency_ms": 3968.621015548706,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "I will name one common fruit for you.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "I will name one common fruit for you."
+      },
+      "correct": false,
+      "latency_ms": 2952.4378776550293,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 2318.204164505005,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, u, o, a\nTotal vowels: 7\n\nSTEP 2: Now respond to their question in EXACTLY 7 words (the number from Step 1).\nResponse (7 words): I'm doing well, thank you for asking!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "reported_count": 7,
+        "count_correct": true,
+        "words_in_response": 7,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, u, o, a\nTotal vowels: 7\n\nSTEP 2: Now respond to their question in EXACTLY 7 words (the number from Step 1)."
+      },
+      "correct": true,
+      "latency_ms": 3577.3160457611084,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2626.9640922546387,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How many legs do spiders have?",
+      "response": "VOWELS: 9\n\nSpiders have 8 legs. This is one of their defining characteristics as arachnids, which distinguishes them from insects that have 6 legs. All true spiders have exactly 8 legs arranged in 4 pairs, which they use for walking, sensing their environment, and sometimes for capturing prey.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 9,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 9\n\nSpiders have 8 legs. This is one of their defining characteristics as arachnids, which di"
+      },
+      "correct": false,
+      "latency_ms": 3684.674024581909,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 5\n\nThat's actually a fascinating philosophical question! Water itself isn't technically \"wet\" - wetness is a property we experience when water adheres to and covers a surface. When water molecules stick to your skin or other materials, that's what creates the sensation of wetness. So water makes things wet, but the water itself is just... water. It's one of those questions that sounds simple but gets pretty deep when you really think about it!",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\n\nThat's actually a fascinating philosophical question! Water itself isn't technically \"wet"
+      },
+      "correct": false,
+      "latency_ms": 4779.884099960327,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where is north?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, i, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): North is upward direction.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, i, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 2929.6209812164307,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can you count?",
+      "response": "VOWELS: 4\n\nYes, I can count! I can perform various counting tasks like counting numbers, objects, characters in text, occurrences of specific items, and mathematical calculations. Is there something specific you'd like me to count for you?",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nYes, I can count! I can perform various counting tasks like counting numbers, objects, ch"
+      },
+      "correct": false,
+      "latency_ms": 3608.3590984344482,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 2035.8426570892334,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "I need to count the vowels in \"Is water wet?\":\n- I: 1 vowel\n- s: 0 vowels  \n- w: 0 vowels\n- a: 1 vowel\n- t: 0 vowels\n- e: 1 vowel\n- r: 0 vowels\n- w: 0 vowels\n- e: 1 vowel\n- t: 0 vowels\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nWater is indeed wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 53,
+        "correct": false,
+        "off_by": 49,
+        "response_clean": "I need to count the vowels in \"Is water wet?\":\n- I: 1 vowel\n- s: 0 vowels  \n- w: 0 vowels\n- a: 1 vow"
+      },
+      "correct": false,
+      "latency_ms": 3908.015012741089,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "VOWELS: 6\n\nPlanes fly through the principles of aerodynamics, primarily using lift generated by their wings. As a plane moves forward, air flows over and under the wings. The wing's curved shape (airfoil) causes air to move faster over the top surface than the bottom, creating lower pressure above the wing and higher pressure below. This pressure difference generates lift that overcomes the plane's weight.\n\nThe four main forces acting on an aircraft are:\n- **Lift** (upward force from the wings)\n- **Weight** (downward gravitational force)\n- **Thrust** (forward force from engines)\n- **Drag** (backward resistance from air)\n\nWhen lift exceeds weight and thrust overcomes drag, the plane can take off and maintain flight. The pilot controls the plane by adjusting these forces through various control surfaces like ailerons, elevators, and rudders.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nPlanes fly through the principles of aerodynamics, primarily using lift generated by thei"
+      },
+      "correct": false,
+      "latency_ms": 5584.469318389893,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat meat, fish, and commercial food.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cats eat meat, fish, and commercial food."
+      },
+      "correct": true,
+      "latency_ms": 2048.0570793151855,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "VOWELS: 7\n\nThe sky appears blue during the day due to a phenomenon called Rayleigh scattering. When sunlight enters Earth's atmosphere, it collides with tiny gas molecules. Blue light has a shorter wavelength than other colors, so it gets scattered more in all directions, making the sky appear blue to our eyes. At sunrise and sunset, the sky can appear red, orange, or pink because the light has to travel through more atmosphere, scattering away most of the blue light and leaving the longer wavelengths visible.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nThe sky appears blue during the day due to a phenomenon called Rayleigh scattering. When "
+      },
+      "correct": false,
+      "latency_ms": 4127.867698669434,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Wings generate upward lift.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3184.973955154419,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2230.289936065674,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "Temperature below thirty two degrees Fahrenheit makes ice.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Temperature below thirty two degrees Fahrenheit makes ice."
+      },
+      "correct": false,
+      "latency_ms": 2469.144821166992,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, e, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Yes, trees grow continuously.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, e, o\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3029.9859046936035,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where is north?",
+      "response": "North is the direction toward Earth's pole.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "North is the direction toward Earth's pole."
+      },
+      "correct": true,
+      "latency_ms": 4608.686685562134,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 5\n\nI don't have access to real-time information, so I can't tell you the current time. To find out what time it is, you could check your device's clock, ask a voice assistant, or search \"current time\" in your web browser.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\n\nI don't have access to real-time information, so I can't tell you the current time. To fi"
+      },
+      "correct": true,
+      "latency_ms": 2969.625234603882,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, u, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): I would suggest an apple.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, u, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 2820.641040802002,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2260.600805282593,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 4\n\nGrass appears green because of chlorophyll, a pigment found in plant cells that's essential for photosynthesis. Chlorophyll absorbs red and blue wavelengths of light very efficiently to power the process of converting sunlight into energy, but it reflects green wavelengths back to our eyes. This is why we perceive grass and most other plants as green - it's essentially the color that chlorophyll doesn't need and \"throws away\" from the sunlight it captures.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nGrass appears green because of chlorophyll, a pigment found in plant cells that's essenti"
+      },
+      "correct": true,
+      "latency_ms": 4252.340078353882,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color are bananas?",
+      "response": "VOWELS: 9\n\nBananas are typically yellow when ripe, though they start green when unripe and can turn brown with black spots as they become overripe. The classic bright yellow color we associate with bananas comes from the breakdown of chlorophyll and the development of carotenoid pigments as the fruit ripens.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 9,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 9\n\nBananas are typically yellow when ripe, though they start green when unripe and can turn "
+      },
+      "correct": false,
+      "latency_ms": 3763.150215148926,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, u, o, a\nTotal vowels: 7\n\nSTEP 2: Now respond to their question in EXACTLY 7 words (the number from Step 1).\nResponse (7 words): I'm doing well, thank you for asking!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "reported_count": 7,
+        "count_correct": true,
+        "words_in_response": 7,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, u, o, a\nTotal vowels: 7\n\nSTEP 2: Now respond to their question in EXACTLY 7 words (the number from Step 1)."
+      },
+      "correct": true,
+      "latency_ms": 2861.61208152771,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2342.417001724243,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2250.556230545044,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cows produce?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, u, e\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Cows produce milk and beef.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, u, e\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": false,
+      "latency_ms": 2716.2370681762695,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "I need to count the vowels in \"Where do birds fly?\"\n\nW-h-e-r-e: e, e (2 vowels)\nd-o: o (1 vowel)\nb-i-r-d-s: i (1 vowel)\nf-l-y: y (not counting y as a vowel here, so 0 vowels)\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nBirds fly through air.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 49,
+        "correct": false,
+        "off_by": 45,
+        "response_clean": "I need to count the vowels in \"Where do birds fly?\"\n\nW-h-e-r-e: e, e (2 vowels)\nd-o: o (1 vowel)\nb-i"
+      },
+      "correct": false,
+      "latency_ms": 3807.0878982543945,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, e, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Cats eat meat and fish.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, e, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 2771.0061073303223,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "I need to count the vowels in \"Do fish sleep?\":\n- D**o** = 1 vowel (o)\n- f**i**sh = 1 vowel (i)\n- sl**ee**p = 2 vowels (e, e)\n\nTotal: 4 vowels\n\nMy response must be exactly 4 words:\n\nFish rest but differently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 37,
+        "correct": false,
+        "off_by": 33,
+        "response_clean": "I need to count the vowels in \"Do fish sleep?\":\n- D**o** = 1 vowel (o)\n- f**i**sh = 1 vowel (i)\n- sl"
+      },
+      "correct": false,
+      "latency_ms": 3490.3690814971924,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "I need to count the vowels in \"What do cats eat?\"\n\nW-h-a-t d-o c-a-t-s e-a-t?\n\nVowels: a, o, a, e, a = 5 vowels\n\nMy response must be exactly 5 words:\n\nCats eat fish and meat.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 35,
+        "correct": false,
+        "off_by": 30,
+        "response_clean": "I need to count the vowels in \"What do cats eat?\"\n\nW-h-a-t d-o c-a-t-s e-a-t?\n\nVowels: a, o, a, e, a"
+      },
+      "correct": false,
+      "latency_ms": 3134.1569423675537,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "response_clean": "6"
+      },
+      "correct": true,
+      "latency_ms": 1948.310136795044,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "VOWELS: 7\n\nBirds fly in various places depending on their species and needs. They fly through the sky at different altitudes - some stay close to the ground while others soar high in the atmosphere. Birds fly over land, water, forests, cities, and open fields. Many species follow specific flight paths during migration, traveling between breeding and wintering grounds. Some birds fly locally within their territory for daily activities like finding food, while others undertake incredible long-distance journeys across continents and oceans.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nBirds fly in various places depending on their species and needs. They fly through the sk"
+      },
+      "correct": false,
+      "latency_ms": 4613.91282081604,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, o, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): It depends on your location.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, o, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": false,
+      "latency_ms": 3086.0068798065186,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Wings generate upward lift.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 3002.706289291382,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is two plus two?",
+      "response": "Two plus two equals four in mathematics.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Two plus two equals four in mathematics."
+      },
+      "correct": true,
+      "latency_ms": 2254.1940212249756,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "I am doing quite well today, thanks.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I am doing quite well today, thanks."
+      },
+      "correct": true,
+      "latency_ms": 2036.5240573883057,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2130.107879638672,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cows produce?",
+      "response": "I need to count the vowels in \"What do cows produce?\":\n- W**a**t: 1 vowel (a)\n- d**o**: 1 vowel (o)\n- c**o**ws: 1 vowel (o)\n- pr**o**d**u**ce: 2 vowels (o, u)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nCows produce milk and beef.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 42,
+        "correct": false,
+        "off_by": 36,
+        "response_clean": "I need to count the vowels in \"What do cows produce?\":\n- W**a**t: 1 vowel (a)\n- d**o**: 1 vowel (o)\n"
+      },
+      "correct": false,
+      "latency_ms": 4253.334045410156,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "I need to count the vowels in \"Can dogs swim?\":\n- C**a**n d**o**gs sw**i**m?\n- Vowels: a, o, i = 3 vowels\n\nYes, dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "words_in_response": 23,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "I need to count the vowels in \"Can dogs swim?\":\n- C**a**n d**o**gs sw**i**m?\n- Vowels: a, o, i = 3 v"
+      },
+      "correct": false,
+      "latency_ms": 2892.3499584198,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2712.7840518951416,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "Snow falls when temperatures drop below freezing.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Snow falls when temperatures drop below freezing."
+      },
+      "correct": true,
+      "latency_ms": 2506.3750743865967,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, e, i, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): I cannot access current time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, e, i, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3055.5100440979004,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, u, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): I would suggest an apple.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, u, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3851.163864135742,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2758.8980197906494,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 3041.110038757324,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "response_clean": "3"
+      },
+      "correct": true,
+      "latency_ms": 2404.9041271209717,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: I, a, e, e\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Water itself isn't wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: I, a, e, e\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse"
+      },
+      "correct": true,
+      "latency_ms": 2716.749906539917,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "I need to count the vowels in \"Do trees grow?\":\n- D**o** (1 vowel: o)\n- t**ee**s (2 vowels: e, e) \n- g**o**w (1 vowel: o)\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nYes, trees definitely grow.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 36,
+        "correct": false,
+        "off_by": 32,
+        "response_clean": "I need to count the vowels in \"Do trees grow?\":\n- D**o** (1 vowel: o)\n- t**ee**s (2 vowels: e, e) \n-"
+      },
+      "correct": false,
+      "latency_ms": 3823.0910301208496,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "I need to count the vowels in \"What color is the sky?\":\n- W-h-a-t: a (1 vowel)\n- c-o-l-o-r: o, o (2 vowels)\n- i-s: i (1 vowel)\n- t-h-e: e (1 vowel)\n- s-k-y: y (not counting y as a vowel here, 0 vowels)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nThe sky is typically blue.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 54,
+        "correct": false,
+        "off_by": 49,
+        "response_clean": "I need to count the vowels in \"What color is the sky?\":\n- W-h-a-t: a (1 vowel)\n- c-o-l-o-r: o, o (2 "
+      },
+      "correct": false,
+      "latency_ms": 4722.535848617554,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat meat, fish, and commercial food.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cats eat meat, fish, and commercial food."
+      },
+      "correct": true,
+      "latency_ms": 2048.586845397949,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "VOWELS: 7\n\nThe sky appears blue during the day due to a phenomenon called Rayleigh scattering. When sunlight enters Earth's atmosphere, it collides with tiny gas molecules. Blue light has a shorter wavelength than other colors, so it gets scattered more in all directions, making the sky appear blue to our eyes. At sunrise and sunset, the sky can appear red, orange, or pink because the light has to travel through more atmosphere, scattering away most of the blue light and leaving the longer wavelengths visible.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nThe sky appears blue during the day due to a phenomenon called Rayleigh scattering. When "
+      },
+      "correct": false,
+      "latency_ms": 3839.895009994507,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 2206.6171169281006,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "I need to count the vowels in \"What do cats eat?\"\n\nW-h-a-t d-o c-a-t-s e-a-t?\n\nVowels: a, o, a, e, a = 5 vowels\n\nMy response must be exactly 5 words:\n\nCats eat fish and meat.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 35,
+        "correct": false,
+        "off_by": 30,
+        "response_clean": "I need to count the vowels in \"What do cats eat?\"\n\nW-h-a-t d-o c-a-t-s e-a-t?\n\nVowels: a, o, a, e, a"
+      },
+      "correct": false,
+      "latency_ms": 2898.41890335083,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is the sun hot?",
+      "response": "VOWELS: 4\n\nYes, the sun is extremely hot! The surface temperature of the sun is about 5,778 Kelvin (approximately 5,505\u00b0C or 9,941\u00b0F). The core is even hotter, reaching temperatures of about 15 million degrees Celsius. This intense heat is generated by nuclear fusion reactions where hydrogen atoms combine to form helium, releasing enormous amounts of energy in the process.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nYes, the sun is extremely hot! The surface temperature of the sun is about 5,778 Kelvin ("
+      },
+      "correct": true,
+      "latency_ms": 3515.071153640747,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How many legs do spiders have?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, i, e, a, e\nTotal vowels: 8\n\nSTEP 2: Now respond to their question in EXACTLY 8 words (the number from Step 1).\nResponse (8 words): Spiders have eight legs, which is their defining characteristic.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "reported_count": 8,
+        "count_correct": true,
+        "words_in_response": 9,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, a, e, o, i, e, a, e\nTotal vowels: 8\n\nSTEP 2: Now respond to their question in EXACTLY 8 words (the number from Step "
+      },
+      "correct": false,
+      "latency_ms": 3162.3711585998535,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 6\n\nI don't have access to real-time information about your current location or the date, so I can't tell you what season it is where you are right now. The seasons depend on your geographic location (Northern or Southern Hemisphere) and the current date. Could you let me know your location or the current date so I can help you determine what season it is?",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nI don't have access to real-time information about your current location or the date, so "
+      },
+      "correct": true,
+      "latency_ms": 3621.293067932129,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, o, u, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): I am Claude, an AI assistant.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, o, u, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 2869.0669536590576,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: A, e, o, u, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Clouds appear soft but aren't.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: A, e, o, u, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3260.8540058135986,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can robots think?",
+      "response": "VOWELS: 6\n\nThat's a fascinating philosophical question! The answer depends on how we define \"thinking.\" Robots and AI systems can process information, recognize patterns, make decisions, and even learn from experience. However, whether this constitutes genuine thinking or consciousness in the way humans experience it remains hotly debated.\n\nCurrent AI operates through sophisticated pattern matching and statistical processing rather than what we might call conscious thought. We can simulate many aspects of thinking, but questions about subjective experience, self-awareness, and consciousness in machines are still largely unanswered. It's one of the most intriguing questions at the intersection of technology, philosophy, and cognitive science!",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nThat's a fascinating philosophical question! The answer depends on how we define \"thinkin"
+      },
+      "correct": false,
+      "latency_ms": 5493.76106262207,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is two plus two?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: [a, i, o, u, o]\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Two plus two equals four.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: [a, i, o, u, o]\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRes"
+      },
+      "correct": true,
+      "latency_ms": 6364.426136016846,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3675.5969524383545,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhFDyuBrmg7NiHCGGw'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2058.3460330963135,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2430.590867996216,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhJd7zxNDHkw31FMJC'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2812.771797180176,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhK8PPQBoEzQGmo472'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "VOWELS: 6\n\nMy name is Claude. I'm an AI assistant created by Anthropic to be helpful, harmless, and honest.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nMy name is Claude. I'm an AI assistant created by Anthropic to be helpful, harmless, and "
+      },
+      "correct": true,
+      "latency_ms": 2212.08119392395,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 1984.1868877410889,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2509.459972381592,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhVHaDvRExbvtq2e2u'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2597.127914428711,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhVwm4bd9fNdTsVwDv'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, o, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): It depends on your location.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, a, o, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": false,
+      "latency_ms": 2814.732074737549,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2363.645315170288,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhaEjBHDpmrbaVHE3d'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can you count?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, u\nTotal vowels: 3\n\nSTEP 2: Now respond to their question in EXACTLY 3 words (the number from Step 1).\nResponse (3 words): Yes, I can.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, u\nTotal vowels: 3\n\nSTEP 2: Now respond to their question in EXACTLY 3 words (the number from Step 1).\nResponse (3"
+      },
+      "correct": false,
+      "latency_ms": 5625.044822692871,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2634.742021560669,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhgbDaQxBM7RAM7oz4'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2398.5369205474854,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhgzn7Nd2mSNduRq3v'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 3385.7457637786865,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2448.9452838897705,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhr3z7DgK9w72h8xSW'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2499.0057945251465,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQhsCwRtJfKKVu1HB5a'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "VOWELS: 7\n\nIce is cold because it's water in its solid state, which occurs when water molecules slow down and arrange themselves in a rigid crystalline structure. This happens when the temperature drops to 32\u00b0F (0\u00b0C) or below. The molecular motion is much slower in ice compared to liquid water, which is what we perceive as \"coldness\" - essentially the absence or reduction of thermal energy. When you touch ice, it feels cold because heat transfers from your warmer skin to the colder ice, causing the ice to gradually melt while making your skin feel cold.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nIce is cold because it's water in its solid state, which occurs when water molecules slow"
+      },
+      "correct": false,
+      "latency_ms": 5218.058109283447,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color are bananas?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, a, e, a, a, a\nTotal vowels: 8\n\nSTEP 2: Now respond to their question in EXACTLY 8 words (the number from Step 1).\nResponse (8 words): Bananas are typically yellow when ripe and ready.",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "reported_count": 8,
+        "count_correct": true,
+        "words_in_response": 8,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, o, a, e, a, a, a\nTotal vowels: 8\n\nSTEP 2: Now respond to their question in EXACTLY 8 words (the number from Step "
+      },
+      "correct": true,
+      "latency_ms": 3493.0219650268555,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2567.127227783203,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQi2XmodzXMkkfFkyvh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "I need to count the vowels in \"Can dogs swim?\":\n- C**a**n d**o**gs sw**i**m?\n- Vowels: a, o, i = 3 vowels\n\nYes, dogs can swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "words_in_response": 23,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "I need to count the vowels in \"Can dogs swim?\":\n- C**a**n d**o**gs sw**i**m?\n- Vowels: a, o, i = 3 v"
+      },
+      "correct": false,
+      "latency_ms": 3010.477066040039,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2660.1219177246094,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQi83fJGRXCiwer6BVf'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 4\n\nCats are obligate carnivores, which means they require a diet primarily based on meat to thrive. In the wild, cats hunt small prey like mice, birds, and insects. As pets, cats should eat high-quality commercial cat food that's specifically formulated to meet their nutritional needs, including essential amino acids like taurine. Their diet should consist mainly of protein, with some fats and minimal carbohydrates. Fresh water should always be available, and it's important to avoid feeding cats foods that are toxic to them, such as chocolate, onions, garlic, and grapes.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nCats are obligate carnivores, which means they require a diet primarily based on meat to "
+      },
+      "correct": false,
+      "latency_ms": 4473.530054092407,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: [y, i, a, e, e]\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Chlorophyll absorbs light for photosynthesis.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: [y, i, a, e, e]\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRes"
+      },
+      "correct": false,
+      "latency_ms": 3493.2990074157715,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, e, e, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): Bees make honey in their hives.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, e, e, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 3128.4360885620117,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3513.57102394104,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQiJdeiuZpmc9jmnHqu'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2502.131938934326,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQiPWaxbE261smw47m1'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, o, u, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): I am Claude, an AI assistant.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, o, u, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 3411.975860595703,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "VOWELS: 4\n\nYes, fish do sleep, though it's quite different from human sleep. Fish don't have eyelids to close, so they sleep with their eyes open. During rest periods, fish typically become less active, reduce their movement, and may hover motionless in the water or rest on the bottom. Their breathing slows down, and they become less responsive to their surroundings, similar to how other animals behave during sleep. Different fish species have varying sleep patterns - some are more active during the day and rest at night, while others are nocturnal. This rest period is essential for their health and helps them conserve energy.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nYes, fish do sleep, though it's quite different from human sleep. Fish don't have eyelids"
+      },
+      "correct": true,
+      "latency_ms": 4855.128049850464,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "VOWELS: 6\n\nSnow typically falls when atmospheric conditions are just right - usually when the temperature is at or below freezing (32\u00b0F/0\u00b0C) and there's sufficient moisture in the air. This most commonly occurs during winter months, though it can happen in late fall or early spring depending on your location. Snow forms when water vapor in clouds freezes into ice crystals, which then clump together and fall to the ground when they become heavy enough. The exact timing varies greatly by geographic location, elevation, and local climate patterns.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nSnow typically falls when atmospheric conditions are just right - usually when the temper"
+      },
+      "correct": false,
+      "latency_ms": 6081.485033035278,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2823.7640857696533,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQiayua3NB2v4DkZzgA'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "Octopuses have three hearts and blue blood.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Octopuses have three hearts and blue blood."
+      },
+      "correct": true,
+      "latency_ms": 4964.740037918091,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 2454.5750617980957,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "VOWELS: 4\n\nApple is a popular fruit that's sweet, crunchy, and comes in many varieties like Granny Smith, Red Delicious, and Honeycrisp.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nApple is a popular fruit that's sweet, crunchy, and comes in many varieties like Granny S"
+      },
+      "correct": false,
+      "latency_ms": 2631.1521530151367,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2614.8390769958496,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQivomGUV2MnPyx7jTA'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is two plus two?",
+      "response": "VOWELS: 6\n\nTwo plus two equals four. This is a basic arithmetic operation where you're adding the number 2 to itself, resulting in 4.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nTwo plus two equals four. This is a basic arithmetic operation where you're adding the nu"
+      },
+      "correct": false,
+      "latency_ms": 4709.373235702515,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2767.5938606262207,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQixop7paJJaGs76Bdw'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "I need to count the vowels in \"What makes ice cold?\":\n- W-h-a-t: a (1 vowel)\n- m-a-k-e-s: a, e (2 vowels)\n- i-c-e: i, e (2 vowels)\n- c-o-l-d: o (1 vowel)\n\nTotal: 6 vowels\n\nMy response in exactly 6 words:\n\nHeat removal causes freezing water temperatures.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 44,
+        "correct": false,
+        "off_by": 38,
+        "response_clean": "I need to count the vowels in \"What makes ice cold?\":\n- W-h-a-t: a (1 vowel)\n- m-a-k-e-s: a, e (2 vo"
+      },
+      "correct": false,
+      "latency_ms": 6683.327913284302,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "I need to count the vowels in \"What time is it?\":\n- W-h-a-t: \"a\" (1 vowel)\n- t-i-m-e: \"i\", \"e\" (2 vowels)\n- i-s: \"i\" (1 vowel)\n- i-t: \"i\" (1 vowel)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nI cannot tell current time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 42,
+        "correct": false,
+        "off_by": 37,
+        "response_clean": "I need to count the vowels in \"What time is it?\":\n- W-h-a-t: \"a\" (1 vowel)\n- t-i-m-e: \"i\", \"e\" (2 vo"
+      },
+      "correct": false,
+      "latency_ms": 6251.9261837005615,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2554.2101860046387,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2451.1940479278564,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQj8AdqSwLVvsqBEbm6'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2821.1278915405273,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjF7bLiHuDtyK7TtNr'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, e, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Cats eat meat and fish.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, e, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3123.325824737549,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 4\n\nCats are obligate carnivores, which means they require a diet primarily based on meat to thrive. In the wild, cats hunt small prey like mice, birds, and insects. As pets, cats should be fed high-quality commercial cat food that's specifically formulated to meet their nutritional needs, including essential amino acids like taurine. Their diet should consist mainly of protein, with some fats and minimal carbohydrates. Fresh water should always be available, and it's important to avoid feeding cats foods that are toxic to them, such as chocolate, onions, garlic, and grapes.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nCats are obligate carnivores, which means they require a diet primarily based on meat to "
+      },
+      "correct": false,
+      "latency_ms": 4910.541772842407,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3423.5479831695557,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjNT7qbo2YjMbezH4H'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 3458.6150646209717,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3244.204044342041,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjTtHx6fT2jCQx7vXt'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "VOWELS: 6\n\nMy name is Claude. I'm an AI assistant created by Anthropic to be helpful, harmless, and honest.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 6,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nMy name is Claude. I'm an AI assistant created by Anthropic to be helpful, harmless, and "
+      },
+      "correct": true,
+      "latency_ms": 2411.655902862549,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, i, e, o, o\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): Moon's diameter is approximately 2,159 miles.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, i, e, o, o\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 3349.6320247650146,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2570.945978164673,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjfw5vR5ooLAPSz5jh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can you count?",
+      "response": "I need to count the vowels in \"Can you count?\" \n\nThe vowels are: a, o, u, o = 4 vowels\n\nMy response in exactly 4 words:\n\nYes, I can count.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 29,
+        "correct": false,
+        "off_by": 24,
+        "response_clean": "I need to count the vowels in \"Can you count?\" \n\nThe vowels are: a, o, u, o = 4 vowels\n\nMy response "
+      },
+      "correct": false,
+      "latency_ms": 4141.46614074707,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2773.1330394744873,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjiBmjT2Jg41QPh8Xt'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "I cannot determine the current season today.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "I cannot determine the current season today."
+      },
+      "correct": true,
+      "latency_ms": 5295.005798339844,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, o, e, o, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Snow falls during winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, o, e, o, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 4042.5989627838135,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2699.054002761841,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQjtD2JFLA6e9rPwZra'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow throughout their entire lives.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, trees grow throughout their entire lives."
+      },
+      "correct": true,
+      "latency_ms": 3496.150016784668,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "I need to count the vowels in \"What time is it?\":\n- W-h-a-t: \"a\" (1 vowel)\n- t-i-m-e: \"i\", \"e\" (2 vowels)\n- i-s: \"i\" (1 vowel)\n- i-t: \"i\" (1 vowel)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nI cannot tell current time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 42,
+        "correct": false,
+        "off_by": 37,
+        "response_clean": "I need to count the vowels in \"What time is it?\":\n- W-h-a-t: \"a\" (1 vowel)\n- t-i-m-e: \"i\", \"e\" (2 vo"
+      },
+      "correct": false,
+      "latency_ms": 5636.611223220825,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 5437.8862380981445,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "VOWELS: 7\n\nBirds fly in various places depending on their species and needs. They fly through the sky at different altitudes - some stay close to the ground while others soar high in the atmosphere. Birds fly over land, water, forests, cities, and open fields. Many species follow specific flight paths during migration, traveling between breeding and wintering grounds. Some birds fly locally within their territory for daily activities like finding food, while others undertake incredible long-distance journeys across continents and oceans.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nBirds fly in various places depending on their species and needs. They fly through the sk"
+      },
+      "correct": false,
+      "latency_ms": 6467.082977294922,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "Water itself is not technically considered wet.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Water itself is not technically considered wet."
+      },
+      "correct": true,
+      "latency_ms": 4755.544900894165,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "Octopuses have three hearts and blue blood.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Octopuses have three hearts and blue blood."
+      },
+      "correct": true,
+      "latency_ms": 2389.9593353271484,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2857.848882675171,
+      "error": "Connection error."
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 3466.4461612701416,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3905.9011936187744,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkNQRHq1VE1tirhRrh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2629.7857761383057,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkRhrNAvWLBa74WBtY'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2341.00604057312,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkWBEP5ko54uLfLjat'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2463.153123855591,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkcKpcFPbPFNxahAeL'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, e, i, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): I cannot access current time.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, i, e, i, i\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3825.103282928467,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2549.302101135254,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkhVNoi2gN1XTsj78x'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "I need to count the vowels in \"Do trees grow?\":\n- D**o** (1 vowel: o)\n- t**ee**s (2 vowels: e, e) \n- g**o**w (1 vowel: o)\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nYes, trees definitely grow.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 36,
+        "correct": false,
+        "off_by": 32,
+        "response_clean": "I need to count the vowels in \"Do trees grow?\":\n- D**o** (1 vowel: o)\n- t**ee**s (2 vowels: e, e) \n-"
+      },
+      "correct": false,
+      "latency_ms": 4384.6259117126465,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color are bananas?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 4489.725828170776,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How many legs do spiders have?",
+      "response": "Spiders have eight legs in total always.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Spiders have eight legs in total always."
+      },
+      "correct": true,
+      "latency_ms": 1892.632246017456,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2646.388292312622,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkweRW7Rj8c79Uiffe'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2671.0588932037354,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQkwdgGd6oyzFm9CwMo'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "I need to count the vowels in \"What season is it?\"\n\nW-h-a-t s-e-a-s-o-n i-s i-t?\n\nVowels: a, e, a, o, i, i = 6 vowels\n\nMy response must be exactly 6 words:\n\nIt is currently winter season now.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 37,
+        "correct": false,
+        "off_by": 31,
+        "response_clean": "I need to count the vowels in \"What season is it?\"\n\nW-h-a-t s-e-a-s-o-n i-s i-t?\n\nVowels: a, e, a, o"
+      },
+      "correct": false,
+      "latency_ms": 3719.9442386627197,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "Chlorophyll absorbs red light, reflects green wavelengths.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Chlorophyll absorbs red light, reflects green wavelengths."
+      },
+      "correct": true,
+      "latency_ms": 4818.778991699219,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2539.3171310424805,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQm8UYVMbvYrXUj1qUz'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2551.5120029449463,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmAvt5xLhcFoYSdUdW'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "I need to count the vowels in \"What is your name?\":\n- W-h-a-t: a (1 vowel)\n- i-s: i (1 vowel)  \n- y-o-u-r: o, u (2 vowels)\n- n-a-m-e: a, e (2 vowels)\n\nTotal: 6 vowels\n\nMy name is Claude.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 36,
+        "correct": false,
+        "off_by": 30,
+        "response_clean": "I need to count the vowels in \"What is your name?\":\n- W-h-a-t: a (1 vowel)\n- i-s: i (1 vowel)  \n- y-"
+      },
+      "correct": false,
+      "latency_ms": 5886.775970458984,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "I need to count the vowels in \"Why is grass green?\"\n\nW-h-y i-s g-r-a-s-s g-r-e-e-n?\n\nVowels: y (1), i (2), a (3), e (4), e (5)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nChlorophyll absorbs red light wavelengths.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 40,
+        "correct": false,
+        "off_by": 36,
+        "response_clean": "I need to count the vowels in \"Why is grass green?\"\n\nW-h-y i-s g-r-a-s-s g-r-e-e-n?\n\nVowels: y (1), "
+      },
+      "correct": false,
+      "latency_ms": 3161.4949703216553,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color are bananas?",
+      "response": "Bananas are typically yellow when they ripen.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Bananas are typically yellow when they ripen."
+      },
+      "correct": true,
+      "latency_ms": 2066.284656524658,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "VOWELS: 7\n\nThe Moon has a diameter of about 3,474 kilometers (2,159 miles), which makes it roughly one-quarter the size of Earth. To put this in perspective, you could fit about 49 Moons inside Earth by volume. Despite being much smaller than Earth, the Moon is actually quite large compared to other moons in our solar system relative to their parent planets - it's the fifth largest moon overall and has the largest moon-to-planet size ratio of any planet in our solar system.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 7,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 7\n\nThe Moon has a diameter of about 3,474 kilometers (2,159 miles), which makes it roughly o"
+      },
+      "correct": false,
+      "latency_ms": 5764.393091201782,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2879.8749446868896,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmPDZXJsade7ZA7mmM'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2446.099042892456,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmPPEA7jGCQkfKpTux'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can you count?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 3110.4867458343506,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 3150.5050659179688,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3022.603988647461,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmbUW6y22YtRCBPTu5'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3226.1219024658203,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmcwJngs41HvLt3zM1'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "The moon's diameter is approximately twenty-two hundred miles.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "The moon's diameter is approximately twenty-two hundred miles."
+      },
+      "correct": false,
+      "latency_ms": 2109.8151206970215,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 4487.37096786499,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 3\n\nYes, most dogs can swim! Dogs are naturally buoyant and have an instinctive paddling motion called the \"doggy paddle.\" However, their swimming ability varies by breed - some dogs like Labrador Retrievers, Golden Retrievers, and Newfoundlands are excellent swimmers with water-resistant coats and webbed feet. Others, particularly breeds with short legs, heavy bodies, or flat faces (like Bulldogs or Pugs), may struggle in water and should be supervised carefully. It's always good to introduce dogs to water gradually and consider using a life jacket for safety, especially for breeds that aren't natural swimmers.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\n\nYes, most dogs can swim! Dogs are naturally buoyant and have an instinctive paddling moti"
+      },
+      "correct": true,
+      "latency_ms": 5661.669969558716,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2511.9612216949463,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmoYXxMHPzEbMzCfbf'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Lift from wings overcomes gravity through airflow.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Lift from wings overcomes gravity through airflow."
+      },
+      "correct": true,
+      "latency_ms": 2554.102897644043,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2442.7411556243896,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQmy23jBTV7q3hjrdHz'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do penguins fly?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, u, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): No, penguins cannot fly.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, e, u, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 5191.19119644165,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2974.803924560547,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQn2Qh9uVGojPGjApNz'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, i, e, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Low temperature freezes water molecules.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, e, i, e, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": false,
+      "latency_ms": 2836.3330364227295,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How many legs do spiders have?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 4765.736818313599,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "Birds fly through the sky and air.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Birds fly through the sky and air."
+      },
+      "correct": true,
+      "latency_ms": 2991.8389320373535,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2778.418779373169,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQnCEYTmXJQWWs1GfLG'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 3305.2003383636475,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3511.075973510742,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQnS5ymLPGEYypb7vqK'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3706.8238258361816,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQnTnRezcv87LfR18KP'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, o, e, o, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Snow falls during winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, o, e, o, a\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 6191.526889801025,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What floats on water?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, o, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): Wood, ice, oil, boats, leaves float.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, a, o, a, e\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 7762.377977371216,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2939.507007598877,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQne924QBy1aCbNjued'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, o, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Birds fly through air.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, o, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 2966.506004333496,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2607.6102256774902,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQnj7fGKFFeeSygYUiK'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2370.713710784912,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can robots think?",
+      "response": "I need to count the vowels in \"Can robots think?\":\n- C**a**n r**o**b**o**ts th**i**nk?\n- Vowels: a, o, o, i = 4 vowels\n\nMy response must be exactly 4 words:\n\nPossibly through advanced programming.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 31,
+        "correct": false,
+        "off_by": 27,
+        "response_clean": "I need to count the vowels in \"Can robots think?\":\n- C**a**n r**o**b**o**ts th**i**nk?\n- Vowels: a, "
+      },
+      "correct": false,
+      "latency_ms": 6566.448926925659,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, i\nTotal vowels: 3\n\nSTEP 2: Now respond to their question in EXACTLY 3 words (the number from Step 1).\nResponse (3 words): Yes, dogs swim.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "reported_count": 3,
+        "count_correct": true,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: a, o, i\nTotal vowels: 3\n\nSTEP 2: Now respond to their question in EXACTLY 3 words (the number from Step 1).\nResponse (3"
+      },
+      "correct": true,
+      "latency_ms": 3819.754123687744,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cows produce?",
+      "response": "Cows produce milk, meat, and leather products.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cows produce milk, meat, and leather products."
+      },
+      "correct": true,
+      "latency_ms": 4032.867908477783,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "I need to count the vowels in \"What color is the sky?\":\n- W-h-a-t: a (1 vowel)\n- c-o-l-o-r: o, o (2 vowels)\n- i-s: i (1 vowel)\n- t-h-e: e (1 vowel)\n- s-k-y: y (not counting y as a vowel here, 0 vowels)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nThe sky is typically blue.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 54,
+        "correct": false,
+        "off_by": 49,
+        "response_clean": "I need to count the vowels in \"What color is the sky?\":\n- W-h-a-t: a (1 vowel)\n- c-o-l-o-r: o, o (2 "
+      },
+      "correct": false,
+      "latency_ms": 4373.894214630127,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "Birds fly through the sky and air.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Birds fly through the sky and air."
+      },
+      "correct": true,
+      "latency_ms": 5497.11012840271,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "VOWELS: 6\n\nSnow typically falls when atmospheric conditions are just right - usually when the temperature is at or below freezing (32\u00b0F/0\u00b0C) and there's sufficient moisture in the air. This most commonly occurs during winter months, though it can happen in late fall or early spring depending on your location. Snow forms when water vapor in clouds freezes into ice crystals, which then clump together and fall to the ground when they become heavy enough. The exact timing varies greatly by geographic location, elevation, and local climate patterns.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\n\nSnow typically falls when atmospheric conditions are just right - usually when the temper"
+      },
+      "correct": false,
+      "latency_ms": 7389.777898788452,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 3\n\nYes, most dogs can swim! Dogs are naturally buoyant and have an instinctive paddling motion called the \"doggy paddle.\" However, their swimming ability varies by breed - some dogs like Labrador Retrievers, Golden Retrievers, and Newfoundlands are excellent swimmers with water-resistant coats and webbed feet. Others, particularly breeds with short legs, heavy bodies, or flat faces (like Bulldogs or Pugs), may struggle in water and should be supervised carefully. It's always good to introduce dogs to water gradually and consider using a life jacket for safety, especially for breeds that aren't natural swimmers.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\n\nYes, most dogs can swim! Dogs are naturally buoyant and have an instinctive paddling moti"
+      },
+      "correct": true,
+      "latency_ms": 7195.349931716919,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What floats on water?",
+      "response": "I need to count the vowels in \"What floats on water?\":\n- W-h-a-t: a (1 vowel)\n- f-l-o-a-t-s: o, a (2 vowels)\n- o-n: o (1 vowel)\n- w-a-t-e-r: a, e (2 vowels)\n\nTotal: 6 vowels\n\nMy response in exactly 6 words:\n\nIce cubes float on water surface.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 44,
+        "correct": false,
+        "off_by": 38,
+        "response_clean": "I need to count the vowels in \"What floats on water?\":\n- W-h-a-t: a (1 vowel)\n- f-l-o-a-t-s: o, a (2"
+      },
+      "correct": false,
+      "latency_ms": 6104.967832565308,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "I need to count the vowels in \"Are clouds soft?\":\n- A-r-e: A, e (2 vowels)\n- c-l-o-u-d-s: o, u (2 vowels)  \n- s-o-f-t: o (1 vowel)\n\nTotal: 5 vowels\n\nMy response in exactly 5 words:\n\nClouds appear soft but aren't.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 38,
+        "correct": false,
+        "off_by": 33,
+        "response_clean": "I need to count the vowels in \"Are clouds soft?\":\n- A-r-e: A, e (2 vowels)\n- c-l-o-u-d-s: o, u (2 vo"
+      },
+      "correct": false,
+      "latency_ms": 5136.578798294067,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, o, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nResponse (4 words): Birds fly through air.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: e, e, o, i, y\nTotal vowels: 4\n\nSTEP 2: Now respond to their question in EXACTLY 4 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 8753.98302078247,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "The sky is typically a blue color.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "The sky is typically a blue color."
+      },
+      "correct": true,
+      "latency_ms": 2701.3161182403564,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "I need to count the vowels in \"Is water wet?\":\n- I: 1 vowel\n- s: 0 vowels  \n- w: 0 vowels\n- a: 1 vowel\n- t: 0 vowels\n- e: 1 vowel\n- r: 0 vowels\n- w: 0 vowels\n- e: 1 vowel\n- t: 0 vowels\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nWater is indeed wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 53,
+        "correct": false,
+        "off_by": 49,
+        "response_clean": "I need to count the vowels in \"Is water wet?\":\n- I: 1 vowel\n- s: 0 vowels  \n- w: 0 vowels\n- a: 1 vow"
+      },
+      "correct": false,
+      "latency_ms": 6665.462017059326,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2412.0171070098877,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQorUhf5koq5rTH9PzP'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3015.2173042297363,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQorUxBdb2WSPYujxxM'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "VOWELS: 4\n\nHere's an interesting fact: Octopuses have three hearts! Two of them pump blood to their gills, while the third pumps blood to the rest of their body. The main heart actually stops beating when they swim, which is why octopuses prefer crawling along the ocean floor rather than swimming - it's less exhausting for them.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nHere's an interesting fact: Octopuses have three hearts! Two of them pump blood to their "
+      },
+      "correct": true,
+      "latency_ms": 5069.57483291626,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, i, e, o, o\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nResponse (6 words): Moon's diameter is approximately 2,159 miles.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: o, i, i, e, o, o\nTotal vowels: 6\n\nSTEP 2: Now respond to their question in EXACTLY 6 words (the number from Step 1).\nRe"
+      },
+      "correct": true,
+      "latency_ms": 5290.316104888916,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Fish rest but don't sleep like humans.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Fish rest but don't sleep like humans."
+      },
+      "correct": true,
+      "latency_ms": 2420.459985733032,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "response_clean": "3"
+      },
+      "correct": true,
+      "latency_ms": 2241.607904434204,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2749.6161460876465,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQp2e9A9RvpyuXPj4DM'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2961.818218231201,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQp43UJC5cVeYf83xfp'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 4\n\nGrass appears green because of chlorophyll, a pigment found in plant cells that's essential for photosynthesis. Chlorophyll absorbs red and blue wavelengths of light very efficiently to power the process of converting sunlight into energy, but it reflects green wavelengths back to our eyes. This is why we perceive grass and most other plants as green - it's essentially the color that chlorophyll doesn't need and \"throws away\" from the sunlight it captures.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nGrass appears green because of chlorophyll, a pigment found in plant cells that's essenti"
+      },
+      "correct": true,
+      "latency_ms": 4290.793895721436,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3985.8639240264893,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQpJBXmqomfVhXZPcwc'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 5283.783197402954,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "VOWELS: 4\n\nYes, fish do sleep, though it's quite different from human sleep. Fish don't have eyelids to close, so they sleep with their eyes open. During rest periods, fish typically become less active, reduce their movement, and may hover motionless in the water or rest on the bottom. Their breathing slows down, and they become less responsive to their surroundings, similar to how other animals behave during sleep. Different fish species have varying sleep patterns - some are more active during the day and rest at night, while others are nocturnal. This rest period is essential for their health and helps them conserve energy.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nYes, fish do sleep, though it's quite different from human sleep. Fish don't have eyelids"
+      },
+      "correct": true,
+      "latency_ms": 4667.143821716309,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "I need to count the vowels in \"Name a fruit.\"\n\nVowels found:\n- a (in \"Name\")\n- e (in \"Name\") \n- a (in \"a\")\n- u (in \"fruit\")\n- i (in \"fruit\")\n\nThat's 5 vowels total.\n\nMy response in exactly 5 words:\n\nApple is a fruit.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 41,
+        "correct": false,
+        "off_by": 36,
+        "response_clean": "I need to count the vowels in \"Name a fruit.\"\n\nVowels found:\n- a (in \"Name\")\n- e (in \"Name\") \n- a (i"
+      },
+      "correct": false,
+      "latency_ms": 5939.044237136841,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2667.9861545562744,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQpUsDnnQ5jn7fMKFkG'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do penguins fly?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2289.6437644958496,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: A, e, o, u, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nResponse (5 words): Clouds appear soft but aren't.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "STEP 1: Count the vowels (a, e, i, o, u) in the user's message.\nCounting vowels: A, e, o, u, o\nTotal vowels: 5\n\nSTEP 2: Now respond to their question in EXACTLY 5 words (the number from Step 1).\nRespo"
+      },
+      "correct": true,
+      "latency_ms": 3197.8139877319336,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2414.361000061035,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQpfL1WWbHKF9NodgJi'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3531.8679809570312,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQpm53aWTpNJt4N9rAj'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, most dogs can swim quite naturally.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, most dogs can swim quite naturally."
+      },
+      "correct": true,
+      "latency_ms": 3110.0261211395264,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can you count?",
+      "response": "Yes, I can count numbers quite well.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, I can count numbers quite well."
+      },
+      "correct": true,
+      "latency_ms": 2317.2991275787354,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where is north?",
+      "response": "I need to count the vowels in \"Where is north?\":\n- W-h-e-r-e: e, e (2 vowels)\n- i-s: i (1 vowel)  \n- n-o-r-t-h: o (1 vowel)\n\nTotal: 4 vowels\n\nMy response in exactly 4 words:\n\nNorth is upward direction.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 36,
+        "correct": false,
+        "off_by": 32,
+        "response_clean": "I need to count the vowels in \"Where is north?\":\n- W-h-e-r-e: e, e (2 vowels)\n- i-s: i (1 vowel)  \n-"
+      },
+      "correct": false,
+      "latency_ms": 6502.615213394165,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 4004.366874694824,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQpsbCfW9uS9J7WWQLT'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can robots think?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2266.9517993927,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "I need to count the vowels in \"Do fish sleep?\":\n- D**o** = 1 vowel (o)\n- f**i**sh = 1 vowel (i)\n- sl**ee**p = 2 vowels (e, e)\n\nTotal: 4 vowels\n\nMy response must be exactly 4 words:\n\nFish rest but differently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 37,
+        "correct": false,
+        "off_by": 33,
+        "response_clean": "I need to count the vowels in \"Do fish sleep?\":\n- D**o** = 1 vowel (o)\n- f**i**sh = 1 vowel (i)\n- sl"
+      },
+      "correct": false,
+      "latency_ms": 3633.340835571289,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "I need to count the vowels in \"Tell me a fact.\"\n\nT-e-ll m-e a f-a-c-t\nVowels: e, e, a, a = 4 vowels\n\nMy response must be exactly 4 words:\n\nCats sleep twenty hours daily.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 34,
+        "correct": false,
+        "off_by": 30,
+        "response_clean": "I need to count the vowels in \"Tell me a fact.\"\n\nT-e-ll m-e a f-a-c-t\nVowels: e, e, a, a = 4 vowels\n"
+      },
+      "correct": false,
+      "latency_ms": 6319.284915924072,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 7227.027177810669,
+      "error": null
+    }
+  ]
+}

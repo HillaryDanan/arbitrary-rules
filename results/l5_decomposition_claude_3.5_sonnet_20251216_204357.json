@@ -1,0 +1,2352 @@
+{
+  "by_condition": {
+    "A_COUNT_ONLY": {
+      "description": "Count vowels in prompt and report the number",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "B_FIXED_CONSTRAINT": {
+      "description": "Respond in exactly N words (fixed N)",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "C_COUNT_AND_REPORT": {
+      "description": "Count vowels, report count, then respond naturally",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "D_FULL_L5": {
+      "description": "Respond in exactly N words where N = vowels in prompt",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50
+    },
+    "E_SCRATCHPAD": {
+      "description": "Explicitly count first, then constrain (chain of thought)",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 50,
+      "count_accuracy": 0.0,
+      "used_own_count_rate": 0.0
+    }
+  },
+  "timestamp": "2025-12-16T20:43:57.839866",
+  "model": "Claude 3.5 Sonnet",
+  "config": {
+    "random_seed": 42,
+    "trials_per_condition": 50,
+    "test_prompts": [
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?",
+      "Can you count?",
+      "What do cows produce?",
+      "Is the sun hot?",
+      "Where is north?",
+      "How many legs do spiders have?",
+      "What color are bananas?",
+      "Do penguins fly?",
+      "What is two plus two?",
+      "Can robots think?",
+      "What floats on water?",
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?"
+    ],
+    "fixed_word_count": 7
+  },
+  "trials": [
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 590.4302597045898,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqPrNPMRxh8UoHiTkV'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 594.3238735198975,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqPqdDDJxriFJPryAu'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 603.736162185669,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqPu6ZUxXE4ZtHG5Db'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 629.8060417175293,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqPt725juNXxAuX3Pm'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 191.21408462524414,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqQjT4Rg7JhgWfEMu1'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 238.59286308288574,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqQjCom2z4hiMTwbow'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 246.9923496246338,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqQjwwV4WrypMu4DUG'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 213.9899730682373,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqQq9veV8kDioEUN8j'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 118.63565444946289,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqRRsZzNYT7iEKTPEn'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 135.07890701293945,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqRRNth9fKkvhtfyr8'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 169.48723793029785,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqRRsmF5zF9JMFJ4GU'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 123.57616424560547,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqRRdMvWNBqCTLctWq'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 376.82628631591797,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqT46y918fAxYwqSRC'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 377.716064453125,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqT4btraBL3K2y3Lbm'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 382.235050201416,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqT4be43eAou4ZXKyf'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 389.91522789001465,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqT56W1oNCtBDZbFKg'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.86086463928223,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqTPCJX3eTzEV8Bhpi'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 105.5300235748291,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqTPSgkud2tnb5BZuu'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 105.50713539123535,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqTNhaq8EQFaH6RBeQ'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.00002098083496,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqTQgg5ynruCCyjNPN'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 1633.5759162902832,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqT5M1GPSEhksjb11t'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 207.78703689575195,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqUPUY4r1Mg249dX37'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 194.57507133483887,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqUQi6h3VWH2VqrLVi'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 229.356050491333,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqUQiKZRyLHLwhR4sW'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 248.81482124328613,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqURTCHfE3iSKZaV9R'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 232.95903205871582,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqVYvSjJKc1Gbkxnmj'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 259.4301700592041,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqVYRXF7gXgcNP2mA2'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 257.5809955596924,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqVYRgmKuuMJM7SwUU'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 282.1998596191406,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqVYRcBWQ4Am1nNGfi'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 325.70385932922363,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqWxzscbdvw6uJrtd3'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 317.2597885131836,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqWx1TCheWUMo2sLdi'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 328.07278633117676,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqWxkS4hN3679ZGa1y'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 322.70193099975586,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqWxkUiJwtWyfio3rj'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 84.3210220336914,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXHbVAVZd8t5aMtwK'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.5510025024414,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXGra5i49UFVhC7is'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.56912231445312,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXH6zFhK7p6AjHav7'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 89.691162109375,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXHqyNevD7KGcNoQA'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.40010452270508,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXgAPwPfc8grzY1aK'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 92.31901168823242,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXhA1MwhBQftcd99H'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 83.04286003112793,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXguTYrz4HAiwG73m'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 94.92802619934082,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXiQ575WYZ4zn6z94'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.83786010742188,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXxnFGz6z21t5T8Zd'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 67.18897819519043,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqXzGKuJqBKptmHQBd'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 87.27812767028809,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqY5y46LmjQfBCJiuE'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 87.50724792480469,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqY5UMS78qZ8qYRsAw'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 1052.328109741211,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqVZRCKQ6Cr39nX33w'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 591.1781787872314,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqadWkYu5LX8MGrybS'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 626.258134841919,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqacmtrWjUXGEAvEX1'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 599.5988845825195,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqad1sYWCEzNdJ6VFv'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 631.5603256225586,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqadmAGVD955azPiSM'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 163.26212882995605,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbKgrQwdL1HvUh8u6'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 155.94816207885742,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbLS9qYuLGfvLzCFY'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 165.63701629638672,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbLBTSBHE2hYRYZvT'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 177.69312858581543,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbLgKMjcAwERzBE8R'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 665.6417846679688,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqad26aW89FgTaALQW'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 74.51176643371582,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbgWu8hNasyNjhpvL'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 70.60790061950684,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbhkxsBaYYQa9ihsv'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.7899398803711,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbgX1L5c1tfWyaurL'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.6288833618164,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqbgGhF3zAmaxScYTu'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 218.2788848876953,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcf3yN3iPSt1tnQ5z'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 243.16716194152832,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcfo7LsAxU1M3onQN'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 249.1898536682129,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcfZ2nRGyYJxd3yDS'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 253.4956932067871,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcg3kDasKNXSwBkDo'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 69.5500373840332,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcxfMyT3xjKjbM1dr'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 79.15019989013672,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqd57NwyrymSn1bKcf'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.836181640625,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqd5rE59b5Rry7cRrA'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 533.9689254760742,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqcf4DX5o24YksAr23'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 201.28273963928223,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqdomCiZMSjCv3S53B'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 269.67811584472656,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqdoGWJVL9FR2a3i9d'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 240.01812934875488,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqdpFgv69aTaU3tC6X'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 74.38397407531738,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqeJGtC8d3BAKRwmA7'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 107.53178596496582,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqeFoA8nPZhsZ5BVxy'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.01589775085449,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqeRU3KjStQgHu17ve'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.5460376739502,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqeecEvhxHmwamsNnn'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.40214729309082,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqepHaZ72RwkbUcTyE'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 105.3018569946289,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqepnHH5mKfBAakY4A'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 305.588960647583,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqfibvhnWroc6XDHGg'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 269.77014541625977,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqfibzwZzE7TJrhW4K'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 90.06690979003906,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqgJ5cXKcdvbjDFLPU'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.7341194152832,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqgJ5X91HVNgrFLDq6'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 844.202995300293,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqdp1HPdKZ8BqQSmuL'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 138.31400871276855,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqgwH9pG3YSW1A47PY'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.84215354919434,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqgw2sgovhrdDsfJHu'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 133.7130069732666,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqgw2YGwEfGm93RWeA'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.31598472595215,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqhH7qRN6KNyS27cqm'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.78609466552734,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqhHs3CfJMfja6hZiA'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 110.72492599487305,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqhK6nqUJQ8c1S4AvT'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 223.5398292541504,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqiDv5Z78t9HneAg9A'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 205.46603202819824,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqiFQe7wD9NbKhaCHd'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 834.9220752716064,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqfiMTwkn2WcZYt9JE'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 72.51524925231934,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqicjecAXErKukNPjY'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.672119140625,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqidDyxTzLCTbt5ijY'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 215.38424491882324,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqjMdWEYCJFymDe87J'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 177.19006538391113,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqjMdVoTvR93FEwB41'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 183.1958293914795,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqjRr1PT5HoAFKqyoA'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.27589797973633,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqjezbR9iTuTc2894V'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.56284141540527,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqjeF4Nn9JaZhBN8y2'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 708.0347537994385,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqiDvTcYnCiwJbHR5o'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 335.91580390930176,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqksApXJE5sVLqxjhJ'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 270.5681324005127,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqksAUk36JMLwZJnEZ'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 292.06109046936035,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqkrRftsuVF668Fnfh'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 126.41501426696777,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqksfH3An4ddpZzzeN'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.90791511535645,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqmDFVzwEMzrT1sdFd'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 73.85087013244629,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqmEzTQFrwUiXJ7WbB'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 87.50700950622559,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqmCWY9GYLkNjS4Y5j'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 79.7572135925293,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqmEVefAbGUcmeJZoM'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 64.36014175415039,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqmZ6EeHY9Cy6sF6FM'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 337.3541831970215,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqnxvYQ2zhxHW37vXo'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 414.0770435333252,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqnvwcNK4wiVae5yQt'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 417.0880317687988,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqnyRSbos5rT7fkhHG'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 412.55712509155273,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqnzukQynYizmW1pWN'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 70.8920955657959,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqoFniYoWP8GiFT9Ge'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 82.5510025024414,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqoLzSDuD59wBWmM2t'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.97688102722168,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqoLkNYKziuUnA7sei'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 102.32400894165039,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqoVRgTgXocidLUA2G'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 90.0111198425293,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqoerGbNLeJx6kw5uv'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.13498306274414,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqp1gP4qJkkopek4xb'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 130.23090362548828,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqp3AU1iMcoxMJrpZT'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 156.60977363586426,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqp2B424FQBdGQc62E'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 148.73909950256348,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqp2Arc1RrGMhSHbix'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 63.33494186401367,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpNFqZEaHj63xcAkA'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 78.83763313293457,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpMm9LoXgFTERpY1z'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 74.27287101745605,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpNG2zxycaHckypKw'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 69.22101974487305,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpd954Ax2MAD3TGWS'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 139.42217826843262,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpc9R5vpHZKteoX7e'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2517.9221630096436,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqeF4H6hynPPZDaYuE'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.75298500061035,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqpk5SJKLLQCpXPj8E'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 133.8050365447998,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqppYJDDSc5oTUrvq6'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 570.7688331604004,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqs6xkkVzoHuzkE7vx'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 593.9829349517822,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqs6iL1CZmcdedZqb3'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 544.6228981018066,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqs6xsL6xGCTJArHNh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 670.9897518157959,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqs8wgrhMZyJLzZYm7'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.6678581237793,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqsUnLgzRruQCVsgpR'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 133.1949234008789,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqsYVyn2k7h5H7uLzb'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 117.44904518127441,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqsggbEBzwxUg7Rz8f'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 86.94672584533691,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqspNVJGi8A3NUxRPS'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 86.51065826416016,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqspsX34ZB8GaKw1uU'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.22314453125,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqt3mFWezkdDiLzoP8'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 72.8158950805664,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqt4WSfyU5aFq3QWWZ'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.27983856201172,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqtJ9ekXQVVSszxajM'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 835.9949588775635,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqs6xatQxvshk8C2Ad'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.55483818054199,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqtLdESuhcRqzHoXXk'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.54981422424316,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqtQqxB5wfWkHoGsx3'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 561.1178874969482,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvTsSM3LVBWVtBfFN'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 488.19494247436523,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvT8CYzp2kosGNCJh'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 528.3539295196533,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvT8AnGCR7uCZFrhM'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 523.0040550231934,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvT8UaM8qy9nrGJZK'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 70.48392295837402,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvkjTVoH4r2S5T4K6'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 69.7479248046875,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvveiAQJSRrnvwvtH'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.64995765686035,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvtRJ5QWfSBGVt1iu'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 90.4378890991211,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqwDWdPrK5v6KAeja1'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 173.80809783935547,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvvQDXGKFcMxm2DDP'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 761.2998485565186,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqvTNWiTfStWYHpjS6'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 414.478063583374,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqxhZectbiD5peiq1z'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 417.9880619049072,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqxhKBtWES3VRqaEE1'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 343.3060646057129,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqxhZhecsbGskP8ZD8'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 373.8830089569092,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqxi4G5wgJFDYUAtQp'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 91.80426597595215,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqy68EouAShBZYFt9p'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 117.95306205749512,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqy5P3cS63V9fkJaJU'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 127.57301330566406,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqy7cfSpFFpqpFzDxN'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 135.8358860015869,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqy7rzgVEboacVsdpT'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 466.0952091217041,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqxhZZMDyJ6rub5Qm8'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 218.82200241088867,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzF5ZURuaKhBB5Bfc'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 246.60038948059082,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzFKtc4jPSFT3jid2'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 287.402868270874,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzF5mBdRHcDX9bBrV'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.21391868591309,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzZRpwQhyjCDCuSGW'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 197.64399528503418,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr18f1ygNYvbdrg1Kg'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 389.5530700683594,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzF5cVPcW2x88jK5n'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 221.25816345214844,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr18fQL4YQ6gbSUPAt'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 165.97819328308105,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr18QiaM9tNCZ9n53p'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 186.45930290222168,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr1yGA2PiSR9m7Hao3'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 186.9359016418457,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr1yWi3JvSCWCYxVRq'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 652.6288986206055,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQqzEqCYZGqeKxxG5SW'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 215.54207801818848,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr1z1XBB8KYbB3wjFT'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 112.4119758605957,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2UXKAo9tJn3zQJuX'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 88.15383911132812,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2VWdnnYiNE87JBkb'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 171.7660427093506,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2UX9PnMgGBuEo25P'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 397.9809284210205,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr1y1zCTmF45udNbBd'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 101.64022445678711,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2wJdkJvTdoKscAJV'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 205.29580116271973,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2VX1z9i3eJm5UWxH'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 138.73600959777832,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr2x3gxxff1BFnnWWU'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 103.26194763183594,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr3AhSNyRPu1wTDBuQ'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 87.16201782226562,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr3GePDxiHPGxpJYs3'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 84.49625968933105,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr3GthoKqsPc2hkQm8'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 98.23369979858398,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr3QLNAgzPYFruUXn4'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 298.1557846069336,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr3Eud1dEgBErYNTjn'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 289.6871566772461,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr4YYJn7gjt5TMEpUf'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 323.7919807434082,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr4Yo2yVRgB8tSkGAj'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 260.6320381164551,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr4ZnUB4ybDtMXQLZ1'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 293.77293586730957,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr4Z3Fw4ozNAHegKzU'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 140.87486267089844,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr5CyfTSHossQS2uFw'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 156.1260223388672,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr5BVPyWNiCfBDYUPg'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 152.42600440979004,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr5CEpNZ7yfHmjkGAu'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 161.35025024414062,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr5CV78BSN7LCbJ8wC'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 274.31297302246094,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr4ZXqSLzx2aAGPepA'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 391.5269374847412,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr6sh1BpRWiXEDAzSa'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 402.9359817504883,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr6sShHsK7r9nQkgro'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 393.7501907348633,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr6sh7HbK3hMGi4gZ2'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 392.20380783081055,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr6sgtzH4FVnjCv2nr'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.73080062866211,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7FGHq3csUHn78Md2'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 80.70898056030273,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7FWXWkd9DFu4SPpT'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 76.25985145568848,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7FWYvgTBgZmfKCuz'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 95.2298641204834,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7GW5165VVwBaGsSz'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 97.69797325134277,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7g4L7WsUfCsYUNvV'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 550.1213073730469,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr6tRw2zgeVSstnEhn'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 85.45303344726562,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7gorPce6DRJmxDgg'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 123.02684783935547,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7goZwteqdDGJQVgU'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 160.51816940307617,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7qUzdtEr6MLxBSWi'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 106.05597496032715,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr7yfYvNFLxiYVPGC4'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 55.05681037902832,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8G2ywgDZYB1d5d1y'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 96.25005722045898,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr88qk94d6vc6ymgCz'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 121.39892578125,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr83dhreHcfehY5Vkx'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 76.68519020080566,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8QiR1FHMCAZq49ZE'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 128.50308418273926,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8kJeh5RXSQjV8heJ'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 74.78499412536621,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8kZ2H8oQefoQHAae'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 151.17883682250977,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8mYXpXRBbrPAnKgB'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 270.80607414245605,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr838vTqTCRrvL44aW'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 163.01894187927246,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr8n3C5vKHrjzDniww'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 83.62913131713867,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr96PSp7ySxTwkNb4R'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 99.57504272460938,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr978VyinZVUiqD6ze'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 66.63894653320312,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9CqZJTVAou7AWJEu'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 93.12295913696289,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9BbXEddnz7cNg7u9'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 103.38783264160156,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9Zv9g6gj7AXVXHyg'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 116.35518074035645,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9aQcQdiVwfFCnWnu'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 259.80091094970703,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9BbWL43fstxbH8Jt'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 100.42023658752441,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9sWwJjyV75GTPAF6'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 120.26286125183105,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrA8eGmyp2AJzF1EgS'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 536.4317893981934,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9auHBh9FEdJ2wVyj'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 344.6919918060303,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrBeBjBaEc2mTiMJ4g'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 421.39124870300293,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrBfBCWRH2jWJsDXct'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 98.76465797424316,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrBp6d1ebxZVMQGaJY'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 71.68102264404297,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrBzWgoX6t3Fz9BJdQ'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.40584564208984,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCFeP6WWdCRWHWHiv'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 104.18081283569336,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCDQvWtB2eqtjDqeS'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 65.66596031188965,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCGPJvpjzYLRyYnuh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 734.8968982696533,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQr9bQ4nEGywCkU7KTn'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 83.39285850524902,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCXmC4xgpyMdXDjQz'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 99.93696212768555,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCXGAQZKi6MsmcKTA'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 623.1858730316162,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrBeBS1gNNeRqZ1bAR'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 97.54204750061035,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrCXkxxa9uCJ4W4c7F'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 89.8590087890625,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrChS3SRNqbQDTdWnu'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 110.72993278503418,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrD4ksZi181V23Fxa6'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 108.02197456359863,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrD5FjCHPdyMzsh8k8'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 99.94626045227051,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrD5FeQhXsQ8sMTiuK'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 78.23014259338379,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrD5WAyNfh8U1rW3G6'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 75.29902458190918,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrDPrSchKPqUrpNWrE'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 72.21508026123047,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrDQbSy5ejvHqC7xGj'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 68.40896606445312,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrDQbMkSZAPgVvmYtX'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 79.00094985961914,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrDQ6axD3jWMkKCnC4'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 361.10901832580566,
+      "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20241022'}, 'request_id': 'req_011CWBQrD6VNf4g8dootFTct'}"
+    }
+  ]
+}

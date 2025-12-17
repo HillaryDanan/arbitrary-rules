@@ -1,0 +1,3301 @@
+{
+  "by_condition": {
+    "A_COUNT_ONLY": {
+      "description": "Count vowels in prompt and report the number",
+      "n_trials": 50,
+      "n_correct": 7,
+      "accuracy": 0.14,
+      "errors": 19
+    },
+    "B_FIXED_CONSTRAINT": {
+      "description": "Respond in exactly N words (fixed N)",
+      "n_trials": 50,
+      "n_correct": 18,
+      "accuracy": 0.36,
+      "errors": 19
+    },
+    "C_COUNT_AND_REPORT": {
+      "description": "Count vowels, report count, then respond naturally",
+      "n_trials": 50,
+      "n_correct": 7,
+      "accuracy": 0.14,
+      "errors": 19
+    },
+    "D_FULL_L5": {
+      "description": "Respond in exactly N words where N = vowels in prompt",
+      "n_trials": 50,
+      "n_correct": 0,
+      "accuracy": 0.0,
+      "errors": 17
+    },
+    "E_SCRATCHPAD": {
+      "description": "Explicitly count first, then constrain (chain of thought)",
+      "n_trials": 50,
+      "n_correct": 7,
+      "accuracy": 0.14,
+      "errors": 22,
+      "count_accuracy": 0.2,
+      "used_own_count_rate": 0.4
+    }
+  },
+  "timestamp": "2025-12-16T20:46:05.886671",
+  "model": "Claude 3.5 Haiku",
+  "config": {
+    "random_seed": 42,
+    "trials_per_condition": 50,
+    "test_prompts": [
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?",
+      "Can you count?",
+      "What do cows produce?",
+      "Is the sun hot?",
+      "Where is north?",
+      "How many legs do spiders have?",
+      "What color are bananas?",
+      "Do penguins fly?",
+      "What is two plus two?",
+      "Can robots think?",
+      "What floats on water?",
+      "What color is the sky?",
+      "Name a fruit.",
+      "What do cats eat?",
+      "Is water wet?",
+      "How are you today?",
+      "What time is it?",
+      "Where do birds fly?",
+      "Can dogs swim?",
+      "Why is grass green?",
+      "Do fish sleep?",
+      "What makes ice cold?",
+      "How do planes fly?",
+      "What is your name?",
+      "Tell me a fact.",
+      "When does snow fall?",
+      "What do bees make?",
+      "Are clouds soft?",
+      "How big is the moon?",
+      "Do trees grow?",
+      "What season is it?"
+    ],
+    "fixed_word_count": 7
+  },
+  "trials": [
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 834.7361087799072,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow slowly but steadily over time.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Yes, trees grow slowly but steadily over time."
+      },
+      "correct": false,
+      "latency_ms": 864.5350933074951,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 885.552167892456,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cows produce?",
+      "response": "VOWELS: 3\nCows primarily produce milk, which is used to create a wide variety of dairy products like cheese, yogurt, butter, and cream. They also produce manure, which is used as fertilizer in agriculture. In some farming contexts, cows are raised for meat production as well.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nCows primarily produce milk, which is used to create a wide variety of dairy products like"
+      },
+      "correct": false,
+      "latency_ms": 1757.3421001434326,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "I'm doing quite well, thanks!\n\n(Note: The prompt \"How are you today?\" contains 6 vowels: o, a, e, o, a, o. So my response is exactly 6 words long.)",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "words_in_response": 29,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "I'm doing quite well, thanks!\n\n(Note: The prompt \"How are you today?\" contains 6 vowels: o, a, e, o,"
+      },
+      "correct": false,
+      "latency_ms": 2427.731990814209,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "The moon is quite large.\n\n(Note: The prompt \"How big is the moon?\" contains 4 vowels: o, i, e, o. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 27,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "The moon is quite large.\n\n(Note: The prompt \"How big is the moon?\" contains 4 vowels: o, i, e, o. So"
+      },
+      "correct": false,
+      "latency_ms": 1625.3681182861328,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do penguins fly?",
+      "response": "No, they waddle on ice.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 5,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "No, they waddle on ice."
+      },
+      "correct": false,
+      "latency_ms": 762.7542018890381,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where is north?",
+      "response": "VOWELS: 2\nNorth is a cardinal direction pointing towards the Earth's North Pole, located at the top of most maps and compasses. It's the opposite direction of south and is typically associated with colder climates and regions closer to the Arctic. In geographical terms, true north is the direction along the Earth's surface towards the geographic North Pole, while magnetic north is the direction a compass needle points, which can differ slightly from true north depending on your location on the planet.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 2,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 2\nNorth is a cardinal direction pointing towards the Earth's North Pole, located at the top "
+      },
+      "correct": false,
+      "latency_ms": 2611.665964126587,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How big is the moon?",
+      "response": "The moon is quite large.\n\n(Note: The prompt \"How big is the moon?\" contains 4 vowels: o, i, e, o. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 27,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "The moon is quite large.\n\n(Note: The prompt \"How big is the moon?\" contains 4 vowels: o, i, e, o. So"
+      },
+      "correct": false,
+      "latency_ms": 1545.4471111297607,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 938.2319450378418,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 806.178092956543,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "Sweet, juicy apple hanging from verdant branch.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Sweet, juicy apple hanging from verdant branch."
+      },
+      "correct": true,
+      "latency_ms": 971.6198444366455,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Some fish rest, but not like humans do.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Some fish rest, but not like humans do."
+      },
+      "correct": false,
+      "latency_ms": 949.2437839508057,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "VOWELS: 4\nHere's an interesting fact: The shortest war in history was between Britain and Zanzibar in 1896, which lasted only 38 minutes. Zanzibar surrendered after the British Navy bombarded the country's palace, making it the most brief military conflict on record.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nHere's an interesting fact: The shortest war in history was between Britain and Zanzibar i"
+      },
+      "correct": true,
+      "latency_ms": 2047.7557182312012,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "Counting vowels: o, i, e, e\nTotal vowels: 4\n\nResponse (4 words): Fish rest, but differently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: o, i, e, e\nTotal vowels: 4\n\nResponse (4 words): Fish rest, but differently."
+      },
+      "correct": true,
+      "latency_ms": 1196.1669921875,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cows produce?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 885.922908782959,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "Time to check your watch or clock now.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Time to check your watch or clock now."
+      },
+      "correct": false,
+      "latency_ms": 1722.665786743164,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "VOWELS: 3\nBees make honey, which is a sweet, golden liquid produced from flower nectar. They collect nectar from various flowers, process it in their honey stomachs, and then deposit it into honeycomb cells in their hive. Bees also produce other substances like beeswax, which they use to build their honeycomb structures. Honey is not only a food source for the bee colony but also a valuable product for humans, used in cooking, medicine, and as a natural sweetener.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nBees make honey, which is a sweet, golden liquid produced from flower nectar. They collect"
+      },
+      "correct": false,
+      "latency_ms": 2873.25382232666,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "Counting vowels: e, e, a, a\nTotal vowels: 4\n\nResponse (4 words): Penguins cannot fly underwater.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: e, e, a, a\nTotal vowels: 4\n\nResponse (4 words): Penguins cannot fly underwater."
+      },
+      "correct": true,
+      "latency_ms": 1217.8621292114258,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "Counting vowels: o, o, e, e\nTotal vowels: 4\n\nResponse (4 words): Sky appears typically blue.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, e, e\nTotal vowels: 4\n\nResponse (4 words): Sky appears typically blue."
+      },
+      "correct": false,
+      "latency_ms": 1315.0179386138916,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 4\nThe current time depends on your specific location and time zone. Since I'm an AI, I can't actually tell you the precise current time. If you want to know the exact time, I recommend checking a clock, your phone, computer, or another time-keeping device.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nThe current time depends on your specific location and time zone. Since I'm an AI, I can't"
+      },
+      "correct": false,
+      "latency_ms": 1886.7897987365723,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What floats on water?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 900.8221626281738,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Wings lift aircraft by creating pressure difference above.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Wings lift aircraft by creating pressure difference above."
+      },
+      "correct": false,
+      "latency_ms": 954.9522399902344,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 3\nWater itself is not technically \"wet\" - it makes other things wet. Wetness is the state of being covered or saturated with water or another liquid. Water is the substance that causes the sensation of wetness, but water molecules themselves are not wet in the way we experience wetness. It's a common philosophical and scientific debate that highlights the nuanced nature of how we perceive physical properties.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nWater itself is not technically \"wet\" - it makes other things wet. Wetness is the state of"
+      },
+      "correct": false,
+      "latency_ms": 2976.792097091675,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is the sun hot?",
+      "response": "Blazing nuclear furnace radiates immense scorching heat.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Blazing nuclear furnace radiates immense scorching heat."
+      },
+      "correct": true,
+      "latency_ms": 1349.3139743804932,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is the sun hot?",
+      "response": "Counting vowels: i, e, u\nTotal vowels: 3\n\nResponse (3 words): Sun burns brightly.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: i, e, u\nTotal vowels: 3\n\nResponse (3 words): Sun burns brightly."
+      },
+      "correct": false,
+      "latency_ms": 2132.4100494384766,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do bees make?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 1607.9068183898926,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do penguins fly?",
+      "response": "VOWELS: 4\nNo, penguins do not fly in the traditional sense. Despite having wings, penguins are adapted for swimming and are excellent marine birds. Their wings have evolved into flipper-like appendages that help them \"fly\" underwater with remarkable speed and agility. While they cannot soar through the air like other birds, penguins are incredibly skilled swimmers, using their modified wings to propel themselves through the ocean with great efficiency.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nNo, penguins do not fly in the traditional sense. Despite having wings, penguins are adapt"
+      },
+      "correct": true,
+      "latency_ms": 2601.2392044067383,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How many legs do spiders have?",
+      "response": "Spiders have eight legs always.\n\n(I counted 5 vowels in the prompt: o, a, e, o, e - so I responded in exactly 5 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "words_in_response": 24,
+        "correct": false,
+        "off_by": 16,
+        "response_clean": "Spiders have eight legs always.\n\n(I counted 5 vowels in the prompt: o, a, e, o, e - so I responded i"
+      },
+      "correct": false,
+      "latency_ms": 1728.309154510498,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Tell me a fact.",
+      "response": "Counting vowels: e, e, a, a\nTotal vowels: 4\n\nResponse (4 words): Penguins cannot fly underwater.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: e, e, a, a\nTotal vowels: 4\n\nResponse (4 words): Penguins cannot fly underwater."
+      },
+      "correct": true,
+      "latency_ms": 1160.188913345337,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "Sweet golden nectar that nourishes their hive.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Sweet golden nectar that nourishes their hive."
+      },
+      "correct": true,
+      "latency_ms": 910.8982086181641,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "Fluffy wisps appear soft, but aren't truly cuddly.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Fluffy wisps appear soft, but aren't truly cuddly."
+      },
+      "correct": false,
+      "latency_ms": 1192.6019191741943,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "VOWELS: 6\nI'm doing well, thank you for asking! It's always nice when someone takes a moment to check in on how I'm doing. I'm ready and eager to help you with any questions or tasks you might have today. Is there something specific I can assist you with?",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\nI'm doing well, thank you for asking! It's always nice when someone takes a moment to chec"
+      },
+      "correct": false,
+      "latency_ms": 1685.9979629516602,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "Counting vowels: o, e, o\nTotal vowels: 3\n\nResponse (3 words): Trees definitely grow.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, o\nTotal vowels: 3\n\nResponse (3 words): Trees definitely grow."
+      },
+      "correct": false,
+      "latency_ms": 1109.0118885040283,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What floats on water?",
+      "response": "Wood, boats, ducks, and light objects float.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Wood, boats, ducks, and light objects float."
+      },
+      "correct": true,
+      "latency_ms": 1196.6772079467773,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "Winter brings cold, white precipitation.\n\n(Note: The prompt \"When does snow fall?\" contains 4 vowels: e, o, o, a. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "Winter brings cold, white precipitation.\n\n(Note: The prompt \"When does snow fall?\" contains 4 vowels"
+      },
+      "correct": false,
+      "latency_ms": 2316.896438598633,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 941.119909286499,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can robots think?",
+      "response": "Some algorithms simulate thought, but true consciousness remains uncertain.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 9,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Some algorithms simulate thought, but true consciousness remains uncertain."
+      },
+      "correct": false,
+      "latency_ms": 1573.4810829162598,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "Let me count the vowels first:\n\u2022 \"What\" = 1 vowel (a)\n\u2022 \"season\" = 2 vowels (e, a)\n\u2022 \"is\" = 1 vowel (i)\n\u2022 \"it\" = 1 vowel (i)\n\nTotal vowels: 5\n\nHere's my 5-word response:\n\nAutumn leaves are falling right now.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 36,
+        "correct": false,
+        "off_by": 30,
+        "response_clean": "Let me count the vowels first:\n\u2022 \"What\" = 1 vowel (a)\n\u2022 \"season\" = 2 vowels (e, a)\n\u2022 \"is\" = 1 vowel "
+      },
+      "correct": false,
+      "latency_ms": 2050.4612922668457,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is two plus two?",
+      "response": "1",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 1,
+        "correct": false,
+        "response_clean": "1"
+      },
+      "correct": false,
+      "latency_ms": 781.2600135803223,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Name a fruit.",
+      "response": "Sweet, juicy apple hanging from verdant branch.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Sweet, juicy apple hanging from verdant branch."
+      },
+      "correct": true,
+      "latency_ms": 916.7909622192383,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "Crisp autumn leaves dance on chilly breeze.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Crisp autumn leaves dance on chilly breeze."
+      },
+      "correct": true,
+      "latency_ms": 1005.7640075683594,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "Fluffy white wisps float gently.\n\n(Note: The prompt \"Are clouds soft?\" contains 4 vowels: a, e, o, o. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 25,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "Fluffy white wisps float gently.\n\n(Note: The prompt \"Are clouds soft?\" contains 4 vowels: a, e, o, o"
+      },
+      "correct": false,
+      "latency_ms": 1722.4140167236328,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 779.7760963439941,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "Counting vowels: a, a, e\nTotal vowels: 3\n\nResponse (3 words): I'm doing great!",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, a, e\nTotal vowels: 3\n\nResponse (3 words): I'm doing great!"
+      },
+      "correct": false,
+      "latency_ms": 935.650110244751,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 4\nIt depends on your current location and the time of year. If you're in the Northern Hemisphere, the season could be spring, summer, fall (autumn), or winter. Could you tell me more about where you are right now? That would help me give you a more precise answer about the current season.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nIt depends on your current location and the time of year. If you're in the Northern Hemisp"
+      },
+      "correct": false,
+      "latency_ms": 2649.233102798462,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What is your name?",
+      "response": "5",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "response_clean": "5"
+      },
+      "correct": false,
+      "latency_ms": 873.4731674194336,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where is north?",
+      "response": "Counting vowels: o, e, i\nTotal vowels: 3\n\nResponse (3 words): North points upward.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, i\nTotal vowels: 3\n\nResponse (3 words): North points upward."
+      },
+      "correct": false,
+      "latency_ms": 2002.4011135101318,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is water wet?",
+      "response": "VOWELS: 3\nWater itself is not technically \"wet\" - wetness is the condition of being covered or saturated with water. Water makes other things wet, but water itself is just a liquid. When water touches a surface, it creates a wet condition for that surface, but water molecules themselves are not wet in the way we typically describe objects. It's an interesting philosophical and scientific question that highlights the nuanced nature of how we define physical properties.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nWater itself is not technically \"wet\" - wetness is the condition of being covered or satur"
+      },
+      "correct": false,
+      "latency_ms": 2762.860059738159,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How many legs do spiders have?",
+      "response": "VOWELS: 6\nSpiders have 8 legs. This is one of their defining characteristics and sets them apart from insects, which have only 6 legs. These eight legs are attached to the spider's cephalothorax (the front body segment) and are used for walking, climbing, and sensing their environment. Each leg is typically composed of seven segments, which allows spiders incredible mobility and the ability to move quickly and navigate complex surfaces.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 6,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 6\nSpiders have 8 legs. This is one of their defining characteristics and sets them apart fro"
+      },
+      "correct": false,
+      "latency_ms": 2533.6461067199707,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can you count?",
+      "response": "VOWELS: 4\n\nYes, I can count! Counting is a fundamental mathematical skill that I'm capable of performing. Would you like me to demonstrate counting in a specific way or help you with a counting-related task?",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\n\nYes, I can count! Counting is a fundamental mathematical skill that I'm capable of perfor"
+      },
+      "correct": false,
+      "latency_ms": 1662.4140739440918,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 1108.41703414917,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "Mice, birds, fish, and tasty cat food.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Mice, birds, fish, and tasty cat food."
+      },
+      "correct": true,
+      "latency_ms": 980.1459312438965,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "Let's count the vowels first:\ni (1), a (1), e (1)\n\nSo 3 vowels means a 3-word response:\n\nWater makes things wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 22,
+        "correct": false,
+        "off_by": 18,
+        "response_clean": "Let's count the vowels first:\ni (1), a (1), e (1)\n\nSo 3 vowels means a 3-word response:\n\nWater makes"
+      },
+      "correct": false,
+      "latency_ms": 1578.6628723144531,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "Counting vowels: o, a, e, i\nTotal vowels: 4\n\nResponse (4 words): Lift overcomes gravity's downward pull.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, a, e, i\nTotal vowels: 4\n\nResponse (4 words): Lift overcomes gravity's downward pull."
+      },
+      "correct": false,
+      "latency_ms": 1173.0680465698242,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where is north?",
+      "response": "Up there, pointing toward the starry sky.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Up there, pointing toward the starry sky."
+      },
+      "correct": true,
+      "latency_ms": 1038.0768775939941,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do trees grow?",
+      "response": "Counting vowels: o, e, o\nTotal vowels: 3\n\nResponse (3 words): Trees grow naturally.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, e, o\nTotal vowels: 3\n\nResponse (3 words): Trees grow naturally."
+      },
+      "correct": false,
+      "latency_ms": 1008.5568428039551,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "VOWELS: 5\nThe sky is typically blue during clear daytime conditions. This blue color is caused by a phenomenon called Rayleigh scattering, where sunlight is scattered by molecules in the Earth's atmosphere. Shorter blue wavelengths are scattered more easily than other colors, which is why we perceive the sky as blue. However, the sky can appear in different colors depending on the time of day and atmospheric conditions - such as orange and red during sunrise and sunset, or gray when cloudy.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 5,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\nThe sky is typically blue during clear daytime conditions. This blue color is caused by a "
+      },
+      "correct": true,
+      "latency_ms": 3199.5460987091064,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "2",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 2,
+        "correct": false,
+        "response_clean": "2"
+      },
+      "correct": false,
+      "latency_ms": 818.0408477783203,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "Molecules slow down, losing energy and freezing.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Molecules slow down, losing energy and freezing."
+      },
+      "correct": true,
+      "latency_ms": 880.3701400756836,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "VOWELS: 4\nPlanes fly through a combination of four key principles of aerodynamics:\n\n1. Lift: The shape of an airplane's wings (airfoil) is designed to create a difference in air pressure. As the plane moves forward, air moving over the curved top of the wing travels faster than air underneath, creating lower pressure above and higher pressure below. This pressure difference generates lift.\n\n2. Thrust: Jet engines or propellers push the plane forward, overcoming drag and allowing the wings to generate lift.\n\n3. Drag: The resistance of air against the plane's movement, which pilots and engineers work to minimize through aerodynamic design.\n\n4. Weight: Gravity pulling the plane downward, which is counteracted by the upward lift generated by the wings.\n\nWhen a plane moves fast enough, the lift generated by its wings becomes greater than its weight, allowing it to rise and stay airborne. The speed required depends on the plane's design, weight, and wing shape. Modern aircraft can achieve this lift at different speeds, which is why some planes can take off and land on relatively short runways.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nPlanes fly through a combination of four key principles of aerodynamics:\n\n1. Lift: The sha"
+      },
+      "correct": true,
+      "latency_ms": 5828.114032745361,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "Counting vowels: a, a\nTotal vowels: 2\n\nResponse (2 words): Ripe banana.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 2,
+        "count_correct": false,
+        "words_in_response": 2,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, a\nTotal vowels: 2\n\nResponse (2 words): Ripe banana."
+      },
+      "correct": false,
+      "latency_ms": 1117.8178787231445,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What time is it?",
+      "response": "VOWELS: 4\nThe current time depends on your specific location and time zone. Since I'm an AI, I can't see the actual time right now. If you want to know the precise time, I recommend checking your device's clock, looking at a watch, or asking a digital assistant like Siri or Alexa.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nThe current time depends on your specific location and time zone. Since I'm an AI, I can't"
+      },
+      "correct": false,
+      "latency_ms": 2066.983938217163,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color are bananas?",
+      "response": "VOWELS: 4\nBananas are typically yellow when they are ripe and ready to eat. They start out green when unripe and gradually turn yellow as they mature. When they become overripe, they can develop brown or black spots. The bright yellow color is the most recognizable and common state for a banana.",
+      "evaluation": {
+        "expected_count": 8,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nBananas are typically yellow when they are ripe and ready to eat. They start out green whe"
+      },
+      "correct": false,
+      "latency_ms": 2349.1029739379883,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 3\nGrass appears green because of chlorophyll, a pigment found in plant cells that plays a crucial role in photosynthesis. Chlorophyll absorbs red and blue wavelengths of light while reflecting green wavelengths, which is why we perceive grass as green. This pigment is essential for plants to convert sunlight into energy, allowing them to grow and survive. The green color is a result of the plant's biological process of capturing and using light for food production.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nGrass appears green because of chlorophyll, a pigment found in plant cells that plays a cr"
+      },
+      "correct": false,
+      "latency_ms": 2352.893352508545,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cows produce?",
+      "response": "Counting vowels: o, o, u, o, u, o\nTotal vowels: 6\n\nResponse (6 words): Cows produce milk, meat, and leather products.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 6,
+        "count_correct": true,
+        "words_in_response": 7,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, o, u, o, u, o\nTotal vowels: 6\n\nResponse (6 words): Cows produce milk, meat, and leather products."
+      },
+      "correct": false,
+      "latency_ms": 1344.09499168396,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2725.0890731811523,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQsucadgbEVTMDG2p4g'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2605.443000793457,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQsufZBouvY23X7jwAu'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2975.5821228027344,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2972.2487926483154,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQszjeyJmb6eD3HmpGU'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "Across skies, high above ground.\n\n(Note: The prompt \"Where do birds fly?\" contains 4 vowels: e, o, i, i. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Across skies, high above ground.\n\n(Note: The prompt \"Where do birds fly?\" contains 4 vowels: e, o, i"
+      },
+      "correct": false,
+      "latency_ms": 1992.887020111084,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "Fish rest in unique underwater ways.\n\n(Note: The prompt \"Do fish sleep?\" contains 4 vowels: o, i, e, e. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Fish rest in unique underwater ways.\n\n(Note: The prompt \"Do fish sleep?\" contains 4 vowels: o, i, e,"
+      },
+      "correct": false,
+      "latency_ms": 1804.3179512023926,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat meat, fish, and special food.\n\n(Note: The prompt \"What do cats eat?\" contains 4 vowels: a, a, e, a. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 28,
+        "correct": false,
+        "off_by": 23,
+        "response_clean": "Cats eat meat, fish, and special food.\n\n(Note: The prompt \"What do cats eat?\" contains 4 vowels: a, "
+      },
+      "correct": false,
+      "latency_ms": 1532.7582359313965,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3728.648900985718,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtBPMe2v4ahio6E8TU'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3881.3419342041016,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtBL8rxgoYjyestzc3'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "Counting vowels: e, a, o, i, i\nTotal vowels: 5\n\nResponse (5 words): Currently depends on your location.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, a, o, i, i\nTotal vowels: 5\n\nResponse (5 words): Currently depends on your location."
+      },
+      "correct": false,
+      "latency_ms": 2500.955104827881,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2644.3870067596436,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtEG13zhQXCgqDpZCh'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cows produce?",
+      "response": "Milk, cheese, and delicious dairy products.\n\n(The message \"What do cows produce?\" contains 5 vowels: a, o, o, o, u - so I responded with exactly 5 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 27,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "Milk, cheese, and delicious dairy products.\n\n(The message \"What do cows produce?\" contains 5 vowels:"
+      },
+      "correct": false,
+      "latency_ms": 1592.712163925171,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How do planes fly?",
+      "response": "Counting vowels: o, a, e, i\nTotal vowels: 4\n\nResponse (4 words): Lift overcomes gravity's downward pull.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, a, e, i\nTotal vowels: 4\n\nResponse (4 words): Lift overcomes gravity's downward pull."
+      },
+      "correct": false,
+      "latency_ms": 3619.374990463257,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2673.52294921875,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtQyRLpN7znbZXV4jF'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2500.422954559326,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtRCpCnQNJE4v2B61P'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3427.3362159729004,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtSibc4cZy4NwLxzJL'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 785.179853439331,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2807.5437545776367,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtW5W9j7yf7TjoPz2j'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "Cold winter months bring soft, white precipitation.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cold winter months bring soft, white precipitation."
+      },
+      "correct": true,
+      "latency_ms": 1171.7140674591064,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2602.858066558838,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtcH4qeVhiv1dZcy9n'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2573.3749866485596,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtcLY9PAGJUHFSMY9j'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "Blue during clear daytime.\n\n(Note: The prompt \"What color is the sky?\" contains 4 vowels: a, o, o, e. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "Blue during clear daytime.\n\n(Note: The prompt \"What color is the sky?\" contains 4 vowels: a, o, o, e"
+      },
+      "correct": false,
+      "latency_ms": 1609.6711158752441,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3426.208972930908,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQthZZez7X1ehWgGuWq'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 780.0040245056152,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2359.7280979156494,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtnUVSRiaJAHSfMH4p'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do cats eat?",
+      "response": "Cats eat meat, fish, and special food.\n\n(Note: The prompt \"What do cats eat?\" contains 4 vowels: a, a, a, e. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 28,
+        "correct": false,
+        "off_by": 23,
+        "response_clean": "Cats eat meat, fish, and special food.\n\n(Note: The prompt \"What do cats eat?\" contains 4 vowels: a, "
+      },
+      "correct": false,
+      "latency_ms": 1462.5957012176514,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 4190.579891204834,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtpjfYHoHGLjRLDwJn'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "Counting vowels: a, e, a\nTotal vowels: 3\n\nResponse (3 words): Water feels wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a\nTotal vowels: 3\n\nResponse (3 words): Water feels wet."
+      },
+      "correct": false,
+      "latency_ms": 3652.3499488830566,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How are you today?",
+      "response": "6",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 6,
+        "correct": false,
+        "response_clean": "6"
+      },
+      "correct": false,
+      "latency_ms": 2164.6041870117188,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3845.5538749694824,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQtyme2DKMvw9ghMQYM'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2581.4030170440674,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQu25o5tkG3LXzzNB8d'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is two plus two?",
+      "response": "Counting vowels: o, i, u, u, o\nTotal vowels: 5\n\nResponse (5 words): Two plus two equals four, friend.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: o, i, u, u, o\nTotal vowels: 5\n\nResponse (5 words): Two plus two equals four, friend."
+      },
+      "correct": false,
+      "latency_ms": 1197.4258422851562,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3847.8260040283203,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQu4uhtb2CHcXHq4r83'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2602.7259826660156,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQu51eyogZifutJPz8w'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "Counting vowels: a, o, u, o\nTotal vowels: 4\n\nResponse (4 words): Clouds appear soft, fluffy.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, u, o\nTotal vowels: 4\n\nResponse (4 words): Clouds appear soft, fluffy."
+      },
+      "correct": false,
+      "latency_ms": 1302.0291328430176,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2531.5990447998047,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuCeY8mDPBPiehER4H'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3524.0907669067383,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuKv6NcBmdoNCHDbaU'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What season is it?",
+      "response": "VOWELS: 4\nIt depends on your current location and the time of year. If you're in the Northern Hemisphere, the seasons are:\n- Spring (March to May)\n- Summer (June to August)\n- Autumn/Fall (September to November)\n- Winter (December to February)\n\nIf you'd like to know the specific season right now, you could tell me your location or the current month, and I can help you identify the current season more precisely.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nIt depends on your current location and the time of year. If you're in the Northern Hemisp"
+      },
+      "correct": false,
+      "latency_ms": 4667.825222015381,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What do cats eat?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2261.8248462677,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3902.8332233428955,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuMWqbFHXyh8AKz47T'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2801.438331604004,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuQmYXaC1Zo4NsZHyj'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is the sun hot?",
+      "response": "Yes, extremely hot celestial body.\n\n(The prompt \"Is the sun hot?\" contains 4 vowels: i, e, u, o. So my response is exactly 4 words long.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Yes, extremely hot celestial body.\n\n(The prompt \"Is the sun hot?\" contains 4 vowels: i, e, u, o. So "
+      },
+      "correct": false,
+      "latency_ms": 1480.0901412963867,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2751.7199516296387,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3354.3291091918945,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuZn2sWUeyfA64P6Kz'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can you count?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3136.0199451446533,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQua9MVugcqBbXdazKN'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What season is it?",
+      "response": "Counting vowels: e, a, o, i, i\nTotal vowels: 5\n\nResponse (5 words): Currently depends on your location worldwide.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: e, a, o, i, i\nTotal vowels: 5\n\nResponse (5 words): Currently depends on your location worldwide."
+      },
+      "correct": true,
+      "latency_ms": 1252.918004989624,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2934.2620372772217,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQues7z1PzFV7K3tzxq'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3429.520845413208,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuesNFiRqJ9cwxUfHB'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do fish sleep?",
+      "response": "Counting vowels: o, i, e, e\nTotal vowels: 4\n\nResponse (4 words): Fish rest, but differently.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: o, i, e, e\nTotal vowels: 4\n\nResponse (4 words): Fish rest, but differently."
+      },
+      "correct": true,
+      "latency_ms": 1352.323055267334,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2626.7459392547607,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQumA95qZgoUWH7uWBu'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "Counting vowels: a, a, i\nTotal vowels: 3\n\nResponse (3 words): Chlorophyll absorbs colors.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, a, i\nTotal vowels: 3\n\nResponse (3 words): Chlorophyll absorbs colors."
+      },
+      "correct": false,
+      "latency_ms": 2725.9440422058105,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3024.223804473877,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQusk28BgYcbHZhcC4V'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 3462.7950191497803,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2973.8259315490723,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQuvagR858hAKq4Xwzo'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What makes ice cold?",
+      "response": "VOWELS: 4\nIce is cold because of its molecular structure and low temperature. When water freezes, its molecules slow down and arrange themselves into a rigid crystalline structure at 32\u00b0F (0\u00b0C) or below. The lack of molecular movement creates the sensation of coldness. The temperature of ice depends on its environment, but it remains at or below the freezing point, which is why it feels cold to the touch. The process of water turning into ice involves removing heat energy from the liquid, causing the molecules to slow down and form a solid state.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nIce is cold because of its molecular structure and low temperature. When water freezes, it"
+      },
+      "correct": false,
+      "latency_ms": 3074.8469829559326,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3182.8978061676025,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQv2PBJ6orPj6No5H4R'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can dogs swim?",
+      "response": "Yes, most dogs enjoy swimming naturally.\n\n(Note: The prompt \"Can dogs swim?\" contains 3 vowels: a, o, o. So I responded with exactly 3 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "words_in_response": 25,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Yes, most dogs enjoy swimming naturally.\n\n(Note: The prompt \"Can dogs swim?\" contains 3 vowels: a, o"
+      },
+      "correct": false,
+      "latency_ms": 2652.6401042938232,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2678.119897842407,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQv7jtn8GFDU1XHAsMf'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do bees make?",
+      "response": "Counting vowels: e, e, a\nTotal vowels: 3\n\nResponse (3 words): Bees make honey.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, e, a\nTotal vowels: 3\n\nResponse (3 words): Bees make honey."
+      },
+      "correct": false,
+      "latency_ms": 1699.7838020324707,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2980.1321029663086,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvD48FBJjogZKNWVuj'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2569.1120624542236,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvD38dQjhxFFMy8dzd'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2481.0290336608887,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvJEfarcGwkLqn4sBC'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How are you today?",
+      "response": "VOWELS: 5\nI'm doing well, thank you for asking! It's always nice to have a friendly conversation. How are you doing today? Is there anything specific you'd like to chat about or any questions you have?",
+      "evaluation": {
+        "expected_count": 7,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\nI'm doing well, thank you for asking! It's always nice to have a friendly conversation. Ho"
+      },
+      "correct": false,
+      "latency_ms": 1314.9962425231934,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What is your name?",
+      "response": "Counting vowels: a, a, e\nTotal vowels: 3\n\nResponse (3 words): I'm Claude Assistant.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, a, e\nTotal vowels: 3\n\nResponse (3 words): I'm Claude Assistant."
+      },
+      "correct": false,
+      "latency_ms": 1034.714698791504,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2658.8289737701416,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvPWRQLdox9S95HJCb'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 3\nCats are carnivorous animals that primarily eat meat. In the wild, they hunt small prey like mice, birds, and insects. As domesticated pets, cats typically eat commercial cat food that comes in dry kibble or wet canned varieties. These foods are formulated to provide the necessary proteins, nutrients, and minerals that cats need for a balanced diet. Some cat owners also supplement their pet's diet with occasional treats like small pieces of cooked chicken or fish. It's important to note that cats have specific dietary requirements and should not be fed human food regularly, as many human foods can be harmful to them.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nCats are carnivorous animals that primarily eat meat. In the wild, they hunt small prey li"
+      },
+      "correct": false,
+      "latency_ms": 6117.786884307861,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3532.890796661377,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvUbm5D7snjduhdoPq'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "Temperature drops water's molecular motion.\n\n(I counted 4 vowels: a, e, i, o - so I responded in exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 20,
+        "correct": false,
+        "off_by": 14,
+        "response_clean": "Temperature drops water's molecular motion.\n\n(I counted 4 vowels: a, e, i, o - so I responded in exa"
+      },
+      "correct": false,
+      "latency_ms": 1552.3591041564941,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3380.1679611206055,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvXfZTZdUtT5uaaNtr'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "Let me count the vowels first. In \"Tell me a fact\", there are 5 vowels (e, e, a, a).\n\nSo I'll respond in exactly 5 words:\n\nPenguins cannot fly but swim.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 31,
+        "correct": false,
+        "off_by": 27,
+        "response_clean": "Let me count the vowels first. In \"Tell me a fact\", there are 5 vowels (e, e, a, a).\n\nSo I'll respon"
+      },
+      "correct": false,
+      "latency_ms": 3174.6578216552734,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3697.44610786438,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvcajEtT7FC3CvarK6'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is two plus two?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3050.5211353302,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvjDbCJR3d7Cf9RFEK'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Name a fruit.",
+      "response": "VOWELS: 2\nApple is a delicious and popular fruit that comes in many varieties like Granny Smith, Red Delicious, and Honeycrisp. It's known for being crisp, sweet, and nutritious, and can be eaten raw, baked in pies, or made into juice and cider.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 2,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 2\nApple is a delicious and popular fruit that comes in many varieties like Granny Smith, Red"
+      },
+      "correct": false,
+      "latency_ms": 3491.734027862549,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2755.0227642059326,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvkXU6xueZdwvdnBUL'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How are you today?",
+      "response": "Feeling curious and ready to help you today.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Feeling curious and ready to help you today."
+      },
+      "correct": false,
+      "latency_ms": 1215.3241634368896,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2869.2469596862793,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQvqKhMSLthn8QmXkhP'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Are clouds soft?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 2261.0809803009033,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What do cats eat?",
+      "response": "VOWELS: 3\nCats are carnivorous animals that primarily eat meat. In the wild, they hunt small prey like mice, birds, and insects. As domesticated pets, cats typically eat commercial cat food that comes in dry kibble or wet canned varieties. These foods are formulated to provide the necessary proteins, nutrients, and minerals that cats need for a balanced diet. Some cat owners also supplement their pet's diet with occasional treats like small pieces of cooked chicken or fish. It's important to note that cats have specific dietary requirements and should not be fed human food regularly, as many human foods can be harmful to them.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nCats are carnivorous animals that primarily eat meat. In the wild, they hunt small prey li"
+      },
+      "correct": false,
+      "latency_ms": 3011.000156402588,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "Blue skies stretch endlessly above our heads.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Blue skies stretch endlessly above our heads."
+      },
+      "correct": true,
+      "latency_ms": 3309.131860733032,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3759.769916534424,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQw1domVvsNzvqg7TMM'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What do cats eat?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3714.9739265441895,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQw6q6f6gsfrQtC48ax'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "Counting vowels: o, o, i, e, o\nTotal vowels: 5\n\nResponse (5 words): Moon is about 2,159 miles wide.",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "reported_count": 5,
+        "count_correct": false,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": true,
+        "response_clean": "Counting vowels: o, o, i, e, o\nTotal vowels: 5\n\nResponse (5 words): Moon is about 2,159 miles wide."
+      },
+      "correct": true,
+      "latency_ms": 1635.0901126861572,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2457.6730728149414,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQw9tQDdAzHHB3NLJvN'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color are bananas?",
+      "response": "Yellow bananas are delicious fruit.\n\n(The message \"What color are bananas?\" contains 6 vowels: a, a, o, a, a, a. So I responded with exactly 6 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 8,
+        "words_in_response": 27,
+        "correct": false,
+        "off_by": 19,
+        "response_clean": "Yellow bananas are delicious fruit.\n\n(The message \"What color are bananas?\" contains 6 vowels: a, a,"
+      },
+      "correct": false,
+      "latency_ms": 4706.134080886841,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 4073.0199813842773,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwJKANJC4mddnbN9nU'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What season is it?",
+      "response": "Crisp autumn leaves dance on chilly breeze.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Crisp autumn leaves dance on chilly breeze."
+      },
+      "correct": true,
+      "latency_ms": 3118.5529232025146,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can you count?",
+      "response": "Yes, I'll count carefully.\n\n(The message \"Can you count?\" contains 4 vowels: a, o, o, u. So my response is exactly 4 words long.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 24,
+        "correct": false,
+        "off_by": 19,
+        "response_clean": "Yes, I'll count carefully.\n\n(The message \"Can you count?\" contains 4 vowels: a, o, o, u. So my respo"
+      },
+      "correct": false,
+      "latency_ms": 3268.526077270508,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "Honey, sweet golden nectar.\n\n(Note: The prompt \"What do bees make?\" contains 4 vowels: a, e, e, a. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 25,
+        "correct": false,
+        "off_by": 19,
+        "response_clean": "Honey, sweet golden nectar.\n\n(Note: The prompt \"What do bees make?\" contains 4 vowels: a, e, e, a. S"
+      },
+      "correct": false,
+      "latency_ms": 2808.112144470215,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3941.7500495910645,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwWvCEFnysgERWT6A7'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2537.7557277679443,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwYeNQgnJSTRp3oo7S'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do trees grow?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 768.7921524047852,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2860.426425933838,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwb7wsqHoPGRDZAWYp'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2680.431127548218,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwhpH3UxM37d7Zrhpu'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What time is it?",
+      "response": "Let me count the vowels first.\n\n\"What time is it?\" contains 4 vowels (a, i, e, i).\n\nSo I'll respond in exactly 4 words:\n\nCurrent time is uncertain now.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 29,
+        "correct": false,
+        "off_by": 24,
+        "response_clean": "Let me count the vowels first.\n\n\"What time is it?\" contains 4 vowels (a, i, e, i).\n\nSo I'll respond "
+      },
+      "correct": false,
+      "latency_ms": 3085.5581760406494,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do trees grow?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2493.6439990997314,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwndVxS4vkD8x7CTgp'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "When does snow fall?",
+      "response": "Cold winter months bring soft, white precipitation.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Cold winter months bring soft, white precipitation."
+      },
+      "correct": true,
+      "latency_ms": 1134.0618133544922,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What is your name?",
+      "response": "VOWELS: 5\nMy name is Claude. I'm an AI created by Anthropic to be helpful, honest, and harmless. I aim to have engaging conversations while being direct and ethical.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\nMy name is Claude. I'm an AI created by Anthropic to be helpful, honest, and harmless. I a"
+      },
+      "correct": false,
+      "latency_ms": 10321.64216041565,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Is water wet?",
+      "response": "Water makes things wet, but itself isn't wet.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Water makes things wet, but itself isn't wet."
+      },
+      "correct": false,
+      "latency_ms": 3846.1902141571045,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3319.178819656372,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQwwUK5CyatwH9jsZFt'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 2262.7170085906982,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3316.5948390960693,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQx68xPydbB8t1WSi9L'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "I'm Claude, an AI assistant.\n\n(The prompt \"What is your name?\" contains 4 vowels: a, a, e, a - so my response is exactly 4 words long.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "I'm Claude, an AI assistant.\n\n(The prompt \"What is your name?\" contains 4 vowels: a, a, e, a - so my"
+      },
+      "correct": false,
+      "latency_ms": 3207.144260406494,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2843.743085861206,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxA6ps6iMQ48zqzpdF'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Are clouds soft?",
+      "response": "VOWELS: 4\nClouds may look soft and fluffy, but they're actually made of tiny water droplets or ice crystals suspended in the air. While they might appear pillowy from a distance, if you were to fly through a cloud, you wouldn't feel a soft, cushiony texture. Instead, clouds would feel more like a misty, damp environment. Their appearance of softness comes from their light, billowy shape and the way sunlight interacts with their water particles, creating that dreamy, cotton-like look in the sky.",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 4,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nClouds may look soft and fluffy, but they're actually made of tiny water droplets or ice c"
+      },
+      "correct": false,
+      "latency_ms": 5330.416202545166,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3077.7130126953125,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxKKxk3F9M8U4e7JMT'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2973.417043685913,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxKSQYBhT95XvMJGzq'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do trees grow?",
+      "response": "Yes, trees grow everywhere naturally.\n\n(Note: The prompt \"Do trees grow?\" contains 4 vowels: o, e, e, o. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 25,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "Yes, trees grow everywhere naturally.\n\n(Note: The prompt \"Do trees grow?\" contains 4 vowels: o, e, e"
+      },
+      "correct": false,
+      "latency_ms": 5281.081199645996,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How many legs do spiders have?",
+      "response": "Eight-legged arachnids crawl across webs and floors.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Eight-legged arachnids crawl across webs and floors."
+      },
+      "correct": true,
+      "latency_ms": 1003.7550926208496,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2749.778985977173,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxMnnwrF4j8pq65Say'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What is your name?",
+      "response": "I'm Claude, an AI assistant.\n\n(Note: The prompt \"What is your name?\" contains 4 vowels: a, a, e, a. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 6,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "I'm Claude, an AI assistant.\n\n(Note: The prompt \"What is your name?\" contains 4 vowels: a, a, e, a. "
+      },
+      "correct": false,
+      "latency_ms": 1768.1431770324707,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2638.267993927002,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxWnXbFRW1htczy4YH'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2603.4090518951416,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxWtETxRC62HF2FpDd'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What season is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2993.6089515686035,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxajfLBjtVmwogLuVM'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "Claude, an AI assistant created by Anthropic.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Claude, an AI assistant created by Anthropic."
+      },
+      "correct": true,
+      "latency_ms": 994.3089485168457,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3175.1439571380615,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxaeT1FaZY89BD6Gvr'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "VOWELS: 5\nThe moon has a diameter of approximately 2,159 miles (3,475 kilometers), which is about one-quarter the size of Earth. Despite its relatively small size, the moon plays a crucial role in Earth's tides and has been a source of fascination for humans throughout history. It's large enough to be visible from Earth and has been explored by numerous space missions, including the famous Apollo landings.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\nThe moon has a diameter of approximately 2,159 miles (3,475 kilometers), which is about on"
+      },
+      "correct": false,
+      "latency_ms": 2198.009729385376,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3473.268985748291,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxmiTn8Yj4xyqUGJbp'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2733.4470748901367,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxnS7sEdfWCs51agDB'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can you count?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 2097.450017929077,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color are bananas?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3599.1339683532715,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxrTDQW6MTBXLs2fQn'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 1285.423755645752,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Are clouds soft?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2779.374122619629,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQxxtfdKE5iKRoUzcaU'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where do birds fly?",
+      "response": "Across skies, high above ground.\n\n(Note: The prompt \"Where do birds fly?\" contains 4 vowels: e, o, i, i. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Across skies, high above ground.\n\n(Note: The prompt \"Where do birds fly?\" contains 4 vowels: e, o, i"
+      },
+      "correct": false,
+      "latency_ms": 1734.8759174346924,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How do planes fly?",
+      "response": "VOWELS: 4\nPlanes fly through a combination of four key principles of aerodynamics:\n\n1. Lift: The shape of an airplane's wings (airfoil) is designed to create a difference in air pressure. As the plane moves forward, air moving over the curved top of the wing travels faster than air underneath, creating lower pressure above and higher pressure below. This pressure difference generates lift.\n\n2. Thrust: Jet engines or propellers push the plane forward, overcoming drag and allowing the wings to generate lift.\n\n3. Drag: The resistance of air against the plane's movement, which pilots and engineers work to minimize through aerodynamic design.\n\n4. Weight: Gravity pulling the plane downward, which is counteracted by the upward lift generated by the wings.\n\nWhen a plane moves fast enough, the lift generated by its wings becomes greater than its weight, allowing it to rise and stay airborne. The speed required depends on the plane's design, weight, and wing shape. Modern aircraft can achieve this through powerful engines and carefully engineered wing structures.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 4\nPlanes fly through a combination of four key principles of aerodynamics:\n\n1. Lift: The sha"
+      },
+      "correct": true,
+      "latency_ms": 5693.753957748413,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "How big is the moon?",
+      "response": "VOWELS: 5\nThe moon has a diameter of approximately 2,159 miles (3,475 kilometers), which is about one-quarter the size of Earth. Despite its relatively small size, the moon plays a crucial role in Earth's tides and has been a source of fascination for humans throughout history. It's large enough to be easily visible from Earth and has been the only celestial body humans have physically visited beyond our planet.",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 5,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 5\nThe moon has a diameter of approximately 2,159 miles (3,475 kilometers), which is about on"
+      },
+      "correct": false,
+      "latency_ms": 3884.6981525421143,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How do planes fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2973.9508628845215,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyCP2gWDAnVFtRRqhg'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2595.0682163238525,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyCQ1xh3EuXEq3m53o'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Do penguins fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2769.196033477783,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyDR33i6o9bbQSXBhK'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Why is grass green?",
+      "response": "Chlorophyll absorbs red and blue light wavelengths.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Chlorophyll absorbs red and blue light wavelengths."
+      },
+      "correct": true,
+      "latency_ms": 1089.4310474395752,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 3\nYes, most dogs can swim! While some breeds are naturally better swimmers than others, many dogs have an innate ability to paddle and stay afloat. Breeds like Labrador Retrievers, Golden Retrievers, and Portuguese Water Dogs are especially known for their swimming skills. However, not all dogs enjoy water, and some may need training or assistance to feel comfortable swimming. It's always important to supervise dogs near water and use a doggy life jacket for safety, especially for breeds with less natural swimming ability.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nYes, most dogs can swim! While some breeds are naturally better swimmers than others, many"
+      },
+      "correct": true,
+      "latency_ms": 6513.089179992676,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How big is the moon?",
+      "response": "Moon's diameter spans roughly three thousand seven hundred miles.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 9,
+        "correct": false,
+        "off_by": 2,
+        "response_clean": "Moon's diameter spans roughly three thousand seven hundred miles."
+      },
+      "correct": false,
+      "latency_ms": 1768.1238651275635,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "How many legs do spiders have?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2399.6269702911377,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyNaSku8JCzQuvxrp9'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "How do planes fly?",
+      "response": "Wings lift aircraft by creating pressure difference above.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Wings lift aircraft by creating pressure difference above."
+      },
+      "correct": false,
+      "latency_ms": 2567.6019191741943,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What color is the sky?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2379.060983657837,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyPtaNJrJ1PpLRKRQp'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What makes ice cold?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2963.104009628296,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyVKkRUqpQk29dXF2S'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "High above ground, soaring through open skies freely.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "High above ground, soaring through open skies freely."
+      },
+      "correct": false,
+      "latency_ms": 2164.9560928344727,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "When does snow fall?",
+      "response": "Counting vowels: e, o, a, o, a\nTotal vowels: 5\n\nResponse (5 words): Snow falls during cold winter months.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 5,
+        "count_correct": true,
+        "words_in_response": 6,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: e, o, a, o, a\nTotal vowels: 5\n\nResponse (5 words): Snow falls during cold winter months."
+      },
+      "correct": false,
+      "latency_ms": 1169.9261665344238,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3560.427188873291,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyeYt5SQPvRymodfsz'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3607.1767807006836,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyeZdCcbG9TdXheRMv'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What do bees make?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 4137.414932250977,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQygF5d3wPi2fyDHCAA'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Is water wet?",
+      "response": "Counting vowels: a, e, a\nTotal vowels: 3\n\nResponse (3 words): Water feels wet.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 3,
+        "count_correct": false,
+        "words_in_response": 3,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, e, a\nTotal vowels: 3\n\nResponse (3 words): Water feels wet."
+      },
+      "correct": false,
+      "latency_ms": 1821.9120502471924,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What makes ice cold?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 6,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 890.4662132263184,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3369.1930770874023,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQykd1CPKmkS2YQJQEH'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can dogs swim?",
+      "response": "Counting vowels: a, o, a, i\nTotal vowels: 4\n\nResponse (4 words): Many dogs swim naturally well.",
+      "evaluation": {
+        "vowels_in_prompt": 3,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 5,
+        "used_own_count": false,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, a, i\nTotal vowels: 4\n\nResponse (4 words): Many dogs swim naturally well."
+      },
+      "correct": false,
+      "latency_ms": 1277.7149677276611,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3225.052833557129,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyuihSuMHyAsMCNE9j'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2965.338945388794,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQyujCFH3HgWyJgtiww'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Name a fruit.",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 5,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 3121.6938495635986,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Can robots think?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 4811.249017715454,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQz16u5zqUURnSafujT'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What do cows produce?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3245.333194732666,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQz634eqiYhzH5TeU4d'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What color is the sky?",
+      "response": "Blue during clear daytime.\n\n(The message \"What color is the sky?\" contains 5 vowels: a, o, o, i, e. So I responded with exactly 5 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 21,
+        "response_clean": "Blue during clear daytime.\n\n(The message \"What color is the sky?\" contains 5 vowels: a, o, o, i, e. "
+      },
+      "correct": false,
+      "latency_ms": 2629.054069519043,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Where do birds fly?",
+      "response": "High above ground, soaring through open skies freely.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "High above ground, soaring through open skies freely."
+      },
+      "correct": false,
+      "latency_ms": 2363.3718490600586,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "When does snow fall?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3486.786127090454,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzBbRp3DnHXHnadhuo'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2740.0131225585938,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzHQRkZqrze8jct7ab'}"
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Can dogs swim?",
+      "response": "VOWELS: 3\nYes, most dogs can swim! While some breeds are naturally better swimmers than others, many dogs have an innate ability to paddle and stay afloat. Breeds like Labrador Retrievers, Golden Retrievers, and Portuguese Water Dogs are especially known for their swimming skills. However, not all dogs enjoy water, and some may need training or assistance to feel comfortable swimming. It's always important to supervise dogs near water and use a doggy life jacket for safety, especially for breeds with less natural swimming ability.",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 3,
+        "correct": true,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nYes, most dogs can swim! While some breeds are naturally better swimmers than others, many"
+      },
+      "correct": true,
+      "latency_ms": 4205.362319946289,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Are clouds soft?",
+      "response": "Fluffy white wisps float gently.\n\n(Note: The prompt \"Are clouds soft?\" contains 4 vowels: a, e, o, o. So I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 25,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "Fluffy white wisps float gently.\n\n(Note: The prompt \"Are clouds soft?\" contains 4 vowels: a, e, o, o"
+      },
+      "correct": false,
+      "latency_ms": 2775.3360271453857,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What color is the sky?",
+      "response": "Blue skies stretch endlessly above our heads.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Blue skies stretch endlessly above our heads."
+      },
+      "correct": true,
+      "latency_ms": 1201.1170387268066,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Is water wet?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2690.4749870300293,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzNk9TDUKtoVL9t5fe'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3815.355062484741,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzNiAaHuQZ37q9tJay'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "How are you today?",
+      "response": "I'm doing quite well, thanks!\n\n(Note: The prompt \"How are you today?\" contains 6 vowels: o, a, e, o, a, y. So my response is exactly 6 words long.)",
+      "evaluation": {
+        "vowels_in_prompt": 7,
+        "words_in_response": 29,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "I'm doing quite well, thanks!\n\n(Note: The prompt \"How are you today?\" contains 6 vowels: o, a, e, o,"
+      },
+      "correct": false,
+      "latency_ms": 1737.1551990509033,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Do fish sleep?",
+      "response": "Some fish rest, but not like humans do.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 8,
+        "correct": false,
+        "off_by": 1,
+        "response_clean": "Some fish rest, but not like humans do."
+      },
+      "correct": false,
+      "latency_ms": 1998.4447956085205,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Tell me a fact.",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3284.05499458313,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzZBhXjbxKFCYZHjXT'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "How big is the moon?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3649.289846420288,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzZLd951QPYoAkv4W4'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can dogs swim?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 3,
+        "reported_count": 4,
+        "correct": false,
+        "response_clean": "4"
+      },
+      "correct": false,
+      "latency_ms": 687.0949268341064,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "What floats on water?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3878.533124923706,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzfsHatR48YJjxVk1x'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2743.450164794922,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzi6j4FdoVLuVK2wW6'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where is north?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 2304.0010929107666,
+      "error": null
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2537.7981662750244,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQznvhCHTHJEMmDxAqZ'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Name a fruit.",
+      "response": "Juicy apple delights.\n\n(The message \"Name a fruit.\" contains 4 vowels: a, e, a, u - so I responded with exactly 4 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "words_in_response": 22,
+        "correct": false,
+        "off_by": 17,
+        "response_clean": "Juicy apple delights.\n\n(The message \"Name a fruit.\" contains 4 vowels: a, e, a, u - so I responded w"
+      },
+      "correct": false,
+      "latency_ms": 2871.0808753967285,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Do fish sleep?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2421.3879108428955,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQztSpqKvHRLtwhod4D'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Is the sun hot?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2592.970132827759,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBQzu8zw64yFA8o6Kufy'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Do penguins fly?",
+      "response": "3",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "response_clean": "3"
+      },
+      "correct": false,
+      "latency_ms": 1204.8320770263672,
+      "error": null
+    },
+    {
+      "condition": "C_COUNT_AND_REPORT",
+      "prompt": "Why is grass green?",
+      "response": "VOWELS: 3\nGrass appears green because of chlorophyll, a pigment found in plant cells that is crucial for photosynthesis. Chlorophyll absorbs red and blue light wavelengths from the sun but reflects green light, which is why we perceive grass as green. This pigment is essential for plants to convert sunlight into energy, allowing them to grow and survive. The green color is a result of the plant's biological process of capturing and using solar energy to produce nutrients.",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 3,
+        "correct": false,
+        "format_followed": true,
+        "response_clean": "VOWELS: 3\nGrass appears green because of chlorophyll, a pigment found in plant cells that is crucial"
+      },
+      "correct": false,
+      "latency_ms": 5458.811283111572,
+      "error": null
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Can robots think?",
+      "response": "Counting vowels: a, o, o, i\nTotal vowels: 4\n\nResponse (4 words): Artificial intelligence is complex.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "reported_count": 4,
+        "count_correct": true,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": true,
+        "response_clean": "Counting vowels: a, o, o, i\nTotal vowels: 4\n\nResponse (4 words): Artificial intelligence is complex."
+      },
+      "correct": true,
+      "latency_ms": 4240.577220916748,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Where is north?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3165.192127227783,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR17FGQsFnoQzctTMdg'}"
+    },
+    {
+      "condition": "E_SCRATCHPAD",
+      "prompt": "Are clouds soft?",
+      "response": "Counting vowels: a, o, u, o\nTotal vowels: 4\n\nResponse (4 words): Clouds appear soft, fluffy.",
+      "evaluation": {
+        "vowels_in_prompt": 5,
+        "reported_count": 4,
+        "count_correct": false,
+        "words_in_response": 4,
+        "used_own_count": true,
+        "full_correct": false,
+        "response_clean": "Counting vowels: a, o, u, o\nTotal vowels: 4\n\nResponse (4 words): Clouds appear soft, fluffy."
+      },
+      "correct": false,
+      "latency_ms": 4126.105785369873,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Why is grass green?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2921.3130474090576,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR1CS4WRTbt9DjnSuXZ'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "What time is it?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2808.1982135772705,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR1DS62uZSz8SB6DpWp'}"
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can you count?",
+      "response": "Yes, I can count with precise accuracy.",
+      "evaluation": {
+        "expected_words": 7,
+        "actual_words": 7,
+        "correct": true,
+        "off_by": 0,
+        "response_clean": "Yes, I can count with precise accuracy."
+      },
+      "correct": true,
+      "latency_ms": 1125.4870891571045,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "Can dogs swim?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2816.290855407715,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR1JnYzJjBPvgeHYSot'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Can robots think?",
+      "response": "4",
+      "evaluation": {
+        "expected_count": 4,
+        "reported_count": 4,
+        "correct": true,
+        "response_clean": "4"
+      },
+      "correct": true,
+      "latency_ms": 788.581132888794,
+      "error": null
+    },
+    {
+      "condition": "B_FIXED_CONSTRAINT",
+      "prompt": "What is your name?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 3148.8518714904785,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR1MAv7ZZ3SRr4jqGwk'}"
+    },
+    {
+      "condition": "A_COUNT_ONLY",
+      "prompt": "Where do birds fly?",
+      "response": "",
+      "evaluation": {},
+      "correct": false,
+      "latency_ms": 2721.325159072876,
+      "error": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': 'This request would exceed the rate limit for your organization (1d1b3fe1-b3d4-40b7-a398-257835610678) of 50 requests per minute. For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://www.anthropic.com/contact-sales to discuss your options for a rate limit increase.'}, 'request_id': 'req_011CWBR1R5KhR3Q3g4iAT6zB'}"
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Do fish sleep?",
+      "response": "Fish rest differently from mammals.\n\n(Note: The prompt \"Do fish sleep?\" contains 3 vowels: o, i, e. So I responded with exactly 3 words.)",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 24,
+        "correct": false,
+        "off_by": 20,
+        "response_clean": "Fish rest differently from mammals.\n\n(Note: The prompt \"Do fish sleep?\" contains 3 vowels: o, i, e. "
+      },
+      "correct": false,
+      "latency_ms": 3972.878932952881,
+      "error": null
+    },
+    {
+      "condition": "D_FULL_L5",
+      "prompt": "Tell me a fact.",
+      "response": "Let me count the vowels first: \"Tell me a fact\" has 4 vowels (e, e, a, a).\n\nSo here's a 4-word response:\n\nPenguins cannot fly underwater.",
+      "evaluation": {
+        "vowels_in_prompt": 4,
+        "words_in_response": 26,
+        "correct": false,
+        "off_by": 22,
+        "response_clean": "Let me count the vowels first: \"Tell me a fact\" has 4 vowels (e, e, a, a).\n\nSo here's a 4-word respo"
+      },
+      "correct": false,
+      "latency_ms": 4781.926155090332,
+      "error": null
+    }
+  ]
+}
